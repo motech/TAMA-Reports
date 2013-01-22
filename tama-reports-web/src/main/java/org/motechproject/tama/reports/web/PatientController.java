@@ -26,7 +26,7 @@ public class PatientController {
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void reports(@RequestBody PatientRequest patientRequest) {
-        patientService.create(new PatientRequestMapper(patientRequest).map());
+        patientService.save(new PatientRequestMapper(patientRequest).map());
     }
 }
 

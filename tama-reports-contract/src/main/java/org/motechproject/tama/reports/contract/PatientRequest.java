@@ -15,7 +15,7 @@ public class PatientRequest {
     private String ivrPassCode;
     private String ivrLanguage;
     private String callPreference;
-    private Date bestCallTime;
+    private String bestCallTime;
     private Boolean receiveOTCAdvice;
     private Boolean receiveAppointmentReminder;
 

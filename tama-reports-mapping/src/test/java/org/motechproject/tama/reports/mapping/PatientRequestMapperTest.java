@@ -99,9 +99,8 @@ public class PatientRequestMapperTest {
         PatientRequestMapper mapper = new PatientRequestMapper(request);
         assertNull(mapper.map().getBestCallTime());
 
-        Date time = DateUtil.today().toDate();
-        request.setBestCallTime(time);
-        assertEquals(time, mapper.map().getBestCallTime());
+        request.setBestCallTime("10:10 PM");
+        assertEquals("10:10 PM", mapper.map().getBestCallTime());
     }
 
     @Test

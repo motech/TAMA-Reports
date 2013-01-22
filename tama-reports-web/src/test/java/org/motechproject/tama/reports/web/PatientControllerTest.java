@@ -38,7 +38,7 @@ public class PatientControllerTest {
                 .build()
                 .perform(post("/patient").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
-        verify(patientService).create(new PatientRequestMapper(request).map());
+        verify(patientService).save(new PatientRequestMapper(request).map());
     }
 
     protected String getJSON(Object object) throws IOException {

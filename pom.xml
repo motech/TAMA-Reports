@@ -8,11 +8,13 @@
     <artifactId>TAMA-Reports</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
         <module>tama-reports-web</module>
         <module>tama-reports-domain</module>
         <module>tama-reports-contract</module>
         <module>tama-reports-mapping</module>
+        <module>tama-reports-migration</module>
     </modules>
 
     <properties>
@@ -275,6 +277,17 @@
                 </exclusions>
             </dependency>
             <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.6.8</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
                 <version>${spring.version}</version>
@@ -284,6 +297,16 @@
                         <artifactId>commons-logging</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>${spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -334,6 +357,11 @@
                 <artifactId>spring-test-mvc</artifactId>
                 <version>1.0.0.M1</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>1.2.0.RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>

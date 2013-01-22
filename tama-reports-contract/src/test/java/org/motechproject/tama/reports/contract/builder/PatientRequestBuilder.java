@@ -8,7 +8,7 @@ public class PatientRequestBuilder {
 
     public static PatientRequest validRequest() {
         PatientRequest request = new PatientRequest();
-        request.setBestCallTime(DateUtil.today().toDate());
+        request.setBestCallTime("10:10 PM");
         request.setCallPreference("DPR");
         request.setIvrLanguage("en");
         request.setReceiveAppointmentReminder(true);
