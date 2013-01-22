@@ -4,12 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>TAMA-Reports</groupId>
+    <groupId>org.motechproject.tama.reports</groupId>
     <artifactId>TAMA-Reports</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>tama-reports-web</module>
+        <module>tama-reports-domain</module>
+        <module>tama-reports-contract</module>
+    </modules>
 
     <properties>
-        <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.version>3.1.2.RELEASE</spring.version>
         <motech.version>0.10.5-SNAPSHOT</motech.version>
         <motech.contrib.version>0.10-SNAPSHOT</motech.contrib.version>
         <slf4j.version>1.6.1</slf4j.version>
@@ -167,6 +173,17 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Child modules -->
+            <dependency>
+                <groupId>org.motechproject.tama.reports</groupId>
+                <artifactId>tama-reports-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.motechproject.tama.reports</groupId>
+                <artifactId>tama-reports-contract</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!-- Hibernate -->
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -303,6 +320,7 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test-mvc</artifactId>
                 <version>1.0.0.M1</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -341,6 +359,7 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>2.5</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>commons-lang</groupId>
@@ -384,4 +403,21 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
 </project>
