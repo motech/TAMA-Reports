@@ -21,6 +21,10 @@
             <groupId>org.motechproject.tama.reports</groupId>
             <artifactId>tama-reports-contract</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.motechproject.tama.reports</groupId>
+            <artifactId>tama-reports-mapping</artifactId>
+        </dependency>
         <!-- Spring Core -->
         <dependency>
             <groupId>org.springframework</groupId>

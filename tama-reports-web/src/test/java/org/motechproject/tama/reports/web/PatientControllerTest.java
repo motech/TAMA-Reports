@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.PatientRequest;
 import org.motechproject.tama.reports.domain.service.PatientService;
+import org.motechproject.tama.reports.mapping.PatientRequestMapper;
 import org.springframework.http.MediaType;
 
 import java.io.IOException;
@@ -37,7 +38,7 @@ public class PatientControllerTest {
                 .build()
                 .perform(post("/patient").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
-        verify(patientService).create(request.patient());
+        verify(patientService).create(new PatientRequestMapper(request).map());
     }
 
     protected String getJSON(Object object) throws IOException {
