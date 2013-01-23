@@ -15,7 +15,7 @@ public class PatientRequestBuilder {
         request.setReceiveOTCAdvice(true);
         request.setClinicId("clinicId");
         request.setDateOfBirth(DateUtil.today().toDate());
-        request.setGender("male");
+        request.setGender("m");
         request.setIvrPassCode("1234");
         request.setPatientId("patientId");
         request.setTravelTimeToClinic("travelTime");

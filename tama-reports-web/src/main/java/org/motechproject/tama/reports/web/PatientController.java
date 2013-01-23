@@ -1,5 +1,6 @@
 package org.motechproject.tama.reports.web;
 
+import org.apache.log4j.Logger;
 import org.motechproject.tama.reports.contract.PatientRequest;
 import org.motechproject.tama.reports.domain.service.PatientService;
 import org.motechproject.tama.reports.mapping.PatientRequestMapper;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class PatientController {
 
     private PatientService patientService;
+    private Logger logger = Logger.getLogger(PatientController.class);
 
     @Autowired
     public PatientController(PatientService patientService) {
@@ -26,6 +28,7 @@ public class PatientController {
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void reports(@RequestBody PatientRequest patientRequest) {
+        logger.info("Creating patient");
         patientService.save(new PatientRequestMapper(patientRequest).map());
     }
 }
