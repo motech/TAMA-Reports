@@ -179,6 +179,11 @@
             <!-- Child modules -->
             <dependency>
                 <groupId>org.motechproject.tama.reports</groupId>
+                <artifactId>tama-reports-migration</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.motechproject.tama.reports</groupId>
                 <artifactId>tama-reports-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
