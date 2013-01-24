@@ -15,7 +15,7 @@ import static junit.framework.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath*:/META-INF/spring/applicationContext.xml")
-public class TempIT {
+public class TAMAReportingIT {
 
     @Autowired
     private HttpClientService httpClientService;
