@@ -19,7 +19,7 @@ public class PatientRequestMapper {
         patient.setReceiveAppointmentReminder(request.getReceiveAppointmentReminder());
         patient.setReceiveOTCAdvice(request.getReceiveOTCAdvice());
         patient.setCallPreference(request.getCallPreference());
-        patient.setClinicId(request.getClinicId());
+        patient.setClinic(request.getClinic());
         patient.setDateOfBirth(request.getDateOfBirth());
         patient.setGender(request.getGender());
         patient.setIvrPassCode(request.getIvrPassCode());

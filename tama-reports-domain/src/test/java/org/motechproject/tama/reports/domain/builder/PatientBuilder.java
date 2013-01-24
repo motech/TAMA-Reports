@@ -12,7 +12,7 @@ public class PatientBuilder {
         patient.setIvrLanguage("en");
         patient.setReceiveAppointmentReminder(true);
         patient.setReceiveOTCAdvice(true);
-        patient.setClinicId("clinicId");
+        patient.setClinic("clinic");
         patient.setDateOfBirth(DateUtil.today().toDate());
         patient.setGender("M");
         patient.setIvrPassCode("1234");

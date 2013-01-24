@@ -32,8 +32,8 @@ public class Patient {
     @Column(name = "gender")
     private String gender;
     @NotBlank
-    @Column(name = "clinic_id")
-    private String clinicId;
+    @Column(name = "clinic")
+    private String clinic;
     @NotBlank
     @Column(name = "travel_time_to_clinic")
     private String travelTimeToClinic;
