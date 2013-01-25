@@ -24,4 +24,10 @@ public class PatientService {
     public void save(Patient patient) {
         allPatients.save(patient);
     }
+
+    public void update(Patient patient) {
+        Patient persistedPatient = allPatients.findByPatientId(patient.getPatientId());
+        persistedPatient.merge(patient);
+        allPatients.save(persistedPatient);
+    }
 }

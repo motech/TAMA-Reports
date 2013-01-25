@@ -61,4 +61,17 @@ public class Patient {
         Set<ConstraintViolation<Patient>> violations = validator.validate(this);
         return violations.isEmpty();
     }
+
+    public void merge(Patient patient) {
+        this.setBestCallTime(patient.getBestCallTime());
+        this.setGender(patient.getGender());
+        this.setCallPreference(patient.getCallPreference());
+        this.setDateOfBirth(patient.getDateOfBirth());
+        this.setClinic(patient.getClinic());
+        this.setTravelTimeToClinic(patient.getTravelTimeToClinic());
+        this.setReceiveOTCAdvice(patient.getReceiveOTCAdvice());
+        this.setReceiveAppointmentReminder(patient.getReceiveAppointmentReminder());
+        this.setIvrLanguage(patient.getIvrLanguage());
+        this.setIvrPassCode(patient.getIvrPassCode());
+    }
 }
