@@ -13,7 +13,7 @@ public class PatientRequestBuilder {
         request.setIvrLanguage("en");
         request.setReceiveAppointmentReminder(true);
         request.setReceiveOTCAdvice(true);
-        request.setClinic("clinic");
+        request.setClinicId("clinicId");
         request.setDateOfBirth(DateUtil.today().toDate());
         request.setGender("m");
         request.setIvrPassCode("1234");

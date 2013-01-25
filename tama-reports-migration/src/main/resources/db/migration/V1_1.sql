@@ -4,7 +4,7 @@ create table tama_reports.patient (
     patient_id varchar(100),
     date_of_birth date,
     gender varchar(10),
-    clinic varchar(100),
+    clinic_id varchar(100),
     travel_time_to_clinic varchar(100),
     ivr_pass_code varchar(10),
     ivr_language varchar(10),

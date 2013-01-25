@@ -32,8 +32,8 @@ public class Patient {
     @Column(name = "gender")
     private String gender;
     @NotBlank
-    @Column(name = "clinic")
-    private String clinic;
+    @Column(name = "clinic_id")
+    private String clinicId;
     @NotBlank
     @Column(name = "travel_time_to_clinic")
     private String travelTimeToClinic;
@@ -67,7 +67,7 @@ public class Patient {
         this.setGender(patient.getGender());
         this.setCallPreference(patient.getCallPreference());
         this.setDateOfBirth(patient.getDateOfBirth());
-        this.setClinic(patient.getClinic());
+        this.setClinicId(patient.getClinicId());
         this.setTravelTimeToClinic(patient.getTravelTimeToClinic());
         this.setReceiveOTCAdvice(patient.getReceiveOTCAdvice());
         this.setReceiveAppointmentReminder(patient.getReceiveAppointmentReminder());

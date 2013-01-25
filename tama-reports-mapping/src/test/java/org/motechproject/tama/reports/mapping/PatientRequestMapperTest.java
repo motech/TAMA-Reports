@@ -47,10 +47,10 @@ public class PatientRequestMapperTest {
     public void shouldMapClinic() {
         PatientRequest request = new PatientRequest();
         PatientRequestMapper mapper = new PatientRequestMapper(request);
-        assertNull(mapper.map().getClinic());
+        assertNull(mapper.map().getClinicId());
 
-        request.setClinic("clinic");
-        assertEquals("clinic", mapper.map().getClinic());
+        request.setClinicId("clinicId");
+        assertEquals("clinicId", mapper.map().getClinicId());
     }
 
     @Test

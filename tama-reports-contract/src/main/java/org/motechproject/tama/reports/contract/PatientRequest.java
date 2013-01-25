@@ -13,7 +13,7 @@ public class PatientRequest implements Serializable {
     private String patientId;
     private Date dateOfBirth;
     private String gender;
-    private String clinic;
+    private String clinicId;
     private String travelTimeToClinic;
     private String ivrPassCode;
     private String ivrLanguage;
