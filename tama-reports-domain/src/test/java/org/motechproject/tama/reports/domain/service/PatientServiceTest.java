@@ -43,8 +43,8 @@ public class PatientServiceTest {
 
         when(allPatients.findByPatientId(detachedPatient.getPatientId())).thenReturn(persistedPatient);
         patientService.update(detachedPatient);
-        Patient merged = mergedPatient();
 
+        Patient merged = mergedPatient();
         assertEquals(detachedPatient.getGender(), merged.getGender());
         assertEquals(persistedPatient.getId(), merged.getId());
     }

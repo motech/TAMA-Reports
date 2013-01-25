@@ -14,3 +14,9 @@ create table tama_reports.patient (
     receive_appointment_reminder boolean,
     phone_number varchar(15)
 );
+
+create table tama_reports.clinic (
+    id serial,
+    clinic_id varchar(100),
+    clinic_name varchar(100)
+);
