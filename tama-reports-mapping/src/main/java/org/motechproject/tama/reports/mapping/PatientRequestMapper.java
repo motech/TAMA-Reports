@@ -3,7 +3,7 @@ package org.motechproject.tama.reports.mapping;
 import org.motechproject.tama.reports.contract.PatientRequest;
 import org.motechproject.tama.reports.domain.Patient;
 
-public class PatientRequestMapper {
+public class PatientRequestMapper implements Mapper<Patient> {
 
     private PatientRequest request;
 
@@ -11,6 +11,7 @@ public class PatientRequestMapper {
         this.request = request;
     }
 
+    @Override
     public Patient map() {
         Patient patient = new Patient();
         patient.setPatientId(request.getPatientId());
