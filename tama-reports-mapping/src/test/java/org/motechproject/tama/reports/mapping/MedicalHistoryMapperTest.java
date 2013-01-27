@@ -14,6 +14,8 @@ public class MedicalHistoryMapperTest {
 
     @Mock
     private GeneralHistoryMapper generalHistoryMapper;
+    @Mock
+    private SystemAllergiesMapper systemAllergiesMapper;
 
     private MedicalHistoryMapper mapper;
 
@@ -25,7 +27,14 @@ public class MedicalHistoryMapperTest {
     @Test
     public void shouldMapGeneralHistory() throws IOException {
         MedicalHistoryRequest request = new MedicalHistoryRequest();
-        new MedicalHistoryMapper(request, generalHistoryMapper).map();
+        new MedicalHistoryMapper(request, generalHistoryMapper, systemAllergiesMapper).map();
         verify(generalHistoryMapper).map();
+    }
+
+    @Test
+    public void shouldMapSystemAllergies() throws IOException {
+        MedicalHistoryRequest request = new MedicalHistoryRequest();
+        new MedicalHistoryMapper(request, generalHistoryMapper, systemAllergiesMapper).map();
+        verify(systemAllergiesMapper).map();
     }
 }

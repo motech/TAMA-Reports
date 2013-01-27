@@ -18,4 +18,5 @@ public class MedicalHistory {
     private String patientId;
 
     private GeneralHistory generalHistory;
+    private SystemAllergies systemAllergies;
 }

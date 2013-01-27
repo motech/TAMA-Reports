@@ -10,20 +10,23 @@ public class MedicalHistoryMapper implements Mapper<MedicalHistory> {
 
     private MedicalHistoryRequest request;
     private GeneralHistoryMapper generalHistoryMapper;
+    private SystemAllergiesMapper systemAllergiesMapper;
 
-    public MedicalHistoryMapper(MedicalHistoryRequest request, GeneralHistoryMapper generalHistoryMapper) {
+    public MedicalHistoryMapper(MedicalHistoryRequest request, GeneralHistoryMapper generalHistoryMapper, SystemAllergiesMapper systemAllergiesMapper) {
         this.request = request;
         this.generalHistoryMapper = generalHistoryMapper;
+        this.systemAllergiesMapper = systemAllergiesMapper;
     }
 
     public MedicalHistoryMapper(MedicalHistoryRequest request) throws IOException {
-        this(request, new GeneralHistoryMapper(request.getNonHivMedicalHistory()));
+        this(request, new GeneralHistoryMapper(request.getNonHivMedicalHistory()), new SystemAllergiesMapper(request.getNonHivMedicalHistory()));
     }
 
     @Override
     public MedicalHistory map() throws IOException {
         MedicalHistory history = new MedicalHistory();
         history.setGeneralHistory(generalHistoryMapper.map());
+        history.setSystemAllergies(systemAllergiesMapper.map());
         return history;
     }
 }
