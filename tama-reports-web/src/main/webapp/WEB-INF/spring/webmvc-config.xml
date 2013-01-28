@@ -16,6 +16,10 @@
 
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="basename" value="views"/>
+    </bean>
+
     <!-- Configures Handler Interceptors -->
     <mvc:interceptors>
         <bean id="staticContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
