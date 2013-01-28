@@ -1,6 +1,7 @@
 package org.motechproject.tama.reports.domain.service;
 
 
+import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
@@ -18,12 +19,14 @@ public class PatientServiceTest {
 
     @Mock
     private AllPatients allPatients;
+    @Mock
+    private BasicDataSource dataSource;
     private PatientService patientService;
 
     @Before
     public void setup() {
         initMocks(this);
-        patientService = new PatientService(allPatients);
+        patientService = new PatientService(allPatients, dataSource);
     }
 
     @Test
