@@ -145,6 +145,16 @@ public class PatientRequestMapperTest {
     }
 
     @Test
+    public void shouldMapNotes() {
+        PatientRequest request = new PatientRequest();
+        PatientRequestMapper mapper = new PatientRequestMapper(request);
+        assertNull(mapper.map().getNotes());
+
+        request.setNotes("notes");
+        assertEquals("notes", mapper.map().getNotes());
+    }
+
+    @Test
     public void shouldCreateValidPatientObject() {
         PatientRequest request = validRequest();
         assertTrue(new PatientRequestMapper(request).map().isValid());

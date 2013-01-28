@@ -23,5 +23,6 @@ public class PatientRequest implements Serializable {
     private Boolean receiveAppointmentReminder;
     private Date registeredOn;
     private String status;
+    private String notes;
 
 }

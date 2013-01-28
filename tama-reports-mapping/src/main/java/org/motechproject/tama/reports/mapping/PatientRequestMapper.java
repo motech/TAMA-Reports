@@ -27,6 +27,7 @@ public class PatientRequestMapper implements Mapper<Patient> {
         patient.setIvrPassCode(request.getIvrPassCode());
         patient.setStatus(request.getStatus());
         patient.setTravelTimeToClinic(request.getTravelTimeToClinic());
+        patient.setNotes(request.getNotes());
         return patient;
     }
 }

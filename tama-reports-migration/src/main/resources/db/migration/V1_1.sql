@@ -12,7 +12,8 @@ create table tama_reports.patient (
     receive_otc_advice varchar(10),
     receive_appointment_reminder varchar(10),
     registered_on timestamp,
-    status varchar(50)
+    status varchar(50),
+    notes text
 );
 
 create table tama_reports.clinic (

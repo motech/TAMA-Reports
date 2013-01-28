@@ -61,6 +61,9 @@ public class Patient {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "notes")
+    private String notes;
+
     public boolean isValid() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
@@ -74,6 +77,7 @@ public class Patient {
         this.setCallPreference(patient.getCallPreference());
         this.setDateOfBirth(patient.getDateOfBirth());
         this.setClinicId(patient.getClinicId());
+        this.setNotes(patient.getNotes());
         this.setTravelTimeToClinic(patient.getTravelTimeToClinic());
         this.setReceiveOTCAdvice(patient.getReceiveOTCAdvice());
         this.setReceiveAppointmentReminder(patient.getReceiveAppointmentReminder());
