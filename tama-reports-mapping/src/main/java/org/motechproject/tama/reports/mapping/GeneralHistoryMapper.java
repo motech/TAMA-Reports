@@ -1,6 +1,7 @@
 package org.motechproject.tama.reports.mapping;
 
 
+import org.apache.commons.lang.StringUtils;
 import org.codehaus.jackson.JsonNode;
 import org.motechproject.tama.reports.domain.json.TAMAJsonArrayNode;
 import org.motechproject.tama.reports.domain.json.TAMAJsonNode;
@@ -43,7 +44,16 @@ public class GeneralHistoryMapper implements Mapper<GeneralHistory> {
         history.setSulfonamideAllergy(valueOf(getSection(ALLERGIES_HISTORY).contains(pair("drugAllergy", "Sulfonamide"), pair("specified", "true"))));
         history.setArvAllergy(valueOf(getSection(ALLERGIES_HISTORY).contains(pair("drugAllergy", "ARV"), pair("specified", "true"))));
         history.setOther(valueOf(getSection(ALLERGIES_HISTORY).contains(pair("drugAllergy", "Other"), pair("specified", "true"))));
-        history.setOtherDetails(getSection(ALLERGIES_HISTORY).find(pair("drugAllergy", "Other"), pair("specified", "true")).get("description").asText());
+        history.setOtherDetails(otherDetails());
+    }
+
+    private String otherDetails() {
+        String others = otherAsText();
+        return StringUtils.equals("null", others) ? "" : others;
+    }
+
+    private String otherAsText() {
+        return getSection(ALLERGIES_HISTORY).find(pair("drugAllergy", "Other"), pair("specified", "true")).get("description").asText();
     }
 
     private TAMAJsonArrayNode getSection(String secion) {

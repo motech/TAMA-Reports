@@ -1,6 +1,7 @@
 package org.motechproject.tama.reports.mapping;
 
 
+import org.apache.commons.lang.StringUtils;
 import org.codehaus.jackson.JsonNode;
 import org.motechproject.tama.reports.domain.json.TAMAJsonArrayNode;
 import org.motechproject.tama.reports.domain.json.TAMAJsonNode;
@@ -10,7 +11,6 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.motechproject.tama.reports.domain.json.Pair.pair;
-import static org.motechproject.tama.reports.mapping.type.BooleanType.valueOf;
 
 public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
 
@@ -47,19 +47,19 @@ public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
     }
 
     private void setRespiratoryAilments(SystemAllergies allergies) {
-        allergies.setRespiratory(hasOtherAilment("Respiratory"));
+        allergies.setRespiratory(otherAilment("Respiratory"));
         allergies.setRespiratoryRemarks(getOtherDescription("Respiratory"));
     }
 
     private void setPsychiatricAilments(SystemAllergies allergies) {
-        allergies.setPsychiatric(hasOtherAilment("Psychiatric"));
+        allergies.setPsychiatric(otherAilment("Psychiatric"));
         allergies.setPsychiatricRemarks(getOtherDescription("Psychiatric"));
     }
 
     private void setNonHivAilments(SystemAllergies allergies) {
         StringBuilder builder = new StringBuilder();
 
-        allergies.setNonHivOther(hasOtherAilment("Other"));
+        allergies.setNonHivOther(otherAilment("Other"));
         for (TAMAJsonNode node : getAllDescriptions("Other")) {
             builder.append(node.get("description").asText());
         }
@@ -67,107 +67,115 @@ public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
     }
 
     private void setMusculoSkeletalAilments(SystemAllergies allergies) {
-        allergies.setMusculoSkeletal(hasOtherAilment("Musculo-skeletal"));
+        allergies.setMusculoSkeletal(otherAilment("Musculo-skeletal"));
         allergies.setMusculoSkeletalRemarks(getOtherDescription("Musculo-skeletal"));
     }
 
     private void setHematologicalAilments(SystemAllergies allergies) {
-        allergies.setHematological(hasOtherAilment("Hematological"));
+        allergies.setHematological(otherAilment("Hematological"));
         allergies.setHematologicalRemarks(getOtherDescription("Hematological"));
     }
 
     private void setGenitoUrinaryAilements(SystemAllergies allergies) {
-        allergies.setGenitoUrinary(hasOtherAilment("Genito-urinary"));
+        allergies.setGenitoUrinary(otherAilment("Genito-urinary"));
         allergies.setGenitoUrinaryRemarks(getOtherDescription("Genito-urinary"));
     }
 
     private void setGastroIntestinalAilments(SystemAllergies allergies) {
-        allergies.setGastrointestinal(hasOtherAilment("Gastrointestinal"));
+        allergies.setGastrointestinal(otherAilment("Gastrointestinal"));
         allergies.setGastrointestinalRemarks(getOtherDescription("Gastrointestinal"));
     }
 
     private void setEyeAilments(SystemAllergies allergies) {
-        allergies.setEyes(hasOtherAilment("Eyes"));
+        allergies.setEyes(otherAilment("Eyes"));
         allergies.setEyesRemarks(getOtherDescription("Eyes"));
     }
 
     private void setENTAilments(SystemAllergies allergies) {
-        allergies.setEnt(hasOtherAilment("Ears, Nose, Throat"));
+        allergies.setEnt(otherAilment("Ears, Nose, Throat"));
         allergies.setEntRemarks(getOtherDescription("Ears, Nose, Throat"));
     }
 
     private void setEndocrineAilments(SystemAllergies allergies) {
-        allergies.setEndocrine(hasOtherAilment("Endocrine"));
+        allergies.setEndocrine(otherAilment("Endocrine"));
         allergies.setEndocrineRemarks(getOtherDescription("Endocrine"));
     }
 
     private void setNeurologicalAilments(SystemAllergies allergies) {
-        allergies.setDizziness(hasAilment("Neurological", "Dizziness"));
-        allergies.setImpairedConcentration(hasAilment("Neurological", "ImpairedConcentration"));
-        allergies.setInsomnia(hasAilment("Neurological", "Insomnia"));
+        allergies.setDizziness(ailment("Neurological", "Dizziness"));
+        allergies.setImpairedConcentration(ailment("Neurological", "ImpairedConcentration"));
+        allergies.setInsomnia(ailment("Neurological", "Insomnia"));
 
-        allergies.setNuerologicalOthers(hasOtherAilment("Neurological"));
+        allergies.setNuerologicalOthers(otherAilment("Neurological"));
         allergies.setNuerologicalRemarks(getOtherDescription("Neurological"));
+        allergies.setAbnormalDreamsNightmare(ailment("Neurological", "Nightmares"));
+        allergies.setSomnolence(ailment("Neurological", "Somnolence"));
     }
 
     private void setDermatologicalAilments(SystemAllergies allergies) {
-        allergies.setDermatological(hasOtherAilment("Dermatological"));
+        allergies.setDermatological(otherAilment("Dermatological"));
         allergies.setDermatologicalRemarks(getOtherDescription("Dermatological"));
     }
 
     private void setCoronaryAilments(SystemAllergies allergies) {
-        allergies.setCoronaryDisease(hasAilment("Cardiovascular", "CoronaryDisease"));
-        allergies.setCoronaryOther(hasOtherAilment("Cardiovascular"));
+        allergies.setCoronaryDisease(ailment("Cardiovascular", "CoronaryDisease"));
+        allergies.setCoronaryOther(otherAilment("Cardiovascular"));
         allergies.setCoronaryRemarks(getOtherDescription("Cardiovascular"));
     }
 
     private void setAllergies(SystemAllergies allergies) {
-        allergies.setAllergicOthers(hasOtherAilment("Allergic/Immunologic"));
+        allergies.setAllergicOthers(otherAilment("Allergic/Immunologic"));
         allergies.setAllergicRemarks(getOtherDescription("Allergic/Immunologic"));
     }
 
     private void setOtherAilments(SystemAllergies allergies) {
-        allergies.setAlcoholism(hasAilment("Other", "Alcoholism"));
-        allergies.setDiabetes(hasAilment("Other", "Diabetes"));
-        allergies.setHypertension(hasAilment("Other", "Hypertension"));
-        allergies.setPsoriasis(hasAilment("Allergic/Immunologic", "Psoriasis"));
-        allergies.setTb(hasAilment("Other", "Tuberculosis"));
-        allergies.setNephrotoxicity(hasAilment("Other", "Nephrotoxicity"));
+        allergies.setAlcoholism(ailment("Other", "Alcoholism"));
+        allergies.setDiabetes(ailment("Other", "Diabetes"));
+        allergies.setHypertension(ailment("Other", "Hypertension"));
+        allergies.setPsoriasis(ailment("Allergic/Immunologic", "Psoriasis"));
+        allergies.setTb(ailment("Other", "Tuberculosis"));
+        allergies.setNephrotoxicity(ailment("Other", "Nephrotoxicity"));
     }
 
     private void setImmunologicAilments(SystemAllergies allergies) {
-        allergies.setAbnormalDreamsNightmare(hasAilment("Allergic/Immunologic", "Asthma"));
-        allergies.setAllergicDermititisEczema(hasAilment("Allergic/Immunologic", "AllergicDermatitis"));
-        allergies.setAsthma(hasAilment("Allergic/Immunologic", "Asthma"));
-        allergies.setHives(hasAilment("Allergic/Immunologic", "Hives"));
-        allergies.setHayFever(hasAilment("Allergic/Immunologic", "HayFever"));
-        allergies.setInheritedChildhoodEczemaDermititus(hasAilment("Allergic/Immunologic", "InheritedChildHoodEczema"));
-        allergies.setSinusitis(hasAilment("Allergic/Immunologic", "Sinusitis"));
-        allergies.setSomnolence(hasAilment("Allergic/Immunologic", "Somnolence"));
+        allergies.setAllergicDermititisEczema(ailment("Allergic/Immunologic", "AllergicDermatitis"));
+        allergies.setAsthma(ailment("Allergic/Immunologic", "Asthma"));
+        allergies.setHives(ailment("Allergic/Immunologic", "Hives"));
+        allergies.setHayFever(ailment("Allergic/Immunologic", "HayFever"));
+        allergies.setInheritedChildhoodEczemaDermititus(ailment("Allergic/Immunologic", "InheritedChildHoodEczema"));
+        allergies.setSinusitis(ailment("Allergic/Immunologic", "Sinusitis"));
+
     }
 
-    private String hasAilment(String category, String name) {
-        return valueOf(
-                nonHivMedicalHistory
-                        .getArrayNode("systemCategories")
-                        .find(pair("name", category))
-                        .getArrayNode("ailments.ailments")
-                        .contains(pair("definition", name), pair("state", YES))
-        );
+    private String ailment(String category, String name) {
+        return nonHivMedicalHistory
+                .getArrayNode("systemCategories")
+                .find(pair("name", category))
+                .getArrayNode("ailments.ailments")
+                .find(pair("definition", name))
+                .get("state").asText();
+
     }
 
-    private String hasOtherAilment(String category) {
-        return valueOf(otherAilments(category).contains(pair("definition", "others"), pair("state", YES)));
+    private String otherAilment(String category) {
+        return otherAilments(category)
+                .find(pair("definition", "others"))
+                .get("state").asText();
+    }
+
+    private String getOtherDescription(String category) {
+        String text = descriptionAsText(category);
+        return StringUtils.equals("null", text) ? "" : text;
+    }
+
+    private String descriptionAsText(String category) {
+        return otherAilments(category)
+                .find(pair("definition", "others"), pair("state", YES))
+                .get("description").asText();
     }
 
     private List<TAMAJsonNode> getAllDescriptions(String category) {
         return otherAilments(category).findAll(pair("definition", "others"), pair("state", YES));
-    }
-
-    private String getOtherDescription(String category) {
-        return otherAilments(category)
-                .find(pair("definition", "others"), pair("state", YES))
-                .get("description").asText();
     }
 
     private TAMAJsonArrayNode otherAilments(String category) {
