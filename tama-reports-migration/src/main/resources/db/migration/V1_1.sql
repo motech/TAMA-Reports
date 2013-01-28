@@ -10,7 +10,9 @@ create table tama_reports.patient (
     call_preference varchar(10),
     best_call_time varchar(20),
     receive_otc_advice varchar(10),
-    receive_appointment_reminder varchar(10)
+    receive_appointment_reminder varchar(10),
+    registered_on timestamp,
+    status varchar(50)
 );
 
 create table tama_reports.clinic (

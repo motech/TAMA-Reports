@@ -22,8 +22,10 @@ public class PatientRequestMapper implements Mapper<Patient> {
         patient.setCallPreference(request.getCallPreference());
         patient.setClinicId(request.getClinicId());
         patient.setDateOfBirth(request.getDateOfBirth());
+        patient.setRegisteredOn(request.getRegisteredOn());
         patient.setGender(request.getGender());
         patient.setIvrPassCode(request.getIvrPassCode());
+        patient.setStatus(request.getStatus());
         patient.setTravelTimeToClinic(request.getTravelTimeToClinic());
         return patient;
     }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.Date;
 
 @Embeddable
 @Data
@@ -29,5 +30,4 @@ public class GeneralHistory {
     private String pregnant;
     @Column(name = "baseline_pre_therapy_hb_less_than_10")
     private String baselinePreTherapyHbLessThan10;
-
 }

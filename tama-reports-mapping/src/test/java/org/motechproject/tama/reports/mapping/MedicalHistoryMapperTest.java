@@ -4,9 +4,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.MedicalHistoryRequest;
+import org.motechproject.tama.reports.domain.medicalhistory.MedicalHistory;
 
 import java.io.IOException;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -22,6 +24,16 @@ public class MedicalHistoryMapperTest {
     @Before
     public void setup() {
         initMocks(this);
+    }
+
+    @Test
+    public void shouldMapPatientId() throws IOException {
+        String patientId = "patientId";
+
+        MedicalHistoryRequest request = new MedicalHistoryRequest();
+        request.setPatientId(patientId);
+        MedicalHistory history = new MedicalHistoryMapper(request, generalHistoryMapper, systemAllergiesMapper).map();
+        assertEquals(patientId, history.getPatientId());
     }
 
     @Test

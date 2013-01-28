@@ -124,6 +124,27 @@ public class PatientRequestMapperTest {
     }
 
     @Test
+    public void shouldMapRegisteredOn() {
+        PatientRequest request = new PatientRequest();
+        PatientRequestMapper mapper = new PatientRequestMapper(request);
+        assertNull(mapper.map().getRegisteredOn());
+        Date registeredOn = DateUtil.now().toDate();
+
+        request.setRegisteredOn(registeredOn);
+        assertEquals(registeredOn, mapper.map().getRegisteredOn());
+    }
+
+    @Test
+    public void shouldMapStatus() {
+        PatientRequest request = new PatientRequest();
+        PatientRequestMapper mapper = new PatientRequestMapper(request);
+        assertNull(mapper.map().getStatus());
+
+        request.setStatus("status");
+        assertEquals("status", mapper.map().getStatus());
+    }
+
+    @Test
     public void shouldCreateValidPatientObject() {
         PatientRequest request = validRequest();
         assertTrue(new PatientRequestMapper(request).map().isValid());

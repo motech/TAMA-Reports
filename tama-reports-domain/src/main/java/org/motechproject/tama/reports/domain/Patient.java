@@ -55,6 +55,12 @@ public class Patient {
     @Column(name = "receive_appointment_reminder")
     private Boolean receiveAppointmentReminder;
 
+    @Column(name = "registered_on")
+    private Date registeredOn;
+
+    @Column(name = "status")
+    private String status;
+
     public boolean isValid() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
@@ -73,5 +79,7 @@ public class Patient {
         this.setReceiveAppointmentReminder(patient.getReceiveAppointmentReminder());
         this.setIvrLanguage(patient.getIvrLanguage());
         this.setIvrPassCode(patient.getIvrPassCode());
+        this.setRegisteredOn(patient.getRegisteredOn());
+        this.setStatus(patient.getStatus());
     }
 }

@@ -25,6 +25,7 @@ public class MedicalHistoryMapper implements Mapper<MedicalHistory> {
     @Override
     public MedicalHistory map() throws IOException {
         MedicalHistory history = new MedicalHistory();
+        history.setPatientId(request.getPatientId());
         history.setGeneralHistory(generalHistoryMapper.map());
         history.setSystemAllergies(systemAllergiesMapper.map());
         return history;
