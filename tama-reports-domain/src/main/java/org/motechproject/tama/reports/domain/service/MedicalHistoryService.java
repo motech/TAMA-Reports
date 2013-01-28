@@ -24,4 +24,12 @@ public class MedicalHistoryService {
     public void save(MedicalHistory medicalHistory) {
         allMedicalHistories.save(medicalHistory);
     }
+
+    public void update(MedicalHistory history) {
+        MedicalHistory persistedHistory = allMedicalHistories.findByPatientId(history.getPatientId());
+        if (null != persistedHistory) {
+            persistedHistory.merge(history);
+            allMedicalHistories.save(persistedHistory);
+        }
+    }
 }

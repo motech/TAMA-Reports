@@ -23,4 +23,11 @@ public class MedicalHistory {
 
     private GeneralHistory generalHistory;
     private SystemAllergies systemAllergies;
+
+    public void merge(MedicalHistory history) {
+        this.testReason = history.getTestReason();
+        this.modesOfTransmission = history.getModesOfTransmission();
+        this.generalHistory = history.getGeneralHistory();
+        this.systemAllergies = history.getSystemAllergies();
+    }
 }

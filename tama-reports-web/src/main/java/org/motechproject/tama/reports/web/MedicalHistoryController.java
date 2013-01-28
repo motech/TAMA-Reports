@@ -33,5 +33,12 @@ public class MedicalHistoryController {
         logger.info("Creating medical history");
         medicalHistoryService.save(new MedicalHistoryMapper(request).map());
     }
+
+    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, value = "/update")
+    @ResponseStatus(HttpStatus.OK)
+    public void update(@RequestBody MedicalHistoryRequest request) throws IOException {
+        logger.info("Updating medical history");
+        medicalHistoryService.update(new MedicalHistoryMapper(request).map());
+    }
 }
 

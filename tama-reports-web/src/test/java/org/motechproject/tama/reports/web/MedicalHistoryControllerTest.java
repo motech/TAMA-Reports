@@ -38,4 +38,16 @@ public class MedicalHistoryControllerTest extends BaseControllerTest {
                 .andExpect(status().isOk());
         verify(medicalHistoryService).save(new MedicalHistoryMapper(request).map());
     }
+
+    @Test
+    public void shouldUpdateMedicalHistory() throws Exception {
+        MedicalHistoryRequest request = new MedicalHistoryRequest();
+        request.setNonHivMedicalHistory(NullNode.getInstance());
+
+        standaloneSetup(medicalHistoryController)
+                .build()
+                .perform(post("/medicalHistory/update").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
+                .andExpect(status().isOk());
+        verify(medicalHistoryService).update(new MedicalHistoryMapper(request).map());
+    }
 }
