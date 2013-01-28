@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd"
+             xmlns:security="http://www.springframework.org/schema/security">
+
+    <http auto-config="true">
+        <intercept-url pattern="/patient/**"/>
+        <security:custom-filter position="PRE_AUTH_FILTER" ref="preAuthFilter"/>
+    </http>
+
+    <beans:bean name="authenticationProvider" class="org.motechproject.tama.reports.web.security.IPAuthenticationProvider">
+    </beans:bean>
+
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider ref="authenticationProvider"/>
+    </authentication-manager>
+
+    <beans:bean id="preAuthFilter" class="org.motechproject.tama.reports.web.security.IPAddressFilter">
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+    </beans:bean>
+
+</beans:beans>
