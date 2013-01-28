@@ -13,7 +13,12 @@ public class MedicalHistoryRequest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private byte[] nonHivMedicalHistory;
-
+    @Getter
+    @Setter
+    private String hivTestReason;
+    @Getter
+    @Setter
+    private String modesOfTransmission;
     @Getter
     @Setter
     private String patientId;

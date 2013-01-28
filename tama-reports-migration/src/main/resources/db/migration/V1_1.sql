@@ -27,6 +27,9 @@ create table tama_reports.medical_history (
 
     patient_id varchar(100),
 
+    test_reason varchar(100),
+    modes_of_transmission varchar(100),
+
     history_of_drug_allergy varchar(10),
     history_of_rash varchar(10),
     sulfonamide_allergy varchar(10),

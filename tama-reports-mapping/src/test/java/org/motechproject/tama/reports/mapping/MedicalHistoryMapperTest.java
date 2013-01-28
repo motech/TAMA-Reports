@@ -37,6 +37,26 @@ public class MedicalHistoryMapperTest {
     }
 
     @Test
+    public void shouldMapHIVTestReason() throws IOException {
+        String testReason = "testReason";
+
+        MedicalHistoryRequest request = new MedicalHistoryRequest();
+        request.setHivTestReason(testReason);
+        MedicalHistory history = new MedicalHistoryMapper(request, generalHistoryMapper, systemAllergiesMapper).map();
+        assertEquals(testReason, history.getTestReason());
+    }
+
+    @Test
+    public void shouldMapModesOfTransmission() throws IOException {
+        String modesOfTransmission = "modesOfTransmission";
+
+        MedicalHistoryRequest request = new MedicalHistoryRequest();
+        request.setModesOfTransmission(modesOfTransmission);
+        MedicalHistory history = new MedicalHistoryMapper(request, generalHistoryMapper, systemAllergiesMapper).map();
+        assertEquals(modesOfTransmission, history.getModesOfTransmission());
+    }
+
+    @Test
     public void shouldMapGeneralHistory() throws IOException {
         MedicalHistoryRequest request = new MedicalHistoryRequest();
         new MedicalHistoryMapper(request, generalHistoryMapper, systemAllergiesMapper).map();

@@ -16,6 +16,10 @@ public class MedicalHistory {
 
     @Column(name = "patient_id")
     private String patientId;
+    @Column(name = "test_reason")
+    private String testReason;
+    @Column(name = "modes_of_transmission")
+    private String modesOfTransmission;
 
     private GeneralHistory generalHistory;
     private SystemAllergies systemAllergies;
