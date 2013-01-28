@@ -2,10 +2,12 @@ package org.motechproject.tama.reports.mapping;
 
 
 import org.codehaus.jackson.JsonNode;
+import org.motechproject.tama.reports.domain.json.TAMAJsonArrayNode;
 import org.motechproject.tama.reports.domain.json.TAMAJsonNode;
 import org.motechproject.tama.reports.domain.medicalhistory.SystemAllergies;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.motechproject.tama.reports.domain.json.Pair.pair;
 import static org.motechproject.tama.reports.mapping.type.BooleanType.valueOf;
@@ -55,8 +57,13 @@ public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
     }
 
     private void setNonHivAilments(SystemAllergies allergies) {
+        StringBuilder builder = new StringBuilder();
+
         allergies.setNonHivOther(hasOtherAilment("Other"));
-        allergies.setNonHivOtherRemarks(hasOtherAilment("Other"));
+        for (TAMAJsonNode node : getAllDescriptions("Other")) {
+            builder.append(node.get("description").asText());
+        }
+        allergies.setNonHivOtherRemarks(builder.toString());
     }
 
     private void setMusculoSkeletalAilments(SystemAllergies allergies) {
@@ -150,21 +157,23 @@ public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
     }
 
     private String hasOtherAilment(String category) {
-        return valueOf(
-                nonHivMedicalHistory
-                        .getArrayNode("systemCategories")
-                        .find(pair("name", category))
-                        .getArrayNode("ailments.otherAilments")
-                        .contains(pair("definition", "others"), pair("state", YES))
-        );
+        return valueOf(otherAilments(category).contains(pair("definition", "others"), pair("state", YES)));
+    }
+
+    private List<TAMAJsonNode> getAllDescriptions(String category) {
+        return otherAilments(category).findAll(pair("definition", "others"), pair("state", YES));
     }
 
     private String getOtherDescription(String category) {
+        return otherAilments(category)
+                .find(pair("definition", "others"), pair("state", YES))
+                .get("description").asText();
+    }
+
+    private TAMAJsonArrayNode otherAilments(String category) {
         return nonHivMedicalHistory
                 .getArrayNode("systemCategories")
                 .find(pair("name", category))
-                .getArrayNode("ailments.otherAilments")
-                .find(pair("definition", "others"), pair("state", YES))
-                .get("description").asText();
+                .getArrayNode("ailments.otherAilments");
     }
 }

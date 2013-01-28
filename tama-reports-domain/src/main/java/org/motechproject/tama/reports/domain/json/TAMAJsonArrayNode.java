@@ -4,7 +4,11 @@ import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.NullNode;
 
-public class TAMAJsonArrayNode {
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class TAMAJsonArrayNode implements Iterable<JsonNode> {
 
     private ArrayNode node;
 
@@ -20,6 +24,17 @@ public class TAMAJsonArrayNode {
             }
         }
         return new TAMAJsonNode(NullNode.getInstance());
+    }
+
+    public List<TAMAJsonNode> findAll(Pair... pairs) {
+        List<TAMAJsonNode> result = new ArrayList<>();
+        for (JsonNode element : node) {
+            TAMAJsonNode jsonNode = new TAMAJsonNode(element);
+            if (jsonNode.hasAllPairs(pairs)) {
+                result.add(jsonNode);
+            }
+        }
+        return result;
     }
 
     public boolean contains(String value) {
@@ -41,5 +56,10 @@ public class TAMAJsonArrayNode {
 
     public boolean isArray() {
         return node.isArray();
+    }
+
+    @Override
+    public Iterator<JsonNode> iterator() {
+        return node.iterator();
     }
 }
