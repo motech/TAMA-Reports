@@ -6,6 +6,7 @@ import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.PatientRequest;
 import org.motechproject.tama.reports.domain.service.PatientService;
 import org.motechproject.tama.reports.mapping.PatientRequestMapper;
+import org.motechproject.tama.reports.web.excel.patient.PatientReportService;
 import org.springframework.http.MediaType;
 
 import static org.mockito.Mockito.verify;
@@ -18,6 +19,9 @@ public class PatientControllerTest extends BaseControllerTest {
 
     @Mock
     private PatientService patientService;
+    @Mock
+    private PatientReportService reportService;
+
     private PatientController patientController;
 
     @Before
