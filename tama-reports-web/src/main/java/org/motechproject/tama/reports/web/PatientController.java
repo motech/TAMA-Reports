@@ -1,9 +1,6 @@
 package org.motechproject.tama.reports.web;
 
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.util.JRLoader;
 import org.apache.log4j.Logger;
-import org.drools.io.impl.ClassPathResource;
 import org.motechproject.tama.reports.contract.PatientRequest;
 import org.motechproject.tama.reports.domain.service.PatientService;
 import org.motechproject.tama.reports.mapping.PatientRequestMapper;
@@ -45,13 +42,18 @@ public class PatientController {
     }
 
     @RequestMapping(value = "report", method = RequestMethod.GET)
-    public void report(@RequestParam("clinicName") String clinicName, @RequestParam("patientId") String patientId, HttpServletResponse response) throws Exception {
-        JasperReport report = (JasperReport) JRLoader.loadObject(new ClassPathResource("patient.jasper").getInputStream());
+    public void report(@RequestParam("clinicName") String clinicName,
+                       @RequestParam("patientId") String patientId,
+                       @RequestParam("startDate") String startDate,
+                       @RequestParam("endDate") String endDate,
+                       HttpServletResponse response) throws Exception {
         PatientRegistrationParameters parameters = new PatientRegistrationParameters();
         ServletOutputStream outputStream = response.getOutputStream();
         parameters
                 .setClinicName(clinicName)
-                .setPatientId(patientId);
+                .setPatientId(patientId)
+                .setStartDate(startDate)
+                .setEndDate(endDate);
         new PatientReportService(patientService).export(parameters, outputStream);
     }
 }
