@@ -14,8 +14,8 @@ public class PatientRegistrationParameters {
 
     public PatientRegistrationParameters() {
         parameters = new HashMap();
-        parameters.put(PATIENT_ID, "*");
-        parameters.put(CLINIC_NAME, "*");
+        parameters.put(PATIENT_ID, "%");
+        parameters.put(CLINIC_NAME, "%");
     }
 
     public PatientRegistrationParameters setClinicName(String clinicName) {
