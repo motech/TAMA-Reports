@@ -1,6 +1,7 @@
 create table tama_reports.patient (
     id serial,
     patient_id varchar(100),
+    patient_document_id varchar(100),
     date_of_birth date,
     gender varchar(10),
     clinic_id varchar(100),

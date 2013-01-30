@@ -23,6 +23,16 @@ public class PatientRequestMapperTest {
     }
 
     @Test
+    public void shouldMapPatientDocumentId() {
+        PatientRequest request = new PatientRequest();
+        PatientRequestMapper mapper = new PatientRequestMapper(request);
+        assertNull(mapper.map().getPatientDocumentId());
+
+        request.setPatientDocumentId("patientDocumentId");
+        assertEquals("patientDocumentId", mapper.map().getPatientDocumentId());
+    }
+
+    @Test
     public void shouldMapDateOfBirth() {
         PatientRequest request = new PatientRequest();
         PatientRequestMapper mapper = new PatientRequestMapper(request);

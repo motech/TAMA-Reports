@@ -25,6 +25,9 @@ public class Patient {
     @NotBlank
     @Column(name = "patient_id")
     private String patientId;
+    @NotBlank
+    @Column(name = "patient_document_id")
+    private String patientDocumentId;
     @NotNull
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
@@ -73,6 +76,7 @@ public class Patient {
 
     public void merge(Patient patient) {
         this.setBestCallTime(patient.getBestCallTime());
+        this.setPatientDocumentId(patient.getPatientDocumentId());
         this.setGender(patient.getGender());
         this.setCallPreference(patient.getCallPreference());
         this.setDateOfBirth(patient.getDateOfBirth());

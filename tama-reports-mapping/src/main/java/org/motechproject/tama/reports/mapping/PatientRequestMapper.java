@@ -15,6 +15,7 @@ public class PatientRequestMapper implements Mapper<Patient> {
     public Patient map() {
         Patient patient = new Patient();
         patient.setPatientId(request.getPatientId());
+        patient.setPatientDocumentId(request.getPatientDocumentId());
         patient.setBestCallTime(request.getBestCallTime());
         patient.setIvrLanguage(request.getIvrLanguage());
         patient.setReceiveAppointmentReminder(request.getReceiveAppointmentReminder());

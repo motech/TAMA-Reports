@@ -8,6 +8,7 @@ public class PatientBuilder {
     public static Patient validPatient() {
         Patient patient = new Patient();
         patient.setBestCallTime("10:10 PM");
+        patient.setPatientDocumentId("patientDocId");
         patient.setCallPreference("DPR");
         patient.setIvrLanguage("en");
         patient.setReceiveAppointmentReminder(true);

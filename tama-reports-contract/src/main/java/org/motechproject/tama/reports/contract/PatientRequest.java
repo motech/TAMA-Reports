@@ -11,6 +11,7 @@ public class PatientRequest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String patientId;
+    private String patientDocumentId;
     private Date dateOfBirth;
     private String gender;
     private String clinicId;
