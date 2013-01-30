@@ -1,9 +1,9 @@
 package org.motechproject.tama.reports.web.excel.patient;
 
 
-import org.apache.commons.lang.StringUtils;
-
 import java.util.HashMap;
+
+import static org.apache.commons.lang.StringUtils.isNotBlank;
 
 public class PatientRegistrationParameters {
 
@@ -19,14 +19,14 @@ public class PatientRegistrationParameters {
     }
 
     public PatientRegistrationParameters setClinicName(String clinicName) {
-        if (StringUtils.isNotBlank(clinicName)) {
-            parameters.put(CLINIC_NAME, clinicName);
+        if (isNotBlank(clinicName)) {
+            parameters.put(CLINIC_NAME, "%" + clinicName + "%");
         }
         return this;
     }
 
     public PatientRegistrationParameters setPatientId(String patientId) {
-        if (StringUtils.isNotBlank(patientId)) {
+        if (isNotBlank(patientId)) {
             parameters.put(PATIENT_ID, patientId);
         }
         return this;
