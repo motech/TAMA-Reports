@@ -1,4 +1,4 @@
-package org.motechproject.tama.reports.web.excel.patient;
+package org.motechproject.tama.reports.web.excel;
 
 
 import org.motechproject.tama.reports.domain.export.ReportParameters;

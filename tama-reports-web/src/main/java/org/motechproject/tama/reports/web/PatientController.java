@@ -5,7 +5,7 @@ import org.motechproject.tama.reports.contract.PatientRequest;
 import org.motechproject.tama.reports.domain.export.ReportingService;
 import org.motechproject.tama.reports.domain.service.PatientService;
 import org.motechproject.tama.reports.mapping.PatientRequestMapper;
-import org.motechproject.tama.reports.web.excel.patient.PatientRegistrationParameters;
+import org.motechproject.tama.reports.web.excel.PatientRegistrationParameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
