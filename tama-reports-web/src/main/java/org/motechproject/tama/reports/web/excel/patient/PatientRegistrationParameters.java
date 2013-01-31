@@ -1,11 +1,13 @@
 package org.motechproject.tama.reports.web.excel.patient;
 
 
+import org.motechproject.tama.reports.domain.export.ReportParameters;
+
 import java.util.HashMap;
 
 import static org.apache.commons.lang.StringUtils.isNotBlank;
 
-public class PatientRegistrationParameters {
+public class PatientRegistrationParameters implements ReportParameters {
 
     public static String CLINIC_NAME = "CLINIC_NAME";
     public static String PATIENT_ID = "PATIENT_ID";

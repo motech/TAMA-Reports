@@ -1,4 +1,4 @@
-package org.motechproject.tama.reports.web.excel;
+package org.motechproject.tama.reports.domain.export;
 
 
 import net.sf.jasperreports.engine.JRException;

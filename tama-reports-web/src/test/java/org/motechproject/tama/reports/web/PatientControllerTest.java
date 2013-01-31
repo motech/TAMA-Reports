@@ -4,9 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.PatientRequest;
+import org.motechproject.tama.reports.domain.export.ReportingService;
 import org.motechproject.tama.reports.domain.service.PatientService;
 import org.motechproject.tama.reports.mapping.PatientRequestMapper;
-import org.motechproject.tama.reports.web.excel.patient.PatientReportService;
 import org.springframework.http.MediaType;
 
 import static org.mockito.Mockito.verify;
@@ -20,14 +20,14 @@ public class PatientControllerTest extends BaseControllerTest {
     @Mock
     private PatientService patientService;
     @Mock
-    private PatientReportService reportService;
+    private ReportingService reportService;
 
     private PatientController patientController;
 
     @Before
     public void setup() {
         initMocks(this);
-        patientController = new PatientController(patientService);
+        patientController = new PatientController(patientService, reportService);
     }
 
     @Test
