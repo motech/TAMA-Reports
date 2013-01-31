@@ -104,3 +104,11 @@ create table tama_reports.medical_history (
     non_hiv_other varchar(100),
     non_hiv_other_remarks varchar(100)
 );
+
+create table tama_reports.patient_event (
+    id serial,
+    patient_document_id varchar(100),
+    event_name varchar(50),
+    date_time timestamp,
+    performed_by varchar(100)
+);
