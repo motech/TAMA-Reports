@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="patientEvent" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="763c405b-c15e-4320-a7ce-bb9af19d7c91">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="24"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="patientEventDataSet" uuid="0736b92c-3648-4134-891a-434fd4102279">
+		<parameter name="clinic_name" class="java.lang.String"/>
+		<parameter name="patient_id" class="java.lang.String"/>
+		<parameter name="status" class="java.lang.String"/>
+		<parameter name="from_date" class="java.lang.String"/>
+		<parameter name="end_date" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and a.event_name like $P{status} and a.date_time between to_date($P{from_date}, 'dd/MM/yyyy') and to_date($P{end_date}, 'dd/MM/yyyy');]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="patient_document_id" class="java.lang.String"/>
+		<field name="event_name" class="java.lang.String"/>
+		<field name="date_time" class="java.sql.Timestamp"/>
+		<field name="performed_by" class="java.lang.String"/>
+		<field name="clinic_id" class="java.lang.String"/>
+		<field name="clinic_name" class="java.lang.String"/>
+		<field name="patient_id" class="java.lang.String"/>
+		<field name="date_of_birth" class="java.sql.Date"/>
+		<field name="gender" class="java.lang.String"/>
+		<field name="travel_time_to_clinic" class="java.lang.String"/>
+		<field name="ivr_pass_code" class="java.lang.String"/>
+		<field name="ivr_language" class="java.lang.String"/>
+		<field name="call_preference" class="java.lang.String"/>
+		<field name="best_call_time" class="java.lang.String"/>
+		<field name="receive_otc_advice" class="java.lang.String"/>
+		<field name="receive_appointment_reminder" class="java.lang.String"/>
+		<field name="registered_on" class="java.sql.Timestamp"/>
+		<field name="status" class="java.lang.String"/>
+		<field name="notes" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="clinic_name" class="java.lang.String"/>
+	<parameter name="patient_id" class="java.lang.String"/>
+	<parameter name="status" class="java.lang.String"/>
+	<parameter name="from_date" class="java.lang.String"/>
+	<parameter name="end_date" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from tama_reports.patient_event;]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="patient_document_id" class="java.lang.String"/>
+	<field name="event_name" class="java.lang.String"/>
+	<field name="date_time" class="java.sql.Timestamp"/>
+	<field name="performed_by" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e07e1e28-401e-4073-9034-d889b5b4ec78" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Patient Events]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8f114e88-31f3-486b-8337-0b1786dc1044" x="0" y="20" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="a6fe64a9-55ac-4e2e-a35c-edbed5faf606" x="100" y="20" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="189" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="1b9712e2-7189-4692-afc1-dfbd74542702" key="table 2" style="table 2" x="38" y="12" width="360" height="80"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="patientEventDataSet" uuid="b3c26ea8-6ce9-4b16-8f32-4934724bde39">
+						<datasetParameter name="clinic_name">
+							<datasetParameterExpression><![CDATA[$P{clinic_name}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="patient_id">
+							<datasetParameterExpression><![CDATA[$P{patient_id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="status">
+							<datasetParameterExpression><![CDATA[$P{status}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="from_date">
+							<datasetParameterExpression><![CDATA[$P{from_date}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="end_date">
+							<datasetParameterExpression><![CDATA[$P{end_date}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="7c2f6c5a-698f-4f3b-8c42-83baf16da3b4">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement uuid="9228da0a-1ed0-4791-b637-35f28c08d209" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[patient_id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30"/>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement uuid="57d6bb35-638b-4bf6-b394-a852c8cc79a7" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="a8b74aa2-413c-4fc9-826e-153e5208a243">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement uuid="90f6c538-134a-41bb-8877-377c8fce4c0b" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[clinic_name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30"/>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement uuid="9490f971-6c31-4862-89f2-04dbbb8991d6" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{clinic_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="2924016b-16e1-4637-95ae-2d333477fb6d">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement uuid="54502cc9-b46e-4f9e-8cc5-1c1a39c3a118" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[event_name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30"/>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement uuid="8d5a5e00-b236-4dec-87fb-13a179bc770e" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{event_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="133fe1b0-f0a8-42c6-b2e3-8151e3793c1e">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement uuid="bf5cd0e3-25fe-4f73-988e-7598e17ddf56" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[date_time]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30"/>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement uuid="fe474b73-0541-425d-9ef1-f56f90b3b399" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{date_time}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="6d32e5c2-cca8-4e18-b35f-478dda622b97">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement uuid="2f4e45fc-2d70-4d22-82c2-522f62a1c141" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[performed_by]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30"/>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement uuid="470da8e2-41c5-48f9-b92e-9f8c60f5acbb" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{performed_by}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
