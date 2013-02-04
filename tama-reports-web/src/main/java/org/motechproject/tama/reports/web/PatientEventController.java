@@ -43,7 +43,8 @@ public class PatientEventController {
                        @RequestParam("endDate") String endDate,
                        @RequestParam("eventName") String eventName,
                        HttpServletResponse response) throws Exception {
-
+        response.setHeader("Content-Disposition", "inline; filename=PatientEvent.xls");
+        response.setContentType("application/vnd.ms-excel");
         PatientEventParameters parameters = new PatientEventParameters();
         ServletOutputStream outputStream = response.getOutputStream();
         parameters

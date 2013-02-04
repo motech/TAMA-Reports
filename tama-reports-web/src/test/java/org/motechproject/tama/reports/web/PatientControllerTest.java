@@ -11,7 +11,9 @@ import org.springframework.http.MediaType;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
+import static org.springframework.test.web.server.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.server.setup.MockMvcBuilders.standaloneSetup;
 
@@ -52,5 +54,14 @@ public class PatientControllerTest extends BaseControllerTest {
                 .perform(post("/patient/update").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
         verify(patientService).update(new PatientRequestMapper(request).map());
+    }
+
+    @Test
+    public void shouldGeneratePatientRegistrationReport() throws Exception {
+        standaloneSetup(patientController)
+                .build()
+                .perform(get("/patient/report").param("clinicName", "new").param("patientId", "patientId").param("startDate", "02/01/2013").param("endDate", "02/01/2013"))
+                .andExpect(status().isOk())
+                .andExpect(content().type("application/vnd.ms-excel"));
     }
 }

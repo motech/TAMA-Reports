@@ -50,6 +50,8 @@ public class PatientController {
                        @RequestParam("startDate") String startDate,
                        @RequestParam("endDate") String endDate,
                        HttpServletResponse response) throws Exception {
+        response.setHeader("Content-Disposition", "inline; filename=PatientRegistration.xls");
+        response.setContentType("application/vnd.ms-excel");
         PatientRegistrationParameters parameters = new PatientRegistrationParameters();
         ServletOutputStream outputStream = response.getOutputStream();
         parameters

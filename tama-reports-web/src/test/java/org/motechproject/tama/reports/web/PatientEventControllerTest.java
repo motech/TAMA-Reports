@@ -18,6 +18,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.server.setup.MockMvcBuilders.standaloneSetup;
 
@@ -50,7 +51,9 @@ public class PatientEventControllerTest extends BaseControllerTest {
         standaloneSetup(patientEventController)
                 .build()
                 .perform(get("/patientEvent/report").param("patientId", "").param("eventName", "").param("clinicName", "").param("startDate", "").param("endDate", ""))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(content().type("application/vnd.ms-excel"));
         verify(reportingService).export(any(ReportParameters.class), any(OutputStream.class), eq("patientEvent.jasper"));
     }
+
 }
