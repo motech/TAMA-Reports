@@ -1,5 +1,6 @@
 package org.motechproject.tama.reports.it;
 
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.motechproject.http.client.service.HttpClientService;
@@ -21,12 +22,18 @@ public class TAMAReportingIT {
     private HttpClientService httpClientService;
 
     @Autowired
-    private AllPatients patientService;
+    private AllPatients allPatients;
 
     @Test
     public void shouldAcceptRequestThroughHttpService() throws InterruptedException, IOException {
         httpClientService.post("http://localhost:9999/tama-reports/patient", PatientRequestBuilder.validRequest());
         Thread.sleep(10000);
-        assertEquals(1, patientService.findAll().size());
+        assertEquals(1, allPatients.findAll().size());
+    }
+
+    @After
+    public void tearDown() {
+        allPatients.flush();
+        allPatients.deleteAll();
     }
 }
