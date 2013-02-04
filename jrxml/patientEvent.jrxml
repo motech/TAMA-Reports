@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="patientEvent" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="763c405b-c15e-4320-a7ce-bb9af19d7c91">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="patientEvent" language="groovy" pageWidth="595" pageHeight="72000" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="763c405b-c15e-4320-a7ce-bb9af19d7c91">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -70,7 +70,7 @@
 		<parameter name="from_date" class="java.lang.String"/>
 		<parameter name="end_date" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and a.event_name ilike $P{status} and a.date_time::date >= to_date($P{from_date}, 'dd/MM/yyyy') and a.date_time::date <= to_date($P{end_date}, 'dd/MM/yyyy');]]>
+			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and c.patient_id ilike $P{patient_id} and b.clinic_name ilike $P{clinic_name} and a.event_name ilike $P{status} and a.date_time::date >= to_date($P{from_date}, 'dd/MM/yyyy') and a.date_time::date <= to_date($P{end_date}, 'dd/MM/yyyy');]]>
 		</queryString>
 		<field name="id" class="java.lang.Integer"/>
 		<field name="patient_document_id" class="java.lang.String"/>
