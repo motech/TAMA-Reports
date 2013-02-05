@@ -389,7 +389,7 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.patient a, tama_reports.clinic b, tama_reports.medical_history c where c.patient_id = a.patient_id and a.clinic_id = b.clinic_id and b.clinic_name like $P{CLINIC_NAME} and a.patient_id like $P{PATIENT_ID} and a.registered_on >= to_date($P{START_DATE},'dd/MM/yyyy') and a.registered_on <= to_date($P{END_DATE},'dd/MM/yyyy');]]>
+			<![CDATA[select * from tama_reports.patient a, tama_reports.clinic b, tama_reports.medical_history c where c.patient_id = a.patient_id and a.clinic_id = b.clinic_id and b.clinic_name like $P{CLINIC_NAME} and a.patient_id like $P{PATIENT_ID} and ($P{START_DATE} = '' or a.registered_on >= to_date($P{START_DATE},'dd/MM/yyyy')) and ($P{END_DATE} = '' or a.registered_on <= to_date($P{END_DATE},'dd/MM/yyyy'));]]>
 		</queryString>
 		<field name="id" class="java.lang.Integer"/>
 		<field name="patient_id" class="java.lang.String"/>
