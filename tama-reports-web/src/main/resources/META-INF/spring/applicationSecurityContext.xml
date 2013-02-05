@@ -8,9 +8,10 @@
              http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd"
              xmlns:security="http://www.springframework.org/schema/security">
 
-    <http auto-config="true">
-        <intercept-url pattern="/patient/**"/>
-        <security:custom-filter position="PRE_AUTH_FILTER" ref="preAuthFilter"/>
+    <http auto-config="false" use-expressions="true" entry-point-ref="reportsEntryPoint">
+        <http-basic />
+        <custom-filter position="PRE_AUTH_FILTER" ref="preAuthFilter"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
     </http>
 
     <beans:bean name="authenticationProvider" class="org.motechproject.tama.reports.web.security.IPAuthenticationProvider">
@@ -22,6 +23,10 @@
 
     <beans:bean id="preAuthFilter" class="org.motechproject.tama.reports.web.security.IPAddressFilter">
         <beans:property name="authenticationManager" ref="authenticationManager"/>
+        <beans:property name="checkForPrincipalChanges" value="true"/>
+    </beans:bean>
+
+    <beans:bean id="reportsEntryPoint" class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint">
     </beans:bean>
 
 </beans:beans>
