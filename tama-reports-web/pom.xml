@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>tama-reports-web</artifactId>
+    <packaging>war</packaging>
 
     <properties>
         <jetty.port>9999</jetty.port>
@@ -247,6 +248,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <warName>tama-reports-${version}</warName>
+                </configuration>
             </plugin>
             <!-- Install jar file -->
             <plugin>
