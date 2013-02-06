@@ -8,10 +8,13 @@
              http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd"
              xmlns:security="http://www.springframework.org/schema/security">
 
+
+    <http pattern="/500.html" security="none"/>
+
     <http auto-config="false" use-expressions="true" entry-point-ref="reportsEntryPoint">
         <http-basic />
         <custom-filter position="PRE_AUTH_FILTER" ref="preAuthFilter"/>
-        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <intercept-url pattern="/.*" access="isAuthenticated()"/>
     </http>
 
     <beans:bean name="authenticationProvider" class="org.motechproject.tama.reports.web.security.IPAuthenticationProvider">

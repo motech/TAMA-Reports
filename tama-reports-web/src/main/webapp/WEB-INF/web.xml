@@ -76,6 +76,11 @@
         <session-timeout>120</session-timeout>
     </session-config>
 
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.html</location>
+    </error-page>
+
     <welcome-file-list>
         <welcome-file>welcome.html</welcome-file>
     </welcome-file-list>
