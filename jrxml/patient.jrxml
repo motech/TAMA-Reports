@@ -470,7 +470,7 @@ from
 	tama_reports.clinic b,
 	tama_reports.medical_history c
 where
-	c.patient_id = a.patient_id
+	c.patient_document_id = a.patient_document_id
  and 	a.clinic_id = b.clinic_id
  and 	b.clinic_name like $P{CLINIC_NAME}
  and 	a.patient_id like $P{PATIENT_ID}
