@@ -464,8 +464,12 @@
 	c.diabetes,
 	c.tb,
 	c.alcoholism,
-	c.non_hiv_other,
-	c.non_hiv_other_remarks
+	c.non_hiv_other1,
+	c.non_hiv_other1_remarks,
+	c.non_hiv_other2,
+	c.non_hiv_other2_remarks,
+	c.non_hiv_other3,
+	c.non_hiv_other3_remarks
 
 from
 	tama_reports.patient a,
@@ -551,8 +555,12 @@ where
 		<field name="diabetes" class="java.lang.String"/>
 		<field name="tb" class="java.lang.String"/>
 		<field name="alcoholism" class="java.lang.String"/>
-		<field name="non_hiv_other" class="java.lang.String"/>
-		<field name="non_hiv_other_remarks" class="java.lang.String"/>
+		<field name="non_hiv_other1" class="java.lang.String"/>
+		<field name="non_hiv_other1_remarks" class="java.lang.String"/>
+		<field name="non_hiv_other2" class="java.lang.String"/>
+		<field name="non_hiv_other2_remarks" class="java.lang.String"/>
+		<field name="non_hiv_other3" class="java.lang.String"/>
+		<field name="non_hiv_other3_remarks" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
 	<parameter name="CLINIC_NAME" class="java.lang.String"/>
@@ -632,7 +640,7 @@ where
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="91" uuid="4951be05-0710-4478-b900-fd4c1e8dae7a">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="9929d50f-36aa-4845-b23d-12e51de1329d" x="0" y="0" width="90" height="30"/>
@@ -651,7 +659,7 @@ where
 							</jr:column>
 							<jr:column width="329" uuid="ff78c131-24bb-4e02-9449-08caa1a551ab">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="200" height="36"/>
@@ -670,7 +678,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="3fc27f83-94bd-471a-a238-7d3c606f5d9c">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="d4f13ef1-71dd-4233-8f09-15a0140c7a7c" x="0" y="0" width="90" height="30"/>
@@ -689,7 +697,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="b3060e28-1b8d-4b71-bb9c-c6fc8adfe332">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="11d00ac8-9aa6-499c-972d-c1afc205f9b9" x="0" y="0" width="90" height="30"/>
@@ -708,7 +716,7 @@ where
 							</jr:column>
 							<jr:column width="117" uuid="5313d8d8-fa45-4b76-87b3-25fd35e3948d">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="e7f61f20-9094-459d-bd3e-3f9f8baf586e" x="0" y="0" width="116" height="30"/>
@@ -741,7 +749,7 @@ where
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="102" uuid="d63c9cf5-7562-4ec8-b051-3eb9fa247ce5">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="a0937499-64f3-40ae-a527-405cf0ed48e3" x="0" y="0" width="102" height="30"/>
@@ -760,7 +768,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="ac7f5530-5b71-4d3e-b7ce-f9495bd424fb">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="8a1ca1c8-4183-4ff6-9c5e-810b5ea2d242" x="0" y="0" width="90" height="30"/>
@@ -793,7 +801,7 @@ where
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="90" uuid="6f6769ae-a751-4124-b30b-bebb454a7896">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="463dcb2a-34b9-4b3a-90aa-b72c2c9b0296" x="0" y="0" width="90" height="30"/>
@@ -812,7 +820,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="221da1a8-b7d5-4b1b-8b0d-1ae50db1fdc8">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="2aa9681d-f9d8-4621-8745-d4d95e3394bf" x="0" y="0" width="90" height="30"/>
@@ -831,7 +839,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="de16d59f-f499-457b-b93a-505c5d0013d8">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="33d95f4c-c332-4a5b-b0cf-6dc95867c0b5" x="0" y="0" width="90" height="30"/>
@@ -850,7 +858,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="5f51754e-dd8a-4b13-bef6-79ccd469d804">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="af5b6e44-842c-4d55-8bf4-b140e8c9167f" x="0" y="0" width="90" height="30"/>
@@ -869,7 +877,7 @@ where
 							</jr:column>
 							<jr:column width="109" uuid="8359c101-63df-489d-aa13-a7669619ca5a">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="4744219a-16b4-40a2-a632-ab80c3de53ee" x="0" y="0" width="107" height="30"/>
@@ -888,7 +896,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="a9d3929b-a9df-4ad2-a436-33c83039a705">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="9ceaada8-5cf1-43b6-a46c-777781a014d9" x="0" y="0" width="90" height="30"/>
@@ -921,7 +929,7 @@ where
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="90" uuid="4082c956-3514-420a-b221-63c76ace0d0c">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="8ab84bb3-565f-4922-a22c-e6479bbdb58a" x="0" y="0" width="90" height="30"/>
@@ -940,7 +948,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="f859002b-c4f4-455c-9f05-56ecc5b6b2eb">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="2cb440bd-b3ec-4ab7-b852-43922e1c1e65" x="0" y="0" width="90" height="30"/>
@@ -965,7 +973,7 @@ where
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="122" uuid="24ee9d53-9f12-495f-bda6-09bd182c7e03">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="b9250695-7a4f-4408-bdcb-2cd1af6907c4" x="0" y="0" width="122" height="30"/>
@@ -984,7 +992,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="67c5726c-c790-4328-9d61-41bd941b26ad">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="d700ce5f-26f9-430c-9430-87478a414de4" x="0" y="0" width="90" height="36"/>
@@ -1003,7 +1011,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="0830fc0d-6d18-4ed1-9d24-d860a354c27a">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="91a4b77a-6c23-4d4d-8e3d-a094428bf6f8" x="0" y="0" width="90" height="30"/>
@@ -1022,7 +1030,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="d8f50ce2-56ca-4e17-b401-b576ac23b591">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="bd2441d7-09b0-495d-aad3-1668acf5c2ef" x="0" y="0" width="90" height="30"/>
@@ -1041,7 +1049,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="ba3c0730-46ca-4b28-8741-fe8f5bc4741d">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="0b930e28-7958-4bc6-a938-9b748d20f87d" x="0" y="0" width="90" height="30"/>
@@ -1060,7 +1068,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="8d8c5e37-8d4c-45a0-baa5-299213b66d32">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="9fff2760-057d-4359-96e4-bdef4ac90be4" x="0" y="0" width="90" height="30"/>
@@ -1079,7 +1087,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="c741a570-4d74-457b-b250-d3f090898568">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="c811f1b7-547b-46ff-a0ed-ab27f49645e6" x="0" y="0" width="90" height="36"/>
@@ -1098,7 +1106,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="746af4fc-39cb-470e-bfbe-5a298c591930">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="195ec11c-12cf-402d-8c3f-afe7c6b67949" x="0" y="0" width="90" height="36"/>
@@ -1117,7 +1125,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="de9e377d-dc31-44db-a34d-6813275d8492">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="ebeab9c7-a313-48d9-9201-b8164e926228" x="0" y="0" width="90" height="30"/>
@@ -1136,7 +1144,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="5c5ca2e7-812d-4d77-b4ad-b46d114d5f49">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="844783f0-9bbe-4d35-9321-af35cadf5b3a" x="0" y="0" width="90" height="30"/>
@@ -1167,7 +1175,7 @@ where
 							</jr:columnHeader>
 							<jr:column width="90" uuid="7e7fbdfe-f82c-4a47-b03c-845f13798b21">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="0248667c-4a7c-4834-b46a-48f161ebea99" x="0" y="0" width="90" height="30"/>
@@ -1186,7 +1194,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="c2573af3-6e0e-4f2d-a8e7-b254cb44bf56">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="e073ca95-fcec-4683-8bcb-6bb90929bb4f" x="0" y="0" width="90" height="30"/>
@@ -1205,7 +1213,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="f5dc94cc-da56-4344-af44-054a35a5db24">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="a9e374bf-8295-41e8-ad86-f4b75f72ed95" x="0" y="0" width="90" height="30"/>
@@ -1224,7 +1232,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="4abd7542-8326-4b75-a508-64e1e1265ed8">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="11e6e656-911e-4853-99b2-f6d5ed1c494c" x="0" y="0" width="90" height="30"/>
@@ -1243,7 +1251,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="f0ecc0d1-0212-41fe-8b1d-be6c3d7ac8a2">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="efaf6790-6af1-418c-9071-abc10ce502e4" x="0" y="0" width="90" height="30"/>
@@ -1262,7 +1270,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="093aa778-0ba9-4b0d-9de0-fc6c9bf0b632">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="6c37becc-07e7-432b-bb3b-d5c3efb25f68" x="0" y="0" width="90" height="36"/>
@@ -1281,7 +1289,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="4b4eeb0f-56c7-431b-ad72-e853a8ad2714">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="205cabdc-f0f8-4803-90dc-7d3517e7ac02" x="0" y="0" width="90" height="30"/>
@@ -1300,7 +1308,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="0cf5e084-ac4d-4d3f-9df8-ec8e6200da30">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="26199c70-23dd-48ec-8d50-7b003061e290" x="0" y="0" width="90" height="30"/>
@@ -1319,7 +1327,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="2b034605-8333-4cc1-98ea-ab0752ad0496">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="2c2c5685-ad51-4141-8355-0648f64b52dd" x="0" y="0" width="90" height="30"/>
@@ -1344,7 +1352,7 @@ where
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="90" uuid="645fae6b-bc0b-4eab-bd1c-443a293a1a5c">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="d2dc0be2-3171-4ece-87d9-5614c9666f84" x="0" y="0" width="90" height="30"/>
@@ -1363,7 +1371,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="8b4524cb-5361-4444-b57e-f93e2e2baec7">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="4c839248-d106-45a9-b54e-e7710dea323c" x="0" y="0" width="90" height="30"/>
@@ -1382,7 +1390,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="4b29baf8-0a0f-4c86-b573-d35e248486b0">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="a3af0e59-80d6-436c-a3de-6746a8980f9e" x="0" y="0" width="90" height="30"/>
@@ -1401,7 +1409,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="be4879b1-28c8-475c-bb44-97fc4a4d9cb5">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="f5637bc5-25f8-47ee-812f-caa0b751aa58" x="0" y="0" width="90" height="30"/>
@@ -1434,7 +1442,7 @@ where
 							</jr:columnHeader>
 							<jr:column width="90" uuid="075d9f96-df7a-4715-a7db-57c654b02792">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="46dc22ef-f3d7-49c0-a415-a97abb26067f" x="0" y="0" width="90" height="30"/>
@@ -1453,7 +1461,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="59b41639-ebf3-46f1-9283-bbe860cc75f8">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="3dd0937c-7657-43f1-b36a-5094a9414ef7" x="0" y="0" width="90" height="30"/>
@@ -1472,7 +1480,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="c30c7b1f-ca23-4134-8402-4ba12403e38b">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="36a059e9-7535-488f-82da-6cd00b68dd70" x="0" y="0" width="90" height="30"/>
@@ -1497,7 +1505,7 @@ where
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="90" uuid="f5929f51-8f98-4f9e-b202-b929fcad3213">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="ffc91c11-859b-47ed-8079-946c77dd9385" x="0" y="0" width="90" height="30"/>
@@ -1516,7 +1524,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="ca9516f7-ce18-43c2-94e2-487f02917a79">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="085b4532-9492-470e-b010-13e3f5d44100" x="0" y="0" width="90" height="30"/>
@@ -1535,7 +1543,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="fb4ae9bf-29ec-42e6-a18a-15d1e7e77f98">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="5cfb6b97-7771-4a92-ad0d-a1558914a46c" x="0" y="0" width="90" height="30"/>
@@ -1554,7 +1562,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="be78b1df-4c1a-4a98-96a6-1c3590874b47">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="ec1724ac-7b51-498b-847c-6cceab9fe06a" x="0" y="0" width="90" height="30"/>
@@ -1573,7 +1581,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="2d99e5dc-33a7-441e-b22c-cfec4b51cd8d">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="ba9e4472-0228-4373-a24f-a8a90eb8264d" x="0" y="0" width="90" height="30"/>
@@ -1592,7 +1600,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="1864fd5c-49c1-4cef-8613-1e83ecd6286b">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="32308907-d5e7-40d6-8956-2e90e2ca4376" x="0" y="0" width="90" height="30"/>
@@ -1611,7 +1619,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="c3a9b996-0fe1-4bad-8fc9-a90e8f463b61">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="2884b086-c000-48ff-a5d8-c9ce3a594d3b" x="0" y="0" width="90" height="30"/>
@@ -1630,7 +1638,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="2d09f969-9d0a-4cd1-9fbf-0a7e64fce4d8">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="cdfbbeb6-fc0c-4c69-9ef3-34bda88cbd99" x="0" y="0" width="90" height="30"/>
@@ -1649,7 +1657,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="112827b1-d8ed-467a-9e86-aebe789627dd">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="9145bbd9-b6bb-48d3-88d4-c9693c751503" x="0" y="0" width="90" height="30"/>
@@ -1668,7 +1676,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="7f2105ba-3469-48f2-bd49-77334c68dfc2">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="5bbe1520-31fe-4f74-81df-efb5a5594c11" x="0" y="0" width="90" height="30"/>
@@ -1701,7 +1709,7 @@ where
 							</jr:columnHeader>
 							<jr:column width="90" uuid="958b81a7-85c0-4267-9878-0d335d35c0a3">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="4610862f-1a30-4446-998d-c67b74c9770c" x="0" y="0" width="90" height="30"/>
@@ -1720,7 +1728,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="2ccd9ca6-efcb-425c-a3f5-eb4963da0c66">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="fda1d03e-b934-4b98-b9e3-16abff19dbec" x="0" y="0" width="90" height="30"/>
@@ -1739,7 +1747,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="327f8c0e-0956-48ef-afa5-4854c925d1dc">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="dbd501bf-a976-46c6-9101-e4fc6d45eb49" x="0" y="0" width="90" height="30"/>
@@ -1758,7 +1766,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="066498e1-3df3-4fc6-a79f-16f96f138834">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="1c88b9b9-2973-447e-9498-526ccd0f8429" x="0" y="0" width="90" height="30"/>
@@ -1777,7 +1785,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="9e056d0d-8527-41c9-86ea-84104609eef8">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="27746d5a-5e02-4135-8e70-c6cd211817a5" x="0" y="0" width="90" height="30"/>
@@ -1796,7 +1804,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="1cc3bab3-aa0d-4e0f-bce7-5d67cd4820fd">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="d0acd053-28d2-4abb-a524-b880422d1e22" x="0" y="0" width="90" height="30"/>
@@ -1815,7 +1823,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="3c3cf89c-8b79-4732-b2b5-fbc2c9642fd8">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="aaf4a508-8d3a-490f-933e-01e86e925fe3" x="0" y="0" width="90" height="30"/>
@@ -1840,7 +1848,7 @@ where
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="90" uuid="49fcda78-4656-481f-b07e-e930d02a8200">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="86a5e57a-3570-4031-a049-3ecebe3a1b4e" x="0" y="0" width="90" height="30"/>
@@ -1859,7 +1867,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="372273e7-7f72-46da-9234-3a0eada28818">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="ba8f1604-2244-4b43-8163-a5849c050e27" x="0" y="0" width="90" height="30"/>
@@ -1878,7 +1886,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="b574c40a-04d4-46eb-bdb0-24850033f160">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="35ead66e-54bf-4ea1-a5c1-5989d4f60b5a" x="0" y="0" width="90" height="30"/>
@@ -1897,7 +1905,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="14fb9981-9e50-422e-9d85-51b8e7fc1147">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="feee1db2-88a3-4342-a177-fadac56b3074" x="0" y="0" width="90" height="30"/>
@@ -1916,7 +1924,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="391649da-9e61-483b-b6a5-d358f0f0527c">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="71608f8d-ae34-469a-87b5-7da8a12689b4" x="0" y="0" width="90" height="30"/>
@@ -1935,7 +1943,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="fde175fc-fff4-451c-ad57-7ea8d10e9edf">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="0f4c1124-ba9f-4350-8d77-967de53485f4" x="0" y="0" width="90" height="30"/>
@@ -1954,9 +1962,9 @@ where
 							</jr:column>
 						</jr:columnGroup>
 					</jr:columnGroup>
-					<jr:columnGroup width="630" uuid="aca0cd22-bbff-4746-b238-72c4c283be21">
+					<jr:columnGroup width="990" uuid="aca0cd22-bbff-4746-b238-72c4c283be21">
 						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="630" uuid="904137da-eed3-4adc-b428-58a18e849963">
+						<jr:columnGroup width="990" uuid="904137da-eed3-4adc-b428-58a18e849963">
 							<jr:columnHeader height="33" rowSpan="1">
 								<staticText>
 									<reportElement uuid="b9250695-7a4f-4408-bdcb-2cd1af6907c4" x="0" y="0" width="630" height="30"/>
@@ -1968,7 +1976,7 @@ where
 							</jr:columnHeader>
 							<jr:column width="90" uuid="12c7beb1-5568-4b64-af79-b8c688196431">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="618b86e4-31e2-4fb8-9fb2-a4503d84f6d0" x="0" y="0" width="90" height="30"/>
@@ -1987,7 +1995,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="e273e6a6-be3f-43aa-b55e-f7045a57b8cf">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="408c9023-78c1-47b4-88fa-f4529aa60efd" x="0" y="0" width="90" height="30"/>
@@ -2006,7 +2014,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="0975c1d8-affc-4820-bba3-a2443308ce36">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="cd619d6d-c60f-427e-903d-71f0cd20973a" x="0" y="0" width="90" height="30"/>
@@ -2025,7 +2033,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="edf01cd3-46c2-4a05-b958-74e7915cacc0">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="69355eb9-eea2-4629-9f52-39e7d1d0b71f" x="0" y="0" width="90" height="30"/>
@@ -2044,7 +2052,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="50f27cf3-0a15-4987-80ed-7119271da124">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="fd05d5a5-4607-4116-91a2-f54b52654887" x="0" y="0" width="90" height="30"/>
@@ -2063,7 +2071,7 @@ where
 							</jr:column>
 							<jr:column width="90" uuid="e1d62b4e-ed19-48bf-90fd-ad750a8274fa">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="30"/>
@@ -2076,13 +2084,13 @@ where
 									<textField>
 										<reportElement uuid="f3208951-8474-4609-ae6d-c2a6f8ffaaeb" x="0" y="0" width="90" height="20"/>
 										<textElement/>
-										<textFieldExpression><![CDATA[$F{non_hiv_other}]]></textFieldExpression>
+										<textFieldExpression><![CDATA[$F{non_hiv_other1}]]></textFieldExpression>
 									</textField>
 								</jr:detailCell>
 							</jr:column>
 							<jr:column width="90" uuid="930027d8-22b9-43e8-b9b5-209b59453fe3">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
-								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="30"/>
@@ -2095,7 +2103,83 @@ where
 									<textField>
 										<reportElement uuid="70dd9262-5f9b-48fc-98bd-7532c64bf06e" x="0" y="0" width="90" height="20"/>
 										<textElement/>
-										<textFieldExpression><![CDATA[$F{non_hiv_other_remarks}]]></textFieldExpression>
+										<textFieldExpression><![CDATA[$F{non_hiv_other1_remarks}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="90" uuid="06444201-0db1-4284-b997-e6c769c2e54d">
+								<jr:tableHeader height="30" rowSpan="1"/>
+								<jr:tableFooter height="30" rowSpan="1"/>
+								<jr:columnHeader height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[NonHIV other]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter height="60" rowSpan="1"/>
+								<jr:detailCell height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="f3208951-8474-4609-ae6d-c2a6f8ffaaeb" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{non_hiv_other2}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="90" uuid="4ab13987-02c4-464b-aa03-d0e13a17dd45">
+								<jr:tableHeader height="30" rowSpan="1"/>
+								<jr:tableFooter height="30" rowSpan="1"/>
+								<jr:columnHeader height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[Non HIV other remarks]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter height="60" rowSpan="1"/>
+								<jr:detailCell height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="70dd9262-5f9b-48fc-98bd-7532c64bf06e" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{non_hiv_other2_remarks}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="90" uuid="d628a535-5d8e-4bee-a5ac-cc3c252ff570">
+								<jr:tableHeader height="30" rowSpan="1"/>
+								<jr:tableFooter height="30" rowSpan="1"/>
+								<jr:columnHeader height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[NonHIV other]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter height="60" rowSpan="1"/>
+								<jr:detailCell height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="f3208951-8474-4609-ae6d-c2a6f8ffaaeb" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{non_hiv_other3}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="90" uuid="3d7f6feb-e9b8-485e-9057-e6e0c9b0619c">
+								<jr:tableHeader height="30" rowSpan="1"/>
+								<jr:tableFooter height="30" rowSpan="1"/>
+								<jr:columnHeader height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[Non HIV other remarks]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter height="60" rowSpan="1"/>
+								<jr:detailCell height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="70dd9262-5f9b-48fc-98bd-7532c64bf06e" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{non_hiv_other3_remarks}]]></textFieldExpression>
 									</textField>
 								</jr:detailCell>
 							</jr:column>

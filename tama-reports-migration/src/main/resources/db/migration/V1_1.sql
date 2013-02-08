@@ -102,8 +102,14 @@ create table tama_reports.medical_history (
     tb varchar(20),
     alcoholism varchar(20),
 
-    non_hiv_other text,
-    non_hiv_other_remarks text
+    non_hiv_other1 text,
+    non_hiv_other1_remarks text,
+
+    non_hiv_other2 text,
+    non_hiv_other2_remarks text,
+
+    non_hiv_other3 text,
+    non_hiv_other3_remarks text
 );
 
 create table tama_reports.patient_event (

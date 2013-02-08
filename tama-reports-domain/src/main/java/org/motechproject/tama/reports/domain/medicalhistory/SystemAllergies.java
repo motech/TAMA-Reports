@@ -93,8 +93,35 @@ public class SystemAllergies {
     private String tb;
     private String alcoholism;
 
-    @Column(name = "non_hiv_other")
-    private String nonHivOther;
-    @Column(name = "non_hiv_other_remarks")
-    private String nonHivOtherRemarks;
+    @Column(name = "non_hiv_other1")
+    private String nonHivOther1;
+    @Column(name = "non_hiv_other1_remarks")
+    private String nonHivOther1Remarks;
+
+    @Column(name = "non_hiv_other2")
+    private String nonHivOther2;
+    @Column(name = "non_hiv_other2_remarks")
+    private String nonHivOther2Remarks;
+
+    @Column(name = "non_hiv_other3")
+    private String nonHivOther3;
+    @Column(name = "non_hiv_other3_remarks")
+    private String nonHivOther3Remarks;
+
+    public void setNonHivOther(int number, String value, String remarks) {
+        switch (number) {
+            case 1:
+                nonHivOther1 = value;
+                nonHivOther1Remarks = remarks;
+                break;
+            case 2:
+                nonHivOther2 = value;
+                nonHivOther2Remarks = remarks;
+                break;
+            case 3:
+                nonHivOther3 = value;
+                nonHivOther3Remarks = remarks;
+                break;
+        }
+    }
 }

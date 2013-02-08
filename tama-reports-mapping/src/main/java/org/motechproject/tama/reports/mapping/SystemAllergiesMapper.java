@@ -61,13 +61,15 @@ public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
     }
 
     private void setNonHivAilments(SystemAllergies allergies) {
-        StringBuilder builder = new StringBuilder();
-
-        allergies.setNonHivOther(otherAilment("Other"));
-        for (TAMAJsonNode node : getAllDescriptions("Other")) {
-            builder.append(node.get("description").asText());
+        TAMAJsonArrayNode otherNodes = otherAilments("Other");
+        int i = 1;
+        for (JsonNode otherNode : otherNodes) {
+            TAMAJsonNode tamaOtherNode = new TAMAJsonNode(otherNode);
+            if (!tamaOtherNode.hasAllPairs(pair("state", NONE))) {
+                allergies.setNonHivOther(i, tamaOtherNode.get("state").getTextValue(), tamaOtherNode.get("description").getTextValue());
+            }
+            i++;
         }
-        allergies.setNonHivOtherRemarks(builder.toString());
     }
 
     private void setMusculoSkeletalAilments(SystemAllergies allergies) {
