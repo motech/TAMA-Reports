@@ -8,13 +8,17 @@ import org.motechproject.tama.reports.domain.json.TAMAJsonNode;
 import org.motechproject.tama.reports.domain.medicalhistory.SystemAllergies;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.motechproject.tama.reports.domain.json.Pair.pair;
 
 public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
 
-    private static final String YES = "YES_WITH_HISTORY";
+    private static final String NONE = "NONE";
+    private static final String YES_WITH_HISTORY = "YES_WITH_HISTORY";
+    private static final String YES = "YES";
+
 
     private TAMAJsonNode nonHivMedicalHistory;
 
@@ -169,13 +173,19 @@ public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
     }
 
     private String descriptionAsText(String category) {
-        return otherAilments(category)
-                .find(pair("definition", "others"), pair("state", YES))
-                .get("description").asText();
+        TAMAJsonNode otherNode = otherAilments(category).find(pair("definition", "others"));
+        if (!otherNode.hasAllPairs(pair("state", NONE))) {
+            return otherNode.get("description").asText();
+        } else {
+            return "";
+        }
     }
 
     private List<TAMAJsonNode> getAllDescriptions(String category) {
-        return otherAilments(category).findAll(pair("definition", "others"), pair("state", YES));
+        List<TAMAJsonNode> result = new ArrayList<>();
+        result.addAll(otherAilments(category).findAll(pair("definition", "others"), pair("state", YES)));
+        result.addAll(otherAilments(category).findAll(pair("definition", "others"), pair("state", YES_WITH_HISTORY)));
+        return result;
     }
 
     private TAMAJsonArrayNode otherAilments(String category) {
