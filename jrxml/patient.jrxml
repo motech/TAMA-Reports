@@ -618,7 +618,7 @@ where
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:columnGroup width="478" uuid="5529148a-778d-4e66-a781-586273ff0fc1">
+					<jr:columnGroup width="717" uuid="5529148a-778d-4e66-a781-586273ff0fc1">
 						<jr:columnHeader height="75" rowSpan="1">
 							<staticText>
 								<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="477" height="75"/>
@@ -628,7 +628,7 @@ where
 								<text><![CDATA[Basic Information]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnGroup width="478" uuid="42596891-c732-45f7-962c-3fa76962b95a">
+						<jr:columnGroup width="717" uuid="42596891-c732-45f7-962c-3fa76962b95a">
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="91" uuid="4951be05-0710-4478-b900-fd4c1e8dae7a">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
@@ -649,14 +649,14 @@ where
 									</textField>
 								</jr:detailCell>
 							</jr:column>
-							<jr:column width="90" uuid="ff78c131-24bb-4e02-9449-08caa1a551ab">
+							<jr:column width="329" uuid="ff78c131-24bb-4e02-9449-08caa1a551ab">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:tableFooter style="table 18_TH" height="1" rowSpan="1"/>
 								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
-										<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="90" height="30"/>
+										<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="200" height="36"/>
 										<textElement/>
-										<text><![CDATA[Date of birth]]></text>
+										<text><![CDATA[Date of birth (MM/DD/YYYY) (HH:MM)]]></text>
 									</staticText>
 								</jr:columnHeader>
 								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
@@ -746,7 +746,7 @@ where
 									<staticText>
 										<reportElement uuid="a0937499-64f3-40ae-a527-405cf0ed48e3" x="0" y="0" width="102" height="30"/>
 										<textElement/>
-										<text><![CDATA[Registered on]]></text>
+										<text><![CDATA[Registered on (MM/DD/YYYY) (HH:MM)]]></text>
 									</staticText>
 								</jr:columnHeader>
 								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
