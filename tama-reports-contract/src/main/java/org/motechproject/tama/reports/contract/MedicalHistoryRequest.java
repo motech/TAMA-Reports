@@ -22,6 +22,9 @@ public class MedicalHistoryRequest implements Serializable {
     @Getter
     @Setter
     private String patientId;
+    @Getter
+    @Setter
+    private String patientDoucmentId;
 
     public JsonNode getNonHivMedicalHistory() throws IOException {
         ObjectMapper mapper = new ObjectMapper();

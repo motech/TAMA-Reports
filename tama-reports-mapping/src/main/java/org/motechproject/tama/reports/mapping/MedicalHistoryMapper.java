@@ -28,6 +28,7 @@ public class MedicalHistoryMapper implements Mapper<MedicalHistory> {
         history.setTestReason(request.getHivTestReason());
         history.setModesOfTransmission(request.getModesOfTransmission());
         history.setPatientId(request.getPatientId());
+        history.setPatientDocumentId(request.getPatientDoucmentId());
         history.setGeneralHistory(generalHistoryMapper.map());
         history.setSystemAllergies(systemAllergiesMapper.map());
         return history;

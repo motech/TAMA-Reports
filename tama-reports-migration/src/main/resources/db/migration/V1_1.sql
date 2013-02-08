@@ -27,6 +27,7 @@ create table tama_reports.medical_history (
     id serial,
 
     patient_id varchar(100),
+    patient_document_id varchar(100),
 
     test_reason text,
     modes_of_transmission text,

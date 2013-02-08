@@ -37,6 +37,16 @@ public class MedicalHistoryMapperTest {
     }
 
     @Test
+    public void shouldMapPatientDocumentId() throws IOException {
+        String patientDocumentId = "patientDocumentId";
+
+        MedicalHistoryRequest request = new MedicalHistoryRequest();
+        request.setPatientDoucmentId(patientDocumentId);
+        MedicalHistory history = new MedicalHistoryMapper(request, generalHistoryMapper, systemAllergiesMapper).map();
+        assertEquals(patientDocumentId, history.getPatientDocumentId());
+    }
+
+    @Test
     public void shouldMapHIVTestReason() throws IOException {
         String testReason = "testReason";
 
