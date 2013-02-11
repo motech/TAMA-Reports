@@ -394,7 +394,7 @@
 			<![CDATA[select
 	a.patient_id,
 	a.patient_document_id,
-	a.date_of_birth,
+	to_char(a.date_of_birth, 'dd/MM/yyyy') as date_of_birth,
 	a.gender,
 	a.clinic_id,
 	a.travel_time_to_clinic,
@@ -404,7 +404,7 @@
 	a.best_call_time,
 	a.receive_otc_advice,
 	a.receive_appointment_reminder,
-	a.registered_on,
+	to_char(a.registered_on, 'dd/MM/yyyy') as registered_on,
 	a.status,
 	a.notes,
 	b.clinic_name,
@@ -481,11 +481,11 @@ where
  and 	b.clinic_name like $P{CLINIC_NAME}
  and 	a.patient_id like $P{PATIENT_ID}
  and 	($P{START_DATE} = '' or a.registered_on >= to_date($P{START_DATE},'dd/MM/yyyy')) 	 and 	($P{END_DATE} = '' or a.registered_on <= to_date($P{END_DATE},'dd/MM/yyyy')) order by
-	 a.patient_id;]]>
+	 (a.patient_id, b.clinic_name);]]>
 		</queryString>
 		<field name="patient_id" class="java.lang.String"/>
 		<field name="patient_document_id" class="java.lang.String"/>
-		<field name="date_of_birth" class="java.sql.Date"/>
+		<field name="date_of_birth" class="java.lang.String"/>
 		<field name="gender" class="java.lang.String"/>
 		<field name="clinic_id" class="java.lang.String"/>
 		<field name="travel_time_to_clinic" class="java.lang.String"/>
@@ -495,7 +495,7 @@ where
 		<field name="best_call_time" class="java.lang.String"/>
 		<field name="receive_otc_advice" class="java.lang.String"/>
 		<field name="receive_appointment_reminder" class="java.lang.String"/>
-		<field name="registered_on" class="java.sql.Timestamp"/>
+		<field name="registered_on" class="java.lang.String"/>
 		<field name="status" class="java.lang.String"/>
 		<field name="notes" class="java.lang.String"/>
 		<field name="clinic_name" class="java.lang.String"/>
@@ -664,7 +664,7 @@ where
 									<staticText>
 										<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="200" height="36"/>
 										<textElement/>
-										<text><![CDATA[Date of birth (MM/DD/YYYY) (HH:MM)]]></text>
+										<text><![CDATA[Date of birth (DD/MM/YYYY) ]]></text>
 									</staticText>
 								</jr:columnHeader>
 								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
@@ -754,7 +754,7 @@ where
 									<staticText>
 										<reportElement uuid="a0937499-64f3-40ae-a527-405cf0ed48e3" x="0" y="0" width="102" height="30"/>
 										<textElement/>
-										<text><![CDATA[Registered on (MM/DD/YYYY) (HH:MM)]]></text>
+										<text><![CDATA[Registered on (DD/MM/YYYY) ]]></text>
 									</staticText>
 								</jr:columnHeader>
 								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
@@ -2110,9 +2110,9 @@ where
 							<jr:column width="90" uuid="06444201-0db1-4284-b997-e6c769c2e54d">
 								<jr:tableHeader height="30" rowSpan="1"/>
 								<jr:tableFooter height="30" rowSpan="1"/>
-								<jr:columnHeader height="43" rowSpan="1">
+								<jr:columnHeader height="43" style="table 18_CH" rowSpan="1">
 									<staticText>
-										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="43"/>
+										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="43" backcolor="#92B17D"/>
 										<textElement/>
 										<text><![CDATA[NonHIV other]]></text>
 									</staticText>
@@ -2129,9 +2129,9 @@ where
 							<jr:column width="90" uuid="4ab13987-02c4-464b-aa03-d0e13a17dd45">
 								<jr:tableHeader height="30" rowSpan="1"/>
 								<jr:tableFooter height="30" rowSpan="1"/>
-								<jr:columnHeader height="43" rowSpan="1">
+								<jr:columnHeader height="43" style="table 18_CH" rowSpan="1">
 									<staticText>
-										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="43"/>
+										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="43" backcolor="#92B17D"/>
 										<textElement/>
 										<text><![CDATA[Non HIV other remarks]]></text>
 									</staticText>
@@ -2148,9 +2148,9 @@ where
 							<jr:column width="90" uuid="d628a535-5d8e-4bee-a5ac-cc3c252ff570">
 								<jr:tableHeader height="30" rowSpan="1"/>
 								<jr:tableFooter height="30" rowSpan="1"/>
-								<jr:columnHeader height="43" rowSpan="1">
+								<jr:columnHeader height="43" style="table 18_CH"  rowSpan="1">
 									<staticText>
-										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="43"/>
+										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="43" backcolor="#92B17D"/>
 										<textElement/>
 										<text><![CDATA[NonHIV other]]></text>
 									</staticText>
@@ -2167,9 +2167,9 @@ where
 							<jr:column width="90" uuid="3d7f6feb-e9b8-485e-9057-e6e0c9b0619c">
 								<jr:tableHeader height="30" rowSpan="1"/>
 								<jr:tableFooter height="30" rowSpan="1"/>
-								<jr:columnHeader height="43" rowSpan="1">
+								<jr:columnHeader height="43" style="table 18_CH"  rowSpan="1">
 									<staticText>
-										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="43"/>
+										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="43" backcolor="#92B17D"/>
 										<textElement/>
 										<text><![CDATA[Non HIV other remarks]]></text>
 									</staticText>
