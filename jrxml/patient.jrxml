@@ -481,7 +481,7 @@ where
  and 	b.clinic_name like $P{CLINIC_NAME}
  and 	a.patient_id like $P{PATIENT_ID}
  and 	($P{START_DATE} = '' or a.registered_on >= to_date($P{START_DATE},'dd/MM/yyyy')) 	 and 	($P{END_DATE} = '' or a.registered_on <= to_date($P{END_DATE},'dd/MM/yyyy')) order by
-	 (a.patient_id, b.clinic_name);]]>
+	 (b.clinic_name, a.patient_id);]]>
 		</queryString>
 		<field name="patient_id" class="java.lang.String"/>
 		<field name="patient_document_id" class="java.lang.String"/>
@@ -2110,7 +2110,7 @@ where
 							<jr:column width="90" uuid="06444201-0db1-4284-b997-e6c769c2e54d">
 								<jr:tableHeader height="30" rowSpan="1"/>
 								<jr:tableFooter height="30" rowSpan="1"/>
-								<jr:columnHeader height="43" style="table 18_CH" rowSpan="1">
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="43" backcolor="#92B17D"/>
 										<textElement/>
@@ -2129,7 +2129,7 @@ where
 							<jr:column width="90" uuid="4ab13987-02c4-464b-aa03-d0e13a17dd45">
 								<jr:tableHeader height="30" rowSpan="1"/>
 								<jr:tableFooter height="30" rowSpan="1"/>
-								<jr:columnHeader height="43" style="table 18_CH" rowSpan="1">
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="43" backcolor="#92B17D"/>
 										<textElement/>
@@ -2148,7 +2148,7 @@ where
 							<jr:column width="90" uuid="d628a535-5d8e-4bee-a5ac-cc3c252ff570">
 								<jr:tableHeader height="30" rowSpan="1"/>
 								<jr:tableFooter height="30" rowSpan="1"/>
-								<jr:columnHeader height="43" style="table 18_CH"  rowSpan="1">
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="90" height="43" backcolor="#92B17D"/>
 										<textElement/>
@@ -2167,7 +2167,7 @@ where
 							<jr:column width="90" uuid="3d7f6feb-e9b8-485e-9057-e6e0c9b0619c">
 								<jr:tableHeader height="30" rowSpan="1"/>
 								<jr:tableFooter height="30" rowSpan="1"/>
-								<jr:columnHeader height="43" style="table 18_CH"  rowSpan="1">
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
 									<staticText>
 										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="90" height="43" backcolor="#92B17D"/>
 										<textElement/>
