@@ -94,6 +94,7 @@
 		<field name="registered_on" class="java.sql.Timestamp"/>
 		<field name="status" class="java.lang.String"/>
 		<field name="notes" class="java.lang.String"/>
+		<field name="new_value" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="clinic_name" class="java.lang.String"/>
 	<parameter name="patient_id" class="java.lang.String"/>
@@ -154,15 +155,15 @@
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
 					<jr:column width="90" uuid="7c2f6c5a-698f-4f3b-8c42-83baf16da3b4">
-						<jr:columnHeader style="table 2_CH" height="30">
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="9228da0a-1ed0-4791-b637-35f28c08d209" x="0" y="0" width="90" height="30"/>
 								<textElement/>
 								<text><![CDATA[Patient ID]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 2_CH" height="30"/>
-						<jr:detailCell style="table 2_TD" height="20">
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
 							<textField>
 								<reportElement uuid="57d6bb35-638b-4bf6-b394-a852c8cc79a7" x="0" y="0" width="90" height="20"/>
 								<textElement/>
@@ -171,15 +172,15 @@
 						</jr:detailCell>
 					</jr:column>
 					<jr:column width="90" uuid="a8b74aa2-413c-4fc9-826e-153e5208a243">
-						<jr:columnHeader style="table 2_CH" height="30">
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="90f6c538-134a-41bb-8877-377c8fce4c0b" x="0" y="0" width="90" height="30"/>
 								<textElement/>
 								<text><![CDATA[Clinic Name]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 2_CH" height="30"/>
-						<jr:detailCell style="table 2_TD" height="20">
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
 							<textField>
 								<reportElement uuid="9490f971-6c31-4862-89f2-04dbbb8991d6" x="0" y="0" width="90" height="20"/>
 								<textElement/>
@@ -188,15 +189,15 @@
 						</jr:detailCell>
 					</jr:column>
 					<jr:column width="90" uuid="2924016b-16e1-4637-95ae-2d333477fb6d">
-						<jr:columnHeader style="table 2_CH" height="30">
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="54502cc9-b46e-4f9e-8cc5-1c1a39c3a118" x="0" y="0" width="90" height="30"/>
 								<textElement/>
 								<text><![CDATA[Event Name]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 2_CH" height="30"/>
-						<jr:detailCell style="table 2_TD" height="20">
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
 							<textField>
 								<reportElement uuid="8d5a5e00-b236-4dec-87fb-13a179bc770e" x="0" y="0" width="90" height="20"/>
 								<textElement/>
@@ -204,16 +205,35 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
+					<jr:column width="90" uuid="5f34c94c-e915-43a2-adc7-8f3337757d86">
+						<jr:tableHeader height="30" rowSpan="1"/>
+						<jr:tableFooter height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="54502cc9-b46e-4f9e-8cc5-1c1a39c3a118" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Latest value]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="8d5a5e00-b236-4dec-87fb-13a179bc770e" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{new_value}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
 					<jr:column width="90" uuid="133fe1b0-f0a8-42c6-b2e3-8151e3793c1e">
-						<jr:columnHeader style="table 2_CH" height="30">
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="bf5cd0e3-25fe-4f73-988e-7598e17ddf56" x="0" y="0" width="90" height="30"/>
 								<textElement/>
 								<text><![CDATA[Date/Time event happened]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 2_CH" height="30"/>
-						<jr:detailCell style="table 2_TD" height="20">
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
 							<textField>
 								<reportElement uuid="fe474b73-0541-425d-9ef1-f56f90b3b399" x="0" y="0" width="90" height="20"/>
 								<textElement/>
@@ -222,15 +242,15 @@
 						</jr:detailCell>
 					</jr:column>
 					<jr:column width="90" uuid="6d32e5c2-cca8-4e18-b35f-478dda622b97">
-						<jr:columnHeader style="table 2_CH" height="30">
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="2f4e45fc-2d70-4d22-82c2-522f62a1c141" x="0" y="0" width="90" height="30"/>
 								<textElement/>
 								<text><![CDATA[Action performed by ]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 2_CH" height="30"/>
-						<jr:detailCell style="table 2_TD" height="20">
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
 							<textField>
 								<reportElement uuid="470da8e2-41c5-48f9-b92e-9f8c60f5acbb" x="0" y="0" width="90" height="20"/>
 								<textElement/>
