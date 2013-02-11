@@ -14,4 +14,5 @@ public class PatientEventRequest implements Serializable {
     private String eventName;
     private Date dateTime;
     private String performedBy;
+    private String newValue;
 }

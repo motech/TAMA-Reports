@@ -29,6 +29,9 @@ public class PatientEvent {
     @Column(name = "event_name")
     private String eventName;
 
+    @Column(name = "new_value")
+    private String newValue;
+
     @Column(name = "date_time")
     private Date dateTime;
 
@@ -45,6 +48,7 @@ public class PatientEvent {
 
     public void merge(PatientEvent patient) {
         this.setPatientDocumentId(patient.getPatientDocumentId());
+        this.setNewValue(patient.getNewValue());
         this.setEventName(patient.getEventName());
         this.setDateTime(patient.getDateTime());
         this.setPerformedBy(patient.getPerformedBy());

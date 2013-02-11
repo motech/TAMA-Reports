@@ -116,6 +116,7 @@ create table tama_reports.patient_event (
     id serial,
     patient_document_id varchar(100),
     event_name varchar(50),
+    new_value text,
     date_time timestamp,
     performed_by varchar(100)
 );

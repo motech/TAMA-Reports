@@ -36,6 +36,13 @@ public class PatientEventMapperTest {
     }
 
     @Test
+    public void shouldMapNewValue() {
+        assertNull(mapper.map().getNewValue());
+        request.setNewValue("newValue");
+        assertEquals("newValue", mapper.map().getNewValue());
+    }
+
+    @Test
     public void shouldMapDateTime() {
         assertNull(mapper.map().getDateTime());
         Date now = DateUtil.now().toDate();

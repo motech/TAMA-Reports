@@ -17,6 +17,7 @@ public class PatientEventRequestMapper {
         patientEvent.setPatientDocumentId(request.getPatientDocumentId());
         patientEvent.setEventName(request.getEventName());
         patientEvent.setDateTime(request.getDateTime());
+        patientEvent.setNewValue(request.getNewValue());
         patientEvent.setPerformedBy(request.getPerformedBy());
         return patientEvent;
     }
