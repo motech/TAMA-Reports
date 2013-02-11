@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+
 @Embeddable
 @Data
 public class SystemAllergies {
@@ -94,34 +96,54 @@ public class SystemAllergies {
     private String alcoholism;
 
     @Column(name = "non_hiv_other1")
-    private String nonHivOther1;
+    private String nonHivOther1 = "";
     @Column(name = "non_hiv_other1_remarks")
-    private String nonHivOther1Remarks;
+    private String nonHivOther1Remarks = "";
 
     @Column(name = "non_hiv_other2")
-    private String nonHivOther2;
+    private String nonHivOther2 = "";
     @Column(name = "non_hiv_other2_remarks")
-    private String nonHivOther2Remarks;
+    private String nonHivOther2Remarks = "";
 
     @Column(name = "non_hiv_other3")
-    private String nonHivOther3;
+    private String nonHivOther3 = "";
     @Column(name = "non_hiv_other3_remarks")
-    private String nonHivOther3Remarks;
+    private String nonHivOther3Remarks = "";
 
     public void setNonHivOther(int number, String value, String remarks) {
-        switch (number) {
-            case 1:
-                nonHivOther1 = value;
-                nonHivOther1Remarks = remarks;
-                break;
-            case 2:
-                nonHivOther2 = value;
-                nonHivOther2Remarks = remarks;
-                break;
-            case 3:
-                nonHivOther3 = value;
-                nonHivOther3Remarks = remarks;
-                break;
+        assignValue(number, value);
+        assignRemark(number, remarks);
+    }
+
+    private void assignValue(int number, String value) {
+        if (isNotBlank(value)) {
+            switch (number) {
+                case 1:
+                    nonHivOther1 = value;
+                    break;
+                case 2:
+                    nonHivOther2 = value;
+                    break;
+                case 3:
+                    nonHivOther3 = value;
+            }
+        }
+    }
+
+
+    private void assignRemark(int number, String remarks) {
+        if (isNotBlank(remarks)) {
+            switch (number) {
+                case 1:
+                    nonHivOther1Remarks = remarks;
+                    break;
+                case 2:
+                    nonHivOther2Remarks = remarks;
+                    break;
+                case 3:
+                    nonHivOther3Remarks = remarks;
+                    break;
+            }
         }
     }
 }
