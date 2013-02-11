@@ -10,6 +10,7 @@ import net.sf.jasperreports.engine.util.JRSwapFile;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,12 +24,13 @@ import java.sql.Connection;
 public class ReportingService {
 
     private BasicDataSource dataSource;
+    private String swapLocation;
 
     ReportingService() {
     }
 
     @Autowired
-    public ReportingService(@Qualifier("dataSource") BasicDataSource dataSource) {
+    public ReportingService(@Qualifier("dataSource") BasicDataSource dataSource, @Value("#tamaReportsProperties['jasper.swap.directory']") String swapLocation) {
         this.dataSource = dataSource;
     }
 
@@ -55,7 +57,7 @@ public class ReportingService {
     }
 
     private JRSwapFileVirtualizer createVirtualizer(JRSwapFileVirtualizer virtualizer) {
-        JRSwapFile swapFile = new JRSwapFile("/tmp", 1024, 100);
+        JRSwapFile swapFile = new JRSwapFile(swapLocation, 1024, 100);
         virtualizer = new JRSwapFileVirtualizer(50, swapFile, true);
         return virtualizer;
     }
