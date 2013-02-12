@@ -40,7 +40,7 @@ public class PatientEventParameters implements ReportParameters {
 
     public PatientEventParameters setEventName(String eventName) {
         if (isNotBlank(eventName)) {
-            parameters.put(EVENT_NAME, "%" + eventName + "%");
+            parameters.put(EVENT_NAME, eventName);
         }
         return this;
     }
