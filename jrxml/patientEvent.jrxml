@@ -72,11 +72,12 @@
 		<parameter name="from_date" class="java.lang.String"/>
 		<parameter name="end_date" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and c.patient_id ilike $P{patient_id} and b.clinic_name ilike $P{clinic_name} and a.event_name ilike $P{status} and ($P{from_date} = '' or a.date_time::date >= to_date($P{from_date}, 'dd/MM/yyyy')) and ($P{end_date} = '' or a.date_time::date <= to_date($P{end_date}, 'dd/MM/yyyy'));]]>
+			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and c.patient_id ilike $P{patient_id} and b.clinic_name ilike $P{clinic_name} and a.event_name ilike $P{status} and ($P{from_date} = '' or a.date_time::date >= to_date($P{from_date}, 'dd/MM/yyyy')) and ($P{end_date} = '' or a.date_time::date <= to_date($P{end_date}, 'dd/MM/yyyy')) order by (b.clinic_name,c.patient_id,a.date_time);]]>
 		</queryString>
 		<field name="id" class="java.lang.Integer"/>
 		<field name="patient_document_id" class="java.lang.String"/>
 		<field name="event_name" class="java.lang.String"/>
+		<field name="new_value" class="java.lang.String"/>
 		<field name="date_time" class="java.sql.Timestamp"/>
 		<field name="performed_by" class="java.lang.String"/>
 		<field name="clinic_id" class="java.lang.String"/>
@@ -94,7 +95,6 @@
 		<field name="registered_on" class="java.sql.Timestamp"/>
 		<field name="status" class="java.lang.String"/>
 		<field name="notes" class="java.lang.String"/>
-		<field name="new_value" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="clinic_name" class="java.lang.String"/>
 	<parameter name="patient_id" class="java.lang.String"/>
