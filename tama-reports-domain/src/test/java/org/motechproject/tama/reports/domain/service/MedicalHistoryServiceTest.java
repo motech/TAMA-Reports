@@ -35,7 +35,7 @@ public class MedicalHistoryServiceTest {
         MedicalHistory persistedHistory = mock(MedicalHistory.class);
         MedicalHistory newHistory = new MedicalHistory();
 
-        when(allMedicalHistories.findByPatientId(anyString())).thenReturn(persistedHistory);
+        when(allMedicalHistories.findByPatientDocumentId(anyString())).thenReturn(persistedHistory);
         medicalHistoryService.update(newHistory);
 
         verify(persistedHistory).merge(newHistory);

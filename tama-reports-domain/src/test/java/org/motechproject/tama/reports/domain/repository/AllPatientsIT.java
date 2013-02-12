@@ -33,7 +33,7 @@ public class AllPatientsIT {
         Patient patient = PatientBuilder.validPatient();
         allPatients.save(patient);
 
-        assertEquals(patient, allPatients.findByPatientId(patient.getPatientId()));
+        assertEquals(patient, allPatients.findByPatientDocumentId(patient.getPatientDocumentId()));
     }
 
     @Test
@@ -44,7 +44,7 @@ public class AllPatientsIT {
         patient.setIvrPassCode("passcode");
         allPatients.save(patient);
 
-        assertEquals("passcode", allPatients.findByPatientId(patient.getPatientId()).getIvrPassCode());
+        assertEquals("passcode", allPatients.findByPatientDocumentId(patient.getPatientDocumentId()).getIvrPassCode());
     }
 
     @After

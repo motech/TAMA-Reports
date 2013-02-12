@@ -26,7 +26,7 @@ public class MedicalHistoryService {
     }
 
     public void update(MedicalHistory history) {
-        MedicalHistory persistedHistory = allMedicalHistories.findByPatientId(history.getPatientId());
+        MedicalHistory persistedHistory = allMedicalHistories.findByPatientDocumentId(history.getPatientDocumentId());
         if (null != persistedHistory) {
             persistedHistory.merge(history);
             allMedicalHistories.save(persistedHistory);

@@ -41,7 +41,7 @@ public class PatientServiceTest {
         Patient persistedPatient = PatientBuilder.validPatient();
         persistedPatient.setId(10l);
 
-        when(allPatients.findByPatientId(detachedPatient.getPatientId())).thenReturn(persistedPatient);
+        when(allPatients.findByPatientDocumentId(detachedPatient.getPatientDocumentId())).thenReturn(persistedPatient);
         patientService.update(detachedPatient);
 
         Patient merged = mergedPatient();

@@ -26,7 +26,7 @@ public class PatientService {
     }
 
     public void update(Patient patient) {
-        Patient persistedPatient = allPatients.findByPatientId(patient.getPatientId());
+        Patient persistedPatient = allPatients.findByPatientDocumentId(patient.getPatientDocumentId());
         persistedPatient.merge(patient);
         allPatients.save(persistedPatient);
     }

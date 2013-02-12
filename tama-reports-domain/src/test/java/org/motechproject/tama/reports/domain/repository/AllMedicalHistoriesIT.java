@@ -22,7 +22,7 @@ public class AllMedicalHistoriesIT {
 
     @Test
     @Transactional
-    public void shouldSaveClinic() {
+    public void shouldSaveMedicalHistory() {
         MedicalHistory medicalHistory = new MedicalHistory();
         medicalHistory.setPatientId("patientId");
 
