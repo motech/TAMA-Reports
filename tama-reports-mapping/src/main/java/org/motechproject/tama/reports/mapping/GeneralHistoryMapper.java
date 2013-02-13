@@ -37,19 +37,37 @@ public class GeneralHistoryMapper implements Mapper<GeneralHistory> {
 
     private void mapQuestions(GeneralHistory history) {
         history.setPregnant(valueOf(getSection(QUESTIONS).contains(pair("question", "Is the patient pregnant?"), pair("historyPresent", "true"))));
+        history.setPregnantMonths(cellValue(getSection(QUESTIONS).find(pair("question", "Is the patient pregnant?"), pair("historyPresent", "true")).get("comments").getTextValue()));
         history.setBaselinePreTherapyHbLessThan10(valueOf(getSection("questions").contains(pair("question", "Was Baseline pre-therapy Hb lower than 10"), pair("historyPresent", "true"))));
     }
 
     private void mapAllergiesHistory(GeneralHistory history) {
         history.setSulfonamideAllergy(valueOf(getSection(ALLERGIES_HISTORY).contains(pair("drugAllergy", "Sulfonamide"), pair("specified", "true"))));
         history.setArvAllergy(valueOf(getSection(ALLERGIES_HISTORY).contains(pair("drugAllergy", "ARV"), pair("specified", "true"))));
+        history.setArvAllergyRemarks(cellValue(getSection(ALLERGIES_HISTORY).find(pair("drugAllergy", "ARV"), pair("specified", "true")).get("description").getTextValue()));
         history.setOther(valueOf(getSection(ALLERGIES_HISTORY).contains(pair("drugAllergy", "Other"), pair("specified", "true"))));
         history.setOtherDetails(otherDetails());
     }
 
+    private void mapRashes(GeneralHistory history) {
+        history.setHistoryOfRash(valueOf(getSection(RASHES).isNotEmpty()));
+        history.setRashToDelaviridineOrRescriptorOrDlv(valueOf(getSection(RASHES).contains("DRD")));
+        history.setRashToNevirapineOrViramuneOrNVP(valueOf(getSection(RASHES).contains("NVN")));
+        history.setRashToEtravirineOrIntelenceOrTMC125(valueOf(getSection(RASHES).contains("EIT")));
+        history.setRashToEfavirenzOrSustivaOrStocrinOrEfv(valueOf(getSection(RASHES).contains("ESSE")));
+    }
+
+    private void mapSpecifiedAllergies(GeneralHistory history) {
+        history.setHistoryOfDrugAllergy(valueOf(getSection(SPECIFIED_ALLERGIES).isNotEmpty()));
+    }
+
     private String otherDetails() {
         String others = otherAsText();
-        return StringUtils.equals("null", others) ? "" : others;
+        return cellValue(others);
+    }
+
+    private String cellValue(String string) {
+        return StringUtils.equals("null", string) ? "" : string;
     }
 
     private String otherAsText() {
@@ -58,15 +76,5 @@ public class GeneralHistoryMapper implements Mapper<GeneralHistory> {
 
     private TAMAJsonArrayNode getSection(String secion) {
         return nonHivMedicalHistory.getArrayNode(secion);
-    }
-
-    private void mapRashes(GeneralHistory history) {
-        history.setHistoryOfRash(valueOf(getSection(RASHES).isNotEmpty()));
-        history.setRashToDelaviridineOrRescriptorOrDlv(valueOf(getSection(RASHES).contains("DRD")));
-        history.setRashToEfavirenzOrSustivaOrStocrinOrEfv(valueOf(getSection(RASHES).contains("ESSE")));
-    }
-
-    private void mapSpecifiedAllergies(GeneralHistory history) {
-        history.setHistoryOfDrugAllergy(valueOf(getSection(SPECIFIED_ALLERGIES).isNotEmpty()));
     }
 }

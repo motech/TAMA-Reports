@@ -149,6 +149,7 @@ public class SystemAllergiesMapper implements Mapper<SystemAllergies> {
         allergies.setHives(ailment("Allergic/Immunologic", "Hives"));
         allergies.setHayFever(ailment("Allergic/Immunologic", "HayFever"));
         allergies.setInheritedChildhoodEczemaDermititus(ailment("Allergic/Immunologic", "InheritedChildHoodEczema"));
+        allergies.setAtopicDermatitis(ailment("Allergic/Immunologic", "AtopicDermatitis"));
         allergies.setSinusitis(ailment("Allergic/Immunologic", "Sinusitis"));
 
     }

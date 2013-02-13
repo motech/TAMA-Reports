@@ -21,6 +21,8 @@ public class SystemAllergies {
 
     @Column(name = "allergic_dermititis_eczema")
     private String allergicDermititisEczema;
+    @Column(name = "atopic_dermatitis ")
+    private String atopicDermatitis;
     @Column(name = "inherited_childhood_eczema_dermititus")
     private String inheritedChildhoodEczemaDermititus;
     @Column(name = "allergic_others")

@@ -36,11 +36,17 @@ create table tama_reports.medical_history (
     history_of_rash varchar(20),
     sulfonamide_allergy varchar(20),
     arv_allergy varchar(20),
+    arv_allergy_remarks varchar(20),
+
     other varchar(3),
     other_details text,
     rash_to_delaviridine_or_rescriptor_or_dlv varchar(20),
     rash_to_efavirenz_or_sustiva_or_stocrin_or_efv varchar(20),
+    rash_to_nevirapine_viramune_nvp varchar(20),
+    rash_to_etravirine_intelence_tmc125 varchar(20),
+
     pregnant varchar(20),
+    pregnant_months varchar(20),
     baseline_pre_therapy_hb_less_than_10 varchar(20),
 
     asthma varchar(20),
@@ -51,6 +57,8 @@ create table tama_reports.medical_history (
 
     allergic_dermititis_eczema varchar(20),
     inherited_childhood_eczema_dermititus varchar(20),
+    atopic_dermatitis varchar(20),
+
     allergic_others text,
     allergic_remarks text,
 
