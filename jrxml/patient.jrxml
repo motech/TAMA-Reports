@@ -882,7 +882,7 @@ where
 									<staticText>
 										<reportElement uuid="4744219a-16b4-40a2-a632-ab80c3de53ee" x="0" y="0" width="107" height="30"/>
 										<textElement/>
-										<text><![CDATA[Receive apoointment reminder]]></text>
+										<text><![CDATA[Receive appointment reminder]]></text>
 									</staticText>
 								</jr:columnHeader>
 								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
