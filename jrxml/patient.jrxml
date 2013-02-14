@@ -469,7 +469,12 @@
 	c.non_hiv_other2,
 	c.non_hiv_other2_remarks,
 	c.non_hiv_other3,
-	c.non_hiv_other3_remarks
+	c.non_hiv_other3_remarks,
+	c.atopic_dermatitis,
+	c.arv_allergy_remarks,
+	c.rash_to_nevirapine_viramune_nvp,
+	c.rash_to_etravirine_intelence_tmc125,
+	c.pregnant_months
 
 from
 	tama_reports.patient a,
@@ -561,6 +566,11 @@ where
 		<field name="non_hiv_other2_remarks" class="java.lang.String"/>
 		<field name="non_hiv_other3" class="java.lang.String"/>
 		<field name="non_hiv_other3_remarks" class="java.lang.String"/>
+		<field name="atopic_dermatitis" class="java.lang.String"/>
+		<field name="arv_allergy_remarks" class="java.lang.String"/>
+		<field name="rash_to_nevirapine_viramune_nvp" class="java.lang.String"/>
+		<field name="rash_to_etravirine_intelence_tmc125" class="java.lang.String"/>
+		<field name="pregnant_months" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
 	<parameter name="CLINIC_NAME" class="java.lang.String"/>
@@ -967,9 +977,9 @@ where
 							</jr:column>
 						</jr:columnGroup>
 					</jr:columnGroup>
-					<jr:columnGroup width="932" uuid="aef7be0d-6914-4d7e-916a-7100b2be9976">
+					<jr:columnGroup width="1292" uuid="aef7be0d-6914-4d7e-916a-7100b2be9976">
 						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="932" uuid="af4f5780-7b12-4481-acb5-946f8a2be4d6">
+						<jr:columnGroup width="1292" uuid="af4f5780-7b12-4481-acb5-946f8a2be4d6">
 							<jr:columnHeader height="33" rowSpan="1"/>
 							<jr:column width="122" uuid="24ee9d53-9f12-495f-bda6-09bd182c7e03">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
@@ -1009,6 +1019,44 @@ where
 									</textField>
 								</jr:detailCell>
 							</jr:column>
+							<jr:column width="90" uuid="bd90e268-3b67-493b-988c-5ba5297b5f0c">
+								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="d700ce5f-26f9-430c-9430-87478a414de4" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[Rash To Nevirapine/Viramune/NVP]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="5811f3f5-e212-47d2-8bdb-c00779ffc0e5" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{rash_to_nevirapine_viramune_nvp}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="90" uuid="71b69f8a-5125-4824-8d03-07c31f8f7d37">
+								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="d700ce5f-26f9-430c-9430-87478a414de4" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[Rash To Etravirine/Intelence/TMC125]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="5811f3f5-e212-47d2-8bdb-c00779ffc0e5" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{rash_to_etravirine_intelence_tmc125}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
 							<jr:column width="90" uuid="0830fc0d-6d18-4ed1-9d24-d860a354c27a">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
@@ -1044,6 +1092,25 @@ where
 										<reportElement uuid="132f9d21-57e3-4728-bd04-c4268e65e8b5" x="0" y="0" width="90" height="20"/>
 										<textElement/>
 										<textFieldExpression><![CDATA[$F{arv_allergy}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="90" uuid="d5efe0d5-34e1-4d3d-9c63-0c38f2ac37c1">
+								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="bd2441d7-09b0-495d-aad3-1668acf5c2ef" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[Arv Allergy Remarks]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="132f9d21-57e3-4728-bd04-c4268e65e8b5" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{arv_allergy_remarks}]]></textFieldExpression>
 									</textField>
 								</jr:detailCell>
 							</jr:column>
@@ -1142,6 +1209,25 @@ where
 									</textField>
 								</jr:detailCell>
 							</jr:column>
+							<jr:column width="90" uuid="63bf81c6-31a0-405f-96b0-3eb7a824f5cc">
+								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="ebeab9c7-a313-48d9-9201-b8164e926228" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[Pregnant Months]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="daf9bcb9-d918-456e-89b9-be28ebd099d5" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{pregnant_months}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
 							<jr:column width="90" uuid="5c5ca2e7-812d-4d77-b4ad-b46d114d5f49">
 								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
 								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
@@ -1163,9 +1249,9 @@ where
 							</jr:column>
 						</jr:columnGroup>
 					</jr:columnGroup>
-					<jr:columnGroup width="810" uuid="ee2372ae-be65-4ba0-a92d-806bf65125de">
+					<jr:columnGroup width="900" uuid="ee2372ae-be65-4ba0-a92d-806bf65125de">
 						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="810" uuid="ce3c947f-5a03-4ea5-b0e1-5e0e7bb565ce">
+						<jr:columnGroup width="900" uuid="ce3c947f-5a03-4ea5-b0e1-5e0e7bb565ce">
 							<jr:columnHeader height="33" rowSpan="1">
 								<staticText>
 									<reportElement uuid="b9250695-7a4f-4408-bdcb-2cd1af6907c4" x="0" y="0" width="810" height="30"/>
@@ -1284,6 +1370,25 @@ where
 										<reportElement uuid="1bf73449-7560-4a50-bb97-3481ffb62bb9" x="0" y="0" width="90" height="20"/>
 										<textElement/>
 										<textFieldExpression><![CDATA[$F{allergic_dermititis_eczema}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="90" uuid="1f7a068d-9a2a-4a22-a1ef-6ec080537e93">
+								<jr:tableHeader style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:tableFooter style="table 18_TH" height="30" rowSpan="1"/>
+								<jr:columnHeader style="table 18_CH" height="43" rowSpan="1">
+									<staticText>
+										<reportElement uuid="6c37becc-07e7-432b-bb3b-d5c3efb25f68" x="0" y="0" width="90" height="43"/>
+										<textElement/>
+										<text><![CDATA[Atopic Dermatitis]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:columnFooter style="table 18_CH" height="60" rowSpan="1"/>
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="1bf73449-7560-4a50-bb97-3481ffb62bb9" x="0" y="0" width="90" height="30"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{atopic_dermatitis}]]></textFieldExpression>
 									</textField>
 								</jr:detailCell>
 							</jr:column>
