@@ -5,10 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
+import org.motechproject.tama.reports.contract.PillTimeRequest;
 import org.motechproject.tama.reports.domain.Patient;
 import org.motechproject.tama.reports.domain.builder.PatientBuilder;
 import org.motechproject.tama.reports.domain.repository.AllPatients;
 
+import static java.sql.Time.valueOf;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -47,6 +49,23 @@ public class PatientServiceTest {
         Patient merged = mergedPatient();
         assertEquals(detachedPatient.getGender(), merged.getGender());
         assertEquals(persistedPatient.getId(), merged.getId());
+    }
+
+    @Test
+    public void shouldUpdatePillTime() {
+        Patient persistedPatient = PatientBuilder.validPatient();
+        PillTimeRequest pillTimeRequest = new PillTimeRequest();
+        pillTimeRequest.setPatientDocumentId(persistedPatient.getPatientDocumentId());
+        pillTimeRequest.setMorningPillTime("10:10:10");
+        pillTimeRequest.setEveningPillTime("14:10:10");
+
+        when(allPatients.findByPatientDocumentId(persistedPatient.getPatientDocumentId())).thenReturn(persistedPatient);
+
+        patientService.updatePillTimes(pillTimeRequest);
+
+        Patient merged = mergedPatient();
+        assertEquals(valueOf(pillTimeRequest.getMorningPillTime()), merged.getMorningPillTime());
+        assertEquals(valueOf(pillTimeRequest.getEveningPillTime()), merged.getEveningPillTime());
     }
 
     private Patient mergedPatient() {

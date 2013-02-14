@@ -2,6 +2,7 @@ package org.motechproject.tama.reports.web;
 
 import org.apache.log4j.Logger;
 import org.motechproject.tama.reports.contract.PatientRequest;
+import org.motechproject.tama.reports.contract.PillTimeRequest;
 import org.motechproject.tama.reports.domain.export.ReportingService;
 import org.motechproject.tama.reports.domain.service.PatientService;
 import org.motechproject.tama.reports.mapping.PatientRequestMapper;
@@ -42,6 +43,13 @@ public class PatientController {
     public void update(@RequestBody PatientRequest patientRequest) {
         logger.info("Updating patient");
         patientService.update(new PatientRequestMapper(patientRequest).map());
+    }
+
+    @RequestMapping(value = "update/pillTimes", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public void updatePillTimes(@RequestBody PillTimeRequest pillTimeRequest) {
+        logger.info("Updating patient pill times");
+        patientService.updatePillTimes(pillTimeRequest);
     }
 
     @RequestMapping(value = "report", method = RequestMethod.GET)

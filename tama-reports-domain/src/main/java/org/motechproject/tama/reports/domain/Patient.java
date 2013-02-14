@@ -10,8 +10,11 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import javax.validation.constraints.NotNull;
+import java.sql.Time;
 import java.util.Date;
 import java.util.Set;
+
+import static org.apache.commons.lang.StringUtils.isNotBlank;
 
 @Data
 @Table(name = "patient")
@@ -49,6 +52,10 @@ public class Patient {
     @NotBlank
     @Column(name = "call_preference")
     private String callPreference;
+    @Column(name = "morning_pill_time")
+    private Time morningPillTime;
+    @Column(name = "evening_pill_time")
+    private Time eveningPillTime;
     @Column(name = "best_call_time")
     private String bestCallTime;
     @NotNull
@@ -79,6 +86,8 @@ public class Patient {
         this.setPatientDocumentId(patient.getPatientDocumentId());
         this.setGender(patient.getGender());
         this.setCallPreference(patient.getCallPreference());
+        this.setMorningPillTime(patient.getMorningPillTime());
+        this.setEveningPillTime(patient.getEveningPillTime());
         this.setDateOfBirth(patient.getDateOfBirth());
         this.setClinicId(patient.getClinicId());
         this.setNotes(patient.getNotes());
@@ -89,5 +98,14 @@ public class Patient {
         this.setIvrPassCode(patient.getIvrPassCode());
         this.setRegisteredOn(patient.getRegisteredOn());
         this.setStatus(patient.getStatus());
+    }
+
+    public void mergePillTimes(String morningPillTime, String eveningPillTime) {
+        if (isNotBlank(morningPillTime)) {
+            setMorningPillTime(Time.valueOf(morningPillTime));
+        }
+        if (isNotBlank(eveningPillTime)) {
+            setEveningPillTime(Time.valueOf(eveningPillTime));
+        }
     }
 }

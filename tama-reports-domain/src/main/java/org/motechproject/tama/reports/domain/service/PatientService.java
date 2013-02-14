@@ -1,6 +1,7 @@
 package org.motechproject.tama.reports.domain.service;
 
 
+import org.motechproject.tama.reports.contract.PillTimeRequest;
 import org.motechproject.tama.reports.domain.Patient;
 import org.motechproject.tama.reports.domain.repository.AllPatients;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,12 @@ public class PatientService {
     public void update(Patient patient) {
         Patient persistedPatient = allPatients.findByPatientDocumentId(patient.getPatientDocumentId());
         persistedPatient.merge(patient);
+        allPatients.save(persistedPatient);
+    }
+
+    public void updatePillTimes(PillTimeRequest pillTimeRequest) {
+        Patient persistedPatient = allPatients.findByPatientDocumentId(pillTimeRequest.getPatientDocumentId());
+        persistedPatient.mergePillTimes(pillTimeRequest.getMorningPillTime(), pillTimeRequest.getEveningPillTime());
         allPatients.save(persistedPatient);
     }
 }

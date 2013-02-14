@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.PatientRequest;
+import org.motechproject.tama.reports.contract.PillTimeRequest;
 import org.motechproject.tama.reports.domain.export.ReportingService;
 import org.motechproject.tama.reports.domain.service.PatientService;
 import org.motechproject.tama.reports.mapping.PatientRequestMapper;
@@ -54,6 +55,18 @@ public class PatientControllerTest extends BaseControllerTest {
                 .perform(post("/patient/update").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
         verify(patientService).update(new PatientRequestMapper(request).map());
+    }
+
+    @Test
+    public void shouldUpdatePillTimes() throws Exception {
+        PillTimeRequest request = new PillTimeRequest();
+        request.setPatientDocumentId("patientDocId");
+
+        standaloneSetup(patientController)
+                .build()
+                .perform(post("/patient/update/pillTimes").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
+                .andExpect(status().isOk());
+        verify(patientService).updatePillTimes(request);
     }
 
     @Test
