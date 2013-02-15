@@ -15,7 +15,7 @@ import java.io.IOException;
 import static junit.framework.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath*:/META-INF/spring/applicationContext.xml")
+@ContextConfiguration("classpath*:applicationTestContext.xml")
 public class TAMAReportingIT {
 
     @Autowired
