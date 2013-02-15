@@ -123,7 +123,7 @@ create table tama_reports.medical_history (
 );
 
 create table tama_reports.patient_event (
-    id serial,
+    id bigserial,
     patient_document_id varchar(100),
     event_name varchar(50),
     new_value text,
