@@ -3,20 +3,16 @@ package org.motechproject.tama.reports.domain.repository;
 
 import org.junit.After;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.motechproject.tama.reports.domain.Clinic;
 import org.motechproject.tama.reports.domain.builder.ClinicBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-@RunWith(value = SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath*:applicationPersistenceContext.xml")
-public class AllClinicsIT {
+public class AllClinicsIT extends AbstractRepositoryTest {
 
     @Autowired
     private AllClinics allClinics;
@@ -40,6 +36,11 @@ public class AllClinicsIT {
         allClinics.save(clinic);
 
         assertEquals(updatedName, allClinics.findByClinicId(clinic.getClinicId()).getClinicName());
+    }
+
+    @Override
+    protected JpaRepository getRepository() {
+        return allClinics;
     }
 
     @After

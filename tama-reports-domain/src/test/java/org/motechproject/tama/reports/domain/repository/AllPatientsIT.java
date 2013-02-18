@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.motechproject.tama.reports.domain.Patient;
 import org.motechproject.tama.reports.domain.builder.PatientBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,9 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
-@RunWith(value = SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath*:applicationPersistenceContext.xml")
-public class AllPatientsIT {
+public class AllPatientsIT extends AbstractRepositoryTest {
 
     @Autowired
     private AllPatients allPatients;
@@ -45,6 +44,11 @@ public class AllPatientsIT {
         allPatients.save(patient);
 
         assertEquals("passcode", allPatients.findByPatientDocumentId(patient.getPatientDocumentId()).getIvrPassCode());
+    }
+
+    @Override
+    protected JpaRepository getRepository() {
+        return allPatients;
     }
 
     @After

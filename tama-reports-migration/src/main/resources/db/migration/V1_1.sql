@@ -130,3 +130,14 @@ create table tama_reports.patient_event (
     date_time timestamp,
     performed_by varchar(100)
 );
+
+create table tama_reports.health_tips (
+    id bigserial,
+    patient_document_id varchar(100),
+    call_date date,
+    call_direction varchar(10),
+    health_tips_played text,
+    number_of_times_health_tips_accessed numeric,
+    individual_health_tips_access_durations text,
+    total_health_tips_access_duration bigint
+);
