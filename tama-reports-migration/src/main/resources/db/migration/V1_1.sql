@@ -25,6 +25,15 @@ create table tama_reports.clinic (
     clinic_name varchar(100)
 );
 
+create table tama_reports.clinician (
+    id serial,
+    clinician_id varchar(100),
+    clinic_id varchar(100),
+    contact_number varchar(20),
+    alternate_number varchar(20),
+    role varchar(50)
+);
+
 create table tama_reports.medical_history (
     id serial,
 

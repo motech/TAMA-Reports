@@ -1,7 +1,6 @@
 package org.motechproject.tama.reports.domain.repository;
 
 
-import org.junit.After;
 import org.junit.Test;
 import org.motechproject.tama.reports.domain.PatientEvent;
 import org.motechproject.tama.reports.domain.builder.PatientEventBuilder;
@@ -27,11 +26,5 @@ public class AllPatientsEventsIT extends AbstractRepositoryTest {
     @Override
     protected JpaRepository getRepository() {
         return allEvents;
-    }
-
-    @After
-    public void tearDown() {
-        allEvents.flush();
-        allEvents.deleteAll();
     }
 }

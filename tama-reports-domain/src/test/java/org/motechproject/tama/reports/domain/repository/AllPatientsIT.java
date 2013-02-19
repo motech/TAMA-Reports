@@ -1,14 +1,10 @@
 package org.motechproject.tama.reports.domain.repository;
 
-import org.junit.After;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.motechproject.tama.reports.domain.Patient;
 import org.motechproject.tama.reports.domain.builder.PatientBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import static junit.framework.Assert.assertEquals;
@@ -49,11 +45,5 @@ public class AllPatientsIT extends AbstractRepositoryTest {
     @Override
     protected JpaRepository getRepository() {
         return allPatients;
-    }
-
-    @After
-    public void tearDown() {
-        allPatients.flush();
-        allPatients.deleteAll();
     }
 }

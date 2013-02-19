@@ -1,7 +1,6 @@
 package org.motechproject.tama.reports.domain.repository;
 
 
-import org.junit.After;
 import org.junit.Test;
 import org.motechproject.tama.reports.domain.medicalhistory.GeneralHistory;
 import org.motechproject.tama.reports.domain.medicalhistory.MedicalHistory;
@@ -39,11 +38,5 @@ public class AllMedicalHistoriesIT extends AbstractRepositoryTest {
     @Override
     protected JpaRepository getRepository() {
         return allMedicalHistories;
-    }
-
-    @After
-    public void tearDown() {
-        allMedicalHistories.flush();
-        allMedicalHistories.deleteAll();
     }
 }

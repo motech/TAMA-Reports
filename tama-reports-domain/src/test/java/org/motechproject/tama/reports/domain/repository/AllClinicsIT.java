@@ -1,7 +1,6 @@
 package org.motechproject.tama.reports.domain.repository;
 
 
-import org.junit.After;
 import org.junit.Test;
 import org.motechproject.tama.reports.domain.Clinic;
 import org.motechproject.tama.reports.domain.builder.ClinicBuilder;
@@ -41,11 +40,5 @@ public class AllClinicsIT extends AbstractRepositoryTest {
     @Override
     protected JpaRepository getRepository() {
         return allClinics;
-    }
-
-    @After
-    public void tearDown() {
-        allClinics.flush();
-        allClinics.deleteAll();
     }
 }
