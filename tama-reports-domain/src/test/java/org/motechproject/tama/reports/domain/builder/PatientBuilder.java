@@ -3,11 +3,13 @@ package org.motechproject.tama.reports.domain.builder;
 import org.motechproject.tama.reports.domain.Patient;
 import org.motechproject.util.DateUtil;
 
+import java.sql.Time;
+
 public class PatientBuilder {
 
     public static Patient validPatient() {
         Patient patient = new Patient();
-        patient.setBestCallTime("10:10 PM");
+        patient.setBestCallTime(Time.valueOf("10:10:00"));
         patient.setPatientDocumentId("patientDocId");
         patient.setCallPreference("DPR");
         patient.setIvrLanguage("en");

@@ -56,9 +56,8 @@ public class Patient {
     private Time morningPillTime;
     @Column(name = "evening_pill_time")
     private Time eveningPillTime;
-    /*TODO: Model this field as sql time*/
     @Column(name = "best_call_time")
-    private String bestCallTime;
+    private Time bestCallTime;
     @NotNull
     @Column(name = "receive_otc_advice")
     private Boolean receiveOTCAdvice;

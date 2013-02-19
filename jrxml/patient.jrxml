@@ -403,7 +403,7 @@
           to_char(evening_pill_time,'HH12:mm pm') as evening_time,
 	a.ivr_language,
 	a.call_preference,
-	a.best_call_time,
+	to_char(a.best_call_time,'HH12:mm pm') as best_call_time,
 	a.receive_otc_advice,
 	a.receive_appointment_reminder,
 	to_char(a.registered_on, 'dd/MM/yyyy') as registered_on,

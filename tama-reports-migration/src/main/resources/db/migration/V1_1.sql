@@ -11,7 +11,7 @@ create table tama_reports.patient (
     ivr_pass_code varchar(10),
     ivr_language varchar(10),
     call_preference varchar(10),
-    best_call_time varchar(20),
+    best_call_time time,
     receive_otc_advice varchar(10),
     receive_appointment_reminder varchar(10),
     registered_on timestamp,

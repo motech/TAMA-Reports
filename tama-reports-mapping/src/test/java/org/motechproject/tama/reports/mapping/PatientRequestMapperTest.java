@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.motechproject.tama.reports.contract.PatientRequest;
 import org.motechproject.util.DateUtil;
 
+import java.sql.Time;
 import java.util.Date;
 
 import static junit.framework.Assert.*;
@@ -109,8 +110,8 @@ public class PatientRequestMapperTest {
         PatientRequestMapper mapper = new PatientRequestMapper(request);
         assertNull(mapper.map().getBestCallTime());
 
-        request.setBestCallTime("10:10 PM");
-        assertEquals("10:10 PM", mapper.map().getBestCallTime());
+        request.setBestCallTime("10:10:00");
+        assertEquals(Time.valueOf("10:10:00"), mapper.map().getBestCallTime());
     }
 
     @Test
