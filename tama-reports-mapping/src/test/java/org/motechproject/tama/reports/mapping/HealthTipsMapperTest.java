@@ -29,12 +29,21 @@ public class HealthTipsMapperTest {
     }
 
     @Test
-    public void shouldMapCallDirection() {
+    public void shouldMapCallMadeByDuringIncomingCall() {
         HealthTipsRequest healthTipsRequest = new HealthTipsRequest();
         healthTipsRequest.setCallDirection("incoming");
 
         HealthTips healthTips = new HealthTipsMapper(healthTipsRequest).map();
-        assertEquals(healthTipsRequest.getCallDirection(), healthTips.getCallDirection());
+        assertEquals("Patient", healthTips.getCallMadeBy());
+    }
+
+    @Test
+    public void shouldMapCallMadeByDuringOutgoingCall() {
+        HealthTipsRequest healthTipsRequest = new HealthTipsRequest();
+        healthTipsRequest.setCallDirection("outgoing");
+
+        HealthTips healthTips = new HealthTipsMapper(healthTipsRequest).map();
+        assertEquals("TAMA", healthTips.getCallMadeBy());
     }
 
     @Test

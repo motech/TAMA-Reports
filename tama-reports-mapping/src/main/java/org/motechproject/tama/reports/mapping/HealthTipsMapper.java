@@ -16,11 +16,19 @@ public class HealthTipsMapper {
         HealthTips healthTips = new HealthTips();
         healthTips.setPatientDocumentId(healthTipsRequest.getPatientDocumentId());
         healthTips.setCallDate(healthTipsRequest.getCallDate());
-        healthTips.setCallDirection(healthTipsRequest.getCallDirection());
+        healthTips.setCallMadeBy(callMadeBy());
         healthTips.setHealthTipsPlayed(StringUtils.join(healthTipsRequest.getHealthTipsPlayed(), ", "));
         healthTips.setNumberOfTimesHealthTipsAccessed(healthTipsRequest.getNumberOfTimesHealthTipsAccessed());
         healthTips.setIndividualHealthTipsAccessDurations(StringUtils.join(healthTipsRequest.getIndividualHealthTipsAccessDurations(), ", "));
         healthTips.setTotalHealthTipsAccessDuration(healthTipsRequest.getTotalHealthTipsAccessDuration());
         return healthTips;
+    }
+
+    private String callMadeBy() {
+        if (StringUtils.equalsIgnoreCase("incoming", healthTipsRequest.getCallDirection())) {
+            return "Patient";
+        } else {
+            return "TAMA";
+        }
     }
 }

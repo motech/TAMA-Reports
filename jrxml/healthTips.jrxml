@@ -51,12 +51,12 @@
 		<parameter name="start_date" class="java.lang.String"/>
 		<parameter name="end_date" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select *, to_char(a.call_date, 'dd/MM/yyyy') as formatted_call_date from tama_reports.health_tips a, tama_reports.clinic b, tama_reports.patient c where c.patient_id like $P{patient_id} and b.clinic_name ilike $P{clinic_name} and a.call_date <= to_date($P{start_date}, 'dd/MM/yyyy') and a.call_date >= to_date($P{end_date}, 'dd/MM/yyyy');]]>
+			<![CDATA[select *, to_char(a.call_date, 'dd/MM/yyyy') as formatted_call_date from tama_reports.health_tips a, tama_reports.clinic b, tama_reports.patient c where c.patient_id like $P{patient_id} and b.clinic_name ilike $P{clinic_name} and a.call_date >= to_date($P{start_date}, 'dd/MM/yyyy') and a.call_date <= to_date($P{end_date}, 'dd/MM/yyyy');]]>
 		</queryString>
 		<field name="id" class="java.lang.Long"/>
 		<field name="patient_document_id" class="java.lang.String"/>
 		<field name="call_date" class="java.sql.Date"/>
-		<field name="call_direction" class="java.lang.String"/>
+		<field name="call_made_by" class="java.lang.String"/>
 		<field name="health_tips_played" class="java.lang.String"/>
 		<field name="number_of_times_health_tips_accessed" class="java.math.BigDecimal"/>
 		<field name="individual_health_tips_access_durations" class="java.lang.String"/>
@@ -186,7 +186,7 @@
 							<staticText>
 								<reportElement uuid="aa72e61b-afe6-4807-ba10-916936c6f8fc" x="0" y="0" width="90" height="30"/>
 								<textElement/>
-								<text><![CDATA[Call Direction]]></text>
+								<text><![CDATA[Call Made By]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table 1_CH" height="30"/>
@@ -194,7 +194,7 @@
 							<textField>
 								<reportElement uuid="11875386-dae9-49f2-939e-3510e0a508e5" x="0" y="0" width="90" height="20"/>
 								<textElement/>
-								<textFieldExpression><![CDATA[$F{call_direction}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{call_made_by}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -254,7 +254,7 @@
 							<staticText>
 								<reportElement uuid="1c77db54-0cd9-4008-9afd-c35cf30568a8" x="0" y="0" width="90" height="30"/>
 								<textElement/>
-								<text><![CDATA[Health Tips - Total Duration (Seconds]]></text>
+								<text><![CDATA[Health Tips - Total Duration (Seconds)]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table 1_CH" height="30"/>

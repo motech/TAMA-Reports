@@ -21,8 +21,8 @@ public class HealthTips {
     @Column(name = "call_date")
     private Date callDate;
 
-    @Column(name = "call_direction")
-    private String callDirection;
+    @Column(name = "call_made_by")
+    private String callMadeBy;
 
     @Column(name = "health_tips_played")
     private String healthTipsPlayed;
