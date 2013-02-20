@@ -18,8 +18,8 @@ public class SMSLog {
     @Column(name = "external_id")
     private String externalId;
 
-    @Column(name = "receiver_type")
-    private String receiverType;
+    @Column(name = "sms_type")
+    private String smsType;
 
     @Column(name = "content")
     private String content;

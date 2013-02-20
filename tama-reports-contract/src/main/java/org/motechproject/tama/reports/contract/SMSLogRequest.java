@@ -11,7 +11,7 @@ public class SMSLogRequest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String externalId;
-    private String receiverType;
+    private String smsType;
     private String content;
     private String recipientNumber;
     private Date timeStamp;

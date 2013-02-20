@@ -19,7 +19,7 @@ public class SMSLogMapperTest {
         request = new SMSLogRequest();
         request.setExternalId("externalId");
         request.setContent("content");
-        request.setReceiverType("recipientType");
+        request.setSmsType("smsType");
         request.setRecipientNumber("1234567890");
         request.setTimeStamp(DateUtil.now().toDate());
         log = new SMSLog();
@@ -40,10 +40,10 @@ public class SMSLogMapperTest {
     }
 
     @Test
-    public void shouldMapRecipientType() {
-        assertNull(log.getReceiverType());
+    public void shouldMapSmsType() {
+        assertNull(log.getSmsType());
         log = new SMSLogMapper(request).map();
-        assertEquals(request.getReceiverType(), log.getReceiverType());
+        assertEquals(request.getSmsType(), log.getSmsType());
     }
 
     @Test

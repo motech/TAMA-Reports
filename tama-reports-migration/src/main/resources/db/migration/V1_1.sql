@@ -157,7 +157,7 @@ create table tama_reports.health_tips (
 create table tama_reports.sms_log (
     id bigserial,
     external_id varchar(100),
-    receiver_type varchar(1),
+    sms_type varchar(1),
     content text,
     recipient_number varchar(15),
     time_stamp timestamp
