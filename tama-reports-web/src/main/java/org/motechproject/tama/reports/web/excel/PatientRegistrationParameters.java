@@ -4,6 +4,7 @@ package org.motechproject.tama.reports.web.excel;
 import org.motechproject.tama.reports.domain.export.ReportParameters;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static org.apache.commons.lang.StringUtils.isNotBlank;
 
@@ -14,7 +15,7 @@ public class PatientRegistrationParameters implements ReportParameters {
     public static String START_DATE = "START_DATE";
     public static String END_DATE = "END_DATE";
 
-    private HashMap parameters;
+    private Map parameters;
 
     public PatientRegistrationParameters() {
         parameters = new HashMap();
@@ -50,7 +51,8 @@ public class PatientRegistrationParameters implements ReportParameters {
         return this;
     }
 
-    public HashMap parameters() {
+    @Override
+    public Map parameters() {
         return parameters;
     }
 }
