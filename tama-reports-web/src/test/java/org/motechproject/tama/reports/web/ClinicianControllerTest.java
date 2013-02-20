@@ -16,8 +16,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.server.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.server.setup.MockMvcBuilders.standaloneSetup;
@@ -55,7 +54,7 @@ public class ClinicianControllerTest extends BaseControllerTest {
 
         standaloneSetup(clinicianController)
                 .build()
-                .perform(post("/clinician/update").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
+                .perform(put("/clinician").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
         verify(clinicianService).update(new ClinicianRequestMapper(request).map());
     }

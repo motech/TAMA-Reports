@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.server.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.server.setup.MockMvcBuilders.standaloneSetup;
 
@@ -46,7 +47,7 @@ public class MedicalHistoryControllerTest extends BaseControllerTest {
 
         standaloneSetup(medicalHistoryController)
                 .build()
-                .perform(post("/medicalHistory/update").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
+                .perform(put("/medicalHistory").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
         verify(medicalHistoryService).update(new MedicalHistoryMapper(request).map());
     }

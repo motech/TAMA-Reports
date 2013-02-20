@@ -38,14 +38,14 @@ public class PatientController {
         patientService.save(new PatientRequestMapper(patientRequest).map());
     }
 
-    @RequestMapping(value = "update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody PatientRequest patientRequest) {
         logger.info("Updating patient");
         patientService.update(new PatientRequestMapper(patientRequest).map());
     }
 
-    @RequestMapping(value = "update/pillTimes", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "pillTimes", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void updatePillTimes(@RequestBody PillTimeRequest pillTimeRequest) {
         logger.info("Updating patient pill times");

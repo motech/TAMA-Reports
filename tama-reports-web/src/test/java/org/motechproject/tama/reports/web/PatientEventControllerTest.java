@@ -57,3 +57,4 @@ public class PatientEventControllerTest extends BaseControllerTest {
     }
 
 }
+

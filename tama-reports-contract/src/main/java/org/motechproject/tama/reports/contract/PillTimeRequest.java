@@ -3,6 +3,7 @@ package org.motechproject.tama.reports.contract;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 public class PillTimeRequest implements Serializable {
@@ -13,3 +14,5 @@ public class PillTimeRequest implements Serializable {
     private String morningPillTime;
     private String eveningPillTime;
 }
+
+

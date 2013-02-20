@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.server.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.server.setup.MockMvcBuilders.standaloneSetup;
 
@@ -45,7 +46,7 @@ public class ClinicControllerTest extends BaseControllerTest {
 
         standaloneSetup(clinicController)
                 .build()
-                .perform(post("/clinic/update").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
+                .perform(put("/clinic").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
         verify(clinicService).update(new ClinicRequestMapper(request).map());
     }

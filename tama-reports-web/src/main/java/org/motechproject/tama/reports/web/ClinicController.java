@@ -32,7 +32,7 @@ public class ClinicController {
         clinicService.save(new ClinicRequestMapper(clinicRequest).map());
     }
 
-    @RequestMapping(value = "update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody ClinicRequest clinicRequest) {
         logger.info("Updating clinic");

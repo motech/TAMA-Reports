@@ -39,7 +39,7 @@ public class ClinicianController {
         clinicianService.save(new ClinicianRequestMapper(clinicianRequest).map());
     }
 
-    @RequestMapping(value = "update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody ClinicianRequest clinicianRequest) {
         logger.info("Updating clinician");
