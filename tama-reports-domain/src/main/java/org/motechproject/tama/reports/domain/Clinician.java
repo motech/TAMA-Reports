@@ -34,9 +34,19 @@ public class Clinician {
     @Column(name = "clinic_id")
     private String clinicId;
 
+    @NotNull
+    @Column(name = "user_name")
+    private String userName;
+
+    @NotNull
+    @Column(name = "clinician_name")
+    private String name;
+
     public void merge(Clinician clinician) {
         setContactNumber(clinician.getContactNumber());
         setAlternateNumber(clinician.getAlternateNumber());
         setRole(clinician.getRole());
+        setUserName(clinician.getUserName());
+        setName(clinician.getName());
     }
 }

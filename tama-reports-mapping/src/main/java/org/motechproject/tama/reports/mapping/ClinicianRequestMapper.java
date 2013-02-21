@@ -19,6 +19,8 @@ public class ClinicianRequestMapper implements Mapper<Clinician> {
         clinician.setContactNumber(clinicianRequest.getContactNumber());
         clinician.setAlternateNumber(clinicianRequest.getAlternateNumber());
         clinician.setRole(clinicianRequest.getRole());
+        clinician.setUserName(clinicianRequest.getUserName());
+        clinician.setName(clinicianRequest.getName());
         return clinician;
     }
 }

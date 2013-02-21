@@ -30,6 +30,8 @@ create table tama_reports.clinician (
     id serial,
     clinician_id varchar(100),
     clinic_id varchar(100),
+    clinician_name varchar(100),
+    user_name varchar(100),
     contact_number varchar(20),
     alternate_number varchar(20),
     role varchar(50)

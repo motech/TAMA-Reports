@@ -15,4 +15,6 @@ public class ClinicianRequest implements Serializable {
     private String contactNumber;
     private String alternateNumber;
     private String role;
+    private String userName;
+    private String name;
 }

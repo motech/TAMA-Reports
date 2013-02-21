@@ -43,4 +43,22 @@ public class ClinicianTest {
         mergedClinician.merge(clinician);
         assertEquals("newRole", mergedClinician.getRole());
     }
+
+    @Test
+    public void shouldMergeClinicianUserName() {
+        clinician.setUserName("userName");
+
+        assertNull(mergedClinician.getUserName());
+        mergedClinician.merge(clinician);
+        assertEquals("userName", mergedClinician.getUserName());
+    }
+
+    @Test
+    public void shouldMergeClinicianName() {
+        clinician.setName("name");
+
+        assertNull(mergedClinician.getName());
+        mergedClinician.merge(clinician);
+        assertEquals("name", mergedClinician.getName());
+    }
 }

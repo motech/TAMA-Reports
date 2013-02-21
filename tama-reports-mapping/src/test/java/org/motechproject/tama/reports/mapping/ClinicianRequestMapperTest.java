@@ -20,6 +20,8 @@ public class ClinicianRequestMapperTest {
         clinicianRequest.setContactNumber("contactNumber");
         clinicianRequest.setAlternateNumber("alternateNumber");
         clinicianRequest.setRole("role");
+        clinicianRequest.setUserName("userName");
+        clinicianRequest.setName("name");
         clinicianRequestMapper = new ClinicianRequestMapper(clinicianRequest);
     }
 
@@ -51,5 +53,17 @@ public class ClinicianRequestMapperTest {
     public void shouldMapRole() {
         Clinician clinician = clinicianRequestMapper.map();
         assertEquals(clinicianRequest.getRole(), clinician.getRole());
+    }
+
+    @Test
+    public void shouldMapUserName() {
+        Clinician clinician = clinicianRequestMapper.map();
+        assertEquals(clinicianRequest.getUserName(), clinician.getUserName());
+    }
+
+    @Test
+    public void shouldMapName() {
+        Clinician clinician = clinicianRequestMapper.map();
+        assertEquals(clinicianRequest.getName(), clinician.getName());
     }
 }
