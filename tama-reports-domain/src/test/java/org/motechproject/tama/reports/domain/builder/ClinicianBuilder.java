@@ -8,6 +8,8 @@ public class ClinicianBuilder {
         Clinician clinician = new Clinician();
         clinician.setClinicId("clinicId");
         clinician.setClinicianId("clinicianId");
+        clinician.setUserName("userName");
+        clinician.setName("name");
         return clinician;
     }
 }
