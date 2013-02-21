@@ -16,6 +16,7 @@ public class ClinicRequestMapper implements Mapper<Clinic> {
         Clinic clinic = new Clinic();
         clinic.setClinicName(clinicRequest.getClinicName());
         clinic.setClinicId(clinicRequest.getClinicId());
+        clinic.setCityName(clinicRequest.getCityName());
         return clinic;
     }
 }

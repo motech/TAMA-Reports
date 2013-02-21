@@ -25,7 +25,13 @@ public class Clinic {
     @Column(name = "clinic_name")
     private String clinicName;
 
+    @NotNull
+    @Column(name = "city_name")
+    private String cityName;
+
+
     public void merge(Clinic clinic) {
         this.setClinicName(clinic.getClinicName());
+        this.setCityName(clinic.getCityName());
     }
 }

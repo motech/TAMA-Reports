@@ -22,7 +22,8 @@ create table tama_reports.patient (
 create table tama_reports.clinic (
     id serial,
     clinic_id varchar(100),
-    clinic_name varchar(100)
+    clinic_name varchar(100),
+    city_name varchar(100)
 );
 
 create table tama_reports.clinician (

@@ -9,6 +9,7 @@ public class ClinicBuilder {
         Clinic clinic = new Clinic();
         clinic.setClinicId("clinicId");
         clinic.setClinicName("clinicName");
+        clinic.setCityName("cityName");
         return clinic;
     }
 }
