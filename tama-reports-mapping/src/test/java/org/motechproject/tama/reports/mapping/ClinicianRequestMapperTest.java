@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ClinicianRequestMapperTest {
 
-    private ClinicianRequestMapper clinicianRequestMapper;
+    private RequestMapper<ClinicianRequest, Clinician> clinicianRequestMapper;
     private ClinicianRequest clinicianRequest;
 
     @Before
@@ -22,48 +22,48 @@ public class ClinicianRequestMapperTest {
         clinicianRequest.setRole("role");
         clinicianRequest.setUserName("userName");
         clinicianRequest.setName("name");
-        clinicianRequestMapper = new ClinicianRequestMapper(clinicianRequest);
+        clinicianRequestMapper = new RequestMapper<>();
     }
 
     @Test
     public void shouldMapClinicianId() {
-        Clinician clinician = clinicianRequestMapper.map();
+        Clinician clinician = clinicianRequestMapper.map(clinicianRequest, Clinician.class);
         assertEquals(clinicianRequest.getClinicianId(), clinician.getClinicianId());
     }
 
     @Test
     public void shouldMapClinicId() {
-        Clinician clinician = clinicianRequestMapper.map();
+        Clinician clinician = clinicianRequestMapper.map(clinicianRequest, Clinician.class);
         assertEquals(clinicianRequest.getClinicId(), clinician.getClinicId());
     }
 
     @Test
     public void shouldMapContactNumber() {
-        Clinician clinician = clinicianRequestMapper.map();
+        Clinician clinician = clinicianRequestMapper.map(clinicianRequest, Clinician.class);
         assertEquals(clinicianRequest.getContactNumber(), clinician.getContactNumber());
     }
 
     @Test
     public void shouldMapAlternateNumber() {
-        Clinician clinician = clinicianRequestMapper.map();
+        Clinician clinician = clinicianRequestMapper.map(clinicianRequest, Clinician.class);
         assertEquals(clinicianRequest.getAlternateNumber(), clinician.getAlternateNumber());
     }
 
     @Test
     public void shouldMapRole() {
-        Clinician clinician = clinicianRequestMapper.map();
+        Clinician clinician = clinicianRequestMapper.map(clinicianRequest, Clinician.class);
         assertEquals(clinicianRequest.getRole(), clinician.getRole());
     }
 
     @Test
     public void shouldMapUserName() {
-        Clinician clinician = clinicianRequestMapper.map();
+        Clinician clinician = clinicianRequestMapper.map(clinicianRequest, Clinician.class);
         assertEquals(clinicianRequest.getUserName(), clinician.getUserName());
     }
 
     @Test
     public void shouldMapName() {
-        Clinician clinician = clinicianRequestMapper.map();
+        Clinician clinician = clinicianRequestMapper.map(clinicianRequest, Clinician.class);
         assertEquals(clinicianRequest.getName(), clinician.getName());
     }
 }

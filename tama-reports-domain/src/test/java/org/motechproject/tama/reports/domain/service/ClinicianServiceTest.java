@@ -7,6 +7,9 @@ import org.motechproject.tama.reports.domain.Clinician;
 import org.motechproject.tama.reports.domain.builder.ClinicianBuilder;
 import org.motechproject.tama.reports.domain.repository.AllClinicians;
 
+import java.util.List;
+
+import static java.util.Arrays.asList;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -26,23 +29,43 @@ public class ClinicianServiceTest {
 
     @Test
     public void shouldSaveClinician() {
-        Clinician clinician = ClinicianBuilder.validClinician();
+        Clinician clinician = new ClinicianBuilder().build();
         clinicianService.save(clinician);
         verify(allClinicians).save(clinician);
     }
 
     @Test
+    public void shouldSaveAllClinicians() {
+        List<Clinician> clinicians = asList(
+                new ClinicianBuilder().build(),
+                new ClinicianBuilder().build()
+        );
+        clinicianService.save(clinicians);
+        verify(allClinicians).save(clinicians);
+    }
+
+    @Test
     public void shouldUpdateClinician() {
-        Clinician oldClinician = ClinicianBuilder.validClinician();
-        Clinician newClinician = ClinicianBuilder.validClinician();
-        newClinician.setContactNumber("contactNumber");
-        newClinician.setAlternateNumber("alternateNumber");
-        newClinician.setRole("role");
+        Clinician oldClinician = new ClinicianBuilder().build();
+        Clinician newClinician = new ClinicianBuilder().withContactNumber("contactNumber").withAlternateNumber("alternateNumber").withRole("role").build();
 
         when(allClinicians.findByClinicianId(oldClinician.getClinicianId())).thenReturn(oldClinician);
         clinicianService.update(oldClinician);
 
         oldClinician.merge(newClinician);
         verify(allClinicians).save(oldClinician);
+    }
+
+    @Test
+    public void shouldBeIdempotentOnUpdate() {
+        List<Clinician> oldClinicians = asList(new ClinicianBuilder().build());
+        List<Clinician> newClinician = asList(new ClinicianBuilder().withId(oldClinicians.get(0).getClinicianId()).withContactNumber("contactNumber").withAlternateNumber("alternateNumber").withRole("role").build());
+
+        when(allClinicians.findByClinicianIdIn(asList(oldClinicians.get(0).getClinicianId()))).thenReturn(oldClinicians);
+
+        clinicianService.update(newClinician);
+
+        verify(allClinicians).delete(oldClinicians);
+        verify(allClinicians).save(newClinician);
     }
 }

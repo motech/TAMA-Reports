@@ -2,8 +2,9 @@ package org.motechproject.tama.reports.web;
 
 import org.apache.log4j.Logger;
 import org.motechproject.tama.reports.contract.ClinicRequest;
+import org.motechproject.tama.reports.domain.Clinic;
 import org.motechproject.tama.reports.domain.service.ClinicService;
-import org.motechproject.tama.reports.mapping.ClinicRequestMapper;
+import org.motechproject.tama.reports.mapping.RequestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,14 +30,14 @@ public class ClinicController {
     @ResponseStatus(HttpStatus.OK)
     public void save(@RequestBody ClinicRequest clinicRequest) {
         logger.info("Creating clinic");
-        clinicService.save(new ClinicRequestMapper(clinicRequest).map());
+        clinicService.save(new RequestMapper<ClinicRequest, Clinic>().map(clinicRequest, Clinic.class));
     }
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody ClinicRequest clinicRequest) {
         logger.info("Updating clinic");
-        clinicService.update(new ClinicRequestMapper(clinicRequest).map());
+        clinicService.update(new RequestMapper<ClinicRequest, Clinic>().map(clinicRequest, Clinic.class));
     }
 }
 

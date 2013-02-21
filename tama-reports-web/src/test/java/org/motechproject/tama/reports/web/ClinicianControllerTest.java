@@ -4,10 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.ClinicianRequest;
+import org.motechproject.tama.reports.domain.Clinician;
 import org.motechproject.tama.reports.domain.export.ReportParameters;
 import org.motechproject.tama.reports.domain.export.ReportingService;
 import org.motechproject.tama.reports.domain.service.ClinicianService;
-import org.motechproject.tama.reports.mapping.ClinicianRequestMapper;
 import org.springframework.http.MediaType;
 
 import java.io.OutputStream;
@@ -20,6 +20,7 @@ import static org.springframework.test.web.server.request.MockMvcRequestBuilders
 import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.server.setup.MockMvcBuilders.standaloneSetup;
+
 
 public class ClinicianControllerTest extends BaseControllerTest {
 
@@ -44,11 +45,11 @@ public class ClinicianControllerTest extends BaseControllerTest {
                 .build()
                 .perform(post("/clinician").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
-        verify(clinicianService).save(new ClinicianRequestMapper(request).map());
+        verify(clinicianService).save(any(Clinician.class));
     }
 
     @Test
-    public void shouldUpdateClinic() throws Exception {
+    public void shouldUpdateClinician() throws Exception {
         ClinicianRequest request = new ClinicianRequest();
         request.setClinicId("clinicId");
 
@@ -56,7 +57,7 @@ public class ClinicianControllerTest extends BaseControllerTest {
                 .build()
                 .perform(put("/clinician").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
-        verify(clinicianService).update(new ClinicianRequestMapper(request).map());
+        verify(clinicianService).update(any(Clinician.class));
     }
 
     @Test
