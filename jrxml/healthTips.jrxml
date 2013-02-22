@@ -46,12 +46,12 @@
 		</box>
 	</style>
 	<subDataset name="HealthTips" uuid="31a3c47c-8f5f-4910-b3a0-95f17ef89648">
-		<parameter name="patient_id" class="java.lang.String"/>
-		<parameter name="clinic_name" class="java.lang.String"/>
-		<parameter name="start_date" class="java.lang.String"/>
-		<parameter name="end_date" class="java.lang.String"/>
+		<parameter name="PATIENT_ID" class="java.lang.String"/>
+		<parameter name="CLINIC_NAME" class="java.lang.String"/>
+		<parameter name="START_DATE" class="java.lang.String"/>
+		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select *, to_char(a.call_date, 'dd/MM/yyyy') as formatted_call_date from tama_reports.health_tips a, tama_reports.clinic b, tama_reports.patient c where c.patient_id like $P{patient_id} and b.clinic_name ilike $P{clinic_name} and a.call_date >= to_date($P{start_date}, 'dd/MM/yyyy') and a.call_date <= to_date($P{end_date}, 'dd/MM/yyyy');]]>
+			<![CDATA[select *, to_char(a.call_date, 'dd/MM/yyyy') as formatted_call_date from tama_reports.health_tips a, tama_reports.clinic b, tama_reports.patient c where c.patient_id like $P{PATIENT_ID} and b.clinic_name ilike $P{CLINIC_NAME} and a.call_date >= to_date($P{START_DATE}, 'dd/MM/yyyy') and a.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		</queryString>
 		<field name="id" class="java.lang.Long"/>
 		<field name="patient_document_id" class="java.lang.String"/>
@@ -63,6 +63,7 @@
 		<field name="total_health_tips_access_duration" class="java.lang.Long"/>
 		<field name="clinic_id" class="java.lang.String"/>
 		<field name="clinic_name" class="java.lang.String"/>
+		<field name="city_name" class="java.lang.String"/>
 		<field name="patient_id" class="java.lang.String"/>
 		<field name="date_of_birth" class="java.sql.Date"/>
 		<field name="gender" class="java.lang.String"/>
@@ -72,7 +73,7 @@
 		<field name="ivr_pass_code" class="java.lang.String"/>
 		<field name="ivr_language" class="java.lang.String"/>
 		<field name="call_preference" class="java.lang.String"/>
-		<field name="best_call_time" class="java.lang.String"/>
+		<field name="best_call_time" class="java.sql.Time"/>
 		<field name="receive_otc_advice" class="java.lang.String"/>
 		<field name="receive_appointment_reminder" class="java.lang.String"/>
 		<field name="registered_on" class="java.sql.Timestamp"/>
@@ -80,10 +81,10 @@
 		<field name="notes" class="java.lang.String"/>
 		<field name="formatted_call_date" class="java.lang.String"/>
 	</subDataset>
-	<parameter name="patient_id" class="java.lang.String"/>
-	<parameter name="clinic_name" class="java.lang.String"/>
-	<parameter name="start_date" class="java.lang.String"/>
-	<parameter name="end_date" class="java.lang.String"/>
+	<parameter name="PATIENT_ID" class="java.lang.String"/>
+	<parameter name="CLINIC_NAME" class="java.lang.String"/>
+	<parameter name="START_DATE" class="java.lang.String"/>
+	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[select count(*) from tama_reports.health_tips;]]>
 	</queryString>
@@ -116,17 +117,17 @@
 				<reportElement uuid="11c7ba61-ad34-4539-b2d8-ab7e7e3c67ad" key="table 1" style="table 1" x="0" y="0" width="360" height="80"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="HealthTips" uuid="12515dab-8911-4db8-a32e-05c9a9ab5659">
-						<datasetParameter name="patient_id">
-							<datasetParameterExpression><![CDATA[$P{patient_id}]]></datasetParameterExpression>
+						<datasetParameter name="PATIENT_ID">
+							<datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="clinic_name">
-							<datasetParameterExpression><![CDATA[$P{clinic_name}]]></datasetParameterExpression>
+						<datasetParameter name="CLINIC_NAME">
+							<datasetParameterExpression><![CDATA[$P{CLINIC_NAME}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="start_date">
-							<datasetParameterExpression><![CDATA[$P{start_date}]]></datasetParameterExpression>
+						<datasetParameter name="START_DATE">
+							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="end_date">
-							<datasetParameterExpression><![CDATA[$P{end_date}]]></datasetParameterExpression>
+						<datasetParameter name="END_DATE">
+							<datasetParameterExpression><![CDATA[$P{END_DATE}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>

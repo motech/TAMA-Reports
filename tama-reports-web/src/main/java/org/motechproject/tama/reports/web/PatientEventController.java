@@ -50,9 +50,9 @@ public class PatientEventController {
         parameters
                 .setClinicName(clinicName)
                 .setPatientId(patientId)
-                .setEventName(eventName)
                 .setStartDate(startDate)
                 .setEndDate(endDate);
+        parameters.setEventName(eventName);
         reportingService.export(parameters, outputStream, "patientEvent.jasper");
     }
 }

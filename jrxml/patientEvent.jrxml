@@ -66,15 +66,15 @@
 		</box>
 	</style>
 	<subDataset name="patientEventDataSet" uuid="0736b92c-3648-4134-891a-434fd4102279">
-		<parameter name="clinic_name" class="java.lang.String"/>
-		<parameter name="patient_id" class="java.lang.String"/>
-		<parameter name="status" class="java.lang.String"/>
-		<parameter name="from_date" class="java.lang.String"/>
-		<parameter name="end_date" class="java.lang.String"/>
+		<parameter name="CLINIC_NAME" class="java.lang.String"/>
+		<parameter name="PATIENT_ID" class="java.lang.String"/>
+		<parameter name="STATUS" class="java.lang.String"/>
+		<parameter name="START_DATE" class="java.lang.String"/>
+		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and c.patient_id ilike $P{patient_id} and b.clinic_name ilike $P{clinic_name} and a.event_name like $P{status} and ($P{from_date} = '' or a.date_time::date >= to_date($P{from_date}, 'dd/MM/yyyy')) and ($P{end_date} = '' or a.date_time::date <= to_date($P{end_date}, 'dd/MM/yyyy')) order by (b.clinic_name,c.patient_id,a.date_time);]]>
+			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and c.patient_id ilike $P{PATIENT_ID} and b.clinic_name ilike $P{CLINIC_NAME} and a.event_name like $P{STATUS} and ($P{START_DATE} = '' or a.date_time::date >= to_date($P{START_DATE}, 'dd/MM/yyyy')) and ($P{END_DATE} = '' or a.date_time::date <= to_date($P{END_DATE}, 'dd/MM/yyyy')) order by (b.clinic_name,c.patient_id,a.date_time);]]>
 		</queryString>
-		<field name="id" class="java.lang.Integer"/>
+		<field name="id" class="java.lang.Long"/>
 		<field name="patient_document_id" class="java.lang.String"/>
 		<field name="event_name" class="java.lang.String"/>
 		<field name="new_value" class="java.lang.String"/>
@@ -82,25 +82,28 @@
 		<field name="performed_by" class="java.lang.String"/>
 		<field name="clinic_id" class="java.lang.String"/>
 		<field name="clinic_name" class="java.lang.String"/>
+		<field name="city_name" class="java.lang.String"/>
 		<field name="patient_id" class="java.lang.String"/>
 		<field name="date_of_birth" class="java.sql.Date"/>
 		<field name="gender" class="java.lang.String"/>
+		<field name="morning_pill_time" class="java.sql.Time"/>
+		<field name="evening_pill_time" class="java.sql.Time"/>
 		<field name="travel_time_to_clinic" class="java.lang.String"/>
 		<field name="ivr_pass_code" class="java.lang.String"/>
 		<field name="ivr_language" class="java.lang.String"/>
 		<field name="call_preference" class="java.lang.String"/>
-		<field name="best_call_time" class="java.lang.String"/>
+		<field name="best_call_time" class="java.sql.Time"/>
 		<field name="receive_otc_advice" class="java.lang.String"/>
 		<field name="receive_appointment_reminder" class="java.lang.String"/>
 		<field name="registered_on" class="java.sql.Timestamp"/>
 		<field name="status" class="java.lang.String"/>
 		<field name="notes" class="java.lang.String"/>
 	</subDataset>
-	<parameter name="clinic_name" class="java.lang.String"/>
-	<parameter name="patient_id" class="java.lang.String"/>
-	<parameter name="status" class="java.lang.String"/>
-	<parameter name="from_date" class="java.lang.String"/>
-	<parameter name="end_date" class="java.lang.String"/>
+	<parameter name="CLINIC_NAME" class="java.lang.String"/>
+	<parameter name="PATIENT_ID" class="java.lang.String"/>
+	<parameter name="STATUS" class="java.lang.String"/>
+	<parameter name="START_DATE" class="java.lang.String"/>
+	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[select * from tama_reports.patient_event;]]>
 	</queryString>
@@ -137,20 +140,20 @@
 				<reportElement uuid="1b9712e2-7189-4692-afc1-dfbd74542702" key="table 2" style="table 2" x="38" y="12" width="360" height="80"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="patientEventDataSet" uuid="b3c26ea8-6ce9-4b16-8f32-4934724bde39">
-						<datasetParameter name="clinic_name">
-							<datasetParameterExpression><![CDATA[$P{clinic_name}]]></datasetParameterExpression>
+						<datasetParameter name="CLINIC_NAME">
+							<datasetParameterExpression><![CDATA[$P{CLINIC_NAME}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="patient_id">
-							<datasetParameterExpression><![CDATA[$P{patient_id}]]></datasetParameterExpression>
+						<datasetParameter name="PATIENT_ID">
+							<datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="status">
-							<datasetParameterExpression><![CDATA[$P{status}]]></datasetParameterExpression>
+						<datasetParameter name="STATUS">
+							<datasetParameterExpression><![CDATA[$P{STATUS}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="from_date">
-							<datasetParameterExpression><![CDATA[$P{from_date}]]></datasetParameterExpression>
+						<datasetParameter name="START_DATE">
+							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="end_date">
-							<datasetParameterExpression><![CDATA[$P{end_date}]]></datasetParameterExpression>
+						<datasetParameter name="END_DATE">
+							<datasetParameterExpression><![CDATA[$P{END_DATE}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>

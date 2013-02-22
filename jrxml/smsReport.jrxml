@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="smsReport" language="groovy" pageWidth="595" pageHeight="7200" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4d9928e-b7c8-411e-85ce-77ea68ff12bd">
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="smsReport" uuid="c3f3e85d-9bba-4ac7-a0b8-e35bb9d1d865">
+		<parameter name="PATIENT_ID" class="java.lang.String"/>
+		<parameter name="CLINIC_NAME" class="java.lang.String"/>
+		<parameter name="START_DATE" class="java.lang.String"/>
+		<parameter name="END_DATE" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select * from tama_reports.sms_log a , tama_reports.patient b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='O' and a.external_id=patient_document_id and c.clinic_name ilike $P{CLINIC_NAME} and b.patient_id like $P{PATIENT_ID} and a.time_stamp >= to_date($P{START_DATE}, 'dd/MM/yyyy') and a.time_stamp <= to_date($P{END_DATE}, 'dd/MM/yyyy') ]]>
+		</queryString>
+		<field name="id" class="java.lang.Long"/>
+		<field name="external_id" class="java.lang.String"/>
+		<field name="sms_type" class="java.lang.String"/>
+		<field name="content" class="java.lang.String"/>
+		<field name="recipient_number" class="java.lang.String"/>
+		<field name="time_stamp" class="java.sql.Timestamp"/>
+		<field name="patient_id" class="java.lang.String"/>
+		<field name="patient_document_id" class="java.lang.String"/>
+		<field name="date_of_birth" class="java.sql.Date"/>
+		<field name="gender" class="java.lang.String"/>
+		<field name="morning_pill_time" class="java.sql.Time"/>
+		<field name="evening_pill_time" class="java.sql.Time"/>
+		<field name="clinic_id" class="java.lang.String"/>
+		<field name="travel_time_to_clinic" class="java.lang.String"/>
+		<field name="ivr_pass_code" class="java.lang.String"/>
+		<field name="ivr_language" class="java.lang.String"/>
+		<field name="call_preference" class="java.lang.String"/>
+		<field name="best_call_time" class="java.sql.Time"/>
+		<field name="receive_otc_advice" class="java.lang.String"/>
+		<field name="receive_appointment_reminder" class="java.lang.String"/>
+		<field name="registered_on" class="java.sql.Timestamp"/>
+		<field name="status" class="java.lang.String"/>
+		<field name="notes" class="java.lang.String"/>
+		<field name="clinic_name" class="java.lang.String"/>
+		<field name="city_name" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="PATIENT_ID" class="java.lang.String"/>
+	<parameter name="CLINIC_NAME" class="java.lang.String"/>
+	<parameter name="START_DATE" class="java.lang.String"/>
+	<parameter name="END_DATE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<summary>
+		<band height="86" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="82aed4da-e89a-41ad-b33e-6b398fe6d029" key="table" style="table" x="0" y="0" width="360" height="80"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="smsReport" uuid="fc3a69d8-99de-46a0-9f9f-d69c5d3bbafa">
+						<datasetParameter name="PATIENT_ID">
+							<datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CLINIC_NAME">
+							<datasetParameterExpression><![CDATA[$P{CLINIC_NAME}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="START_DATE">
+							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="END_DATE">
+							<datasetParameterExpression><![CDATA[$P{END_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="0ca885da-27f2-4dcd-884e-17782c788edb">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement uuid="587c086a-ab86-4042-8cd4-82f56cc0245e" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Patient Id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement uuid="3d6ccf2b-b541-433b-917d-0a5cbbe1e2d9" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="bff820bd-0aba-4a81-9641-6fc7f5e6fae4">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement uuid="9cf7bd49-a3c4-4099-85ad-81c49878210b" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Recipient Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement uuid="f1293c0a-8f78-404d-8a8f-c48d82a9e4ca" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{recipient_number}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="214eb7db-be84-491e-a19d-df9910a37ced">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement uuid="e231104a-eafa-40a4-bab0-1bc4eb16b36c" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Date and time of sending SMS (dd/mm/yyyy hh:mm)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement uuid="dc418036-04db-46d3-a1f3-52e857defe95" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{time_stamp}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="e3cba993-5f8a-416e-aaf3-141f3d8e1164">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement uuid="f0a6a17a-f7db-4434-b6f4-9039c288167b" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Message]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement uuid="56698671-2604-488d-a7af-c70596dce82b" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{content}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
