@@ -10,6 +10,9 @@ public class ClinicBuilder {
         clinic.setClinicId("clinicId");
         clinic.setClinicName("clinicName");
         clinic.setCityName("cityName");
+        clinic.setGreetingName("greeting");
+        clinic.setAddress("address");
+        clinic.setContactNumber("09898977679");
         return clinic;
     }
 }

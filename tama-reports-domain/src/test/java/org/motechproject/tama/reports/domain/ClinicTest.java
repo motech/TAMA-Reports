@@ -33,4 +33,25 @@ public class ClinicTest {
         mergedClinic.merge(clinic);
         assertEquals(clinic.getCityName(), mergedClinic.getCityName());
     }
+
+    @Test
+    public void shouldMergeGreeting() {
+        assertNull(mergedClinic.getGreetingName());
+        mergedClinic.merge(clinic);
+        assertEquals(clinic.getGreetingName(), mergedClinic.getGreetingName());
+    }
+
+    @Test
+    public void shouldMergeAddress() {
+        assertNull(mergedClinic.getAddress());
+        mergedClinic.merge(clinic);
+        assertEquals(clinic.getAddress(), mergedClinic.getAddress());
+    }
+
+    @Test
+    public void shouldMergeContactNumber() {
+        assertNull(mergedClinic.getContactNumber());
+        mergedClinic.merge(clinic);
+        assertEquals(clinic.getContactNumber(), mergedClinic.getContactNumber());
+    }
 }

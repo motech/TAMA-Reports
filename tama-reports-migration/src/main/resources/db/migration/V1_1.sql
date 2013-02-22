@@ -23,7 +23,10 @@ create table tama_reports.clinic (
     id serial PRIMARY KEY,
     clinic_id varchar(100),
     clinic_name varchar(100),
-    city_name varchar(100)
+    city_name varchar(100),
+    greeting_name varchar(100),
+    address varchar(200),
+    contact_number varchar(20)
 );
 
 create table tama_reports.clinician (
