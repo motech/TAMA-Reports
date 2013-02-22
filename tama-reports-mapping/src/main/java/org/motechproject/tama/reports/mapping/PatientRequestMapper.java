@@ -16,22 +16,8 @@ public class PatientRequestMapper implements Mapper<Patient> {
 
     @Override
     public Patient map() {
-        Patient patient = new Patient();
-        patient.setPatientId(request.getPatientId());
-        patient.setPatientDocumentId(request.getPatientDocumentId());
+        Patient patient = new RequestMapper<PatientRequest, Patient>().map(request, Patient.class, new String[]{"bestCallTime"});
         setBestCallTime(patient);
-        patient.setIvrLanguage(request.getIvrLanguage());
-        patient.setReceiveAppointmentReminder(request.getReceiveAppointmentReminder());
-        patient.setReceiveOTCAdvice(request.getReceiveOTCAdvice());
-        patient.setCallPreference(request.getCallPreference());
-        patient.setClinicId(request.getClinicId());
-        patient.setDateOfBirth(request.getDateOfBirth());
-        patient.setRegisteredOn(request.getRegisteredOn());
-        patient.setGender(request.getGender());
-        patient.setIvrPassCode(request.getIvrPassCode());
-        patient.setStatus(request.getStatus());
-        patient.setTravelTimeToClinic(request.getTravelTimeToClinic());
-        patient.setNotes(request.getNotes());
         return patient;
     }
 

@@ -18,6 +18,16 @@ public class ClinicianTest {
     }
 
     @Test
+    public void shouldMergeType() {
+        String type = "type";
+        clinician.setType(type);
+
+        assertNull(mergedClinician.getType());
+        mergedClinician.merge(clinician);
+        assertEquals(type, mergedClinician.getType());
+    }
+
+    @Test
     public void shouldMergeContactNumber() {
         clinician.setContactNumber("newContactNumber");
 

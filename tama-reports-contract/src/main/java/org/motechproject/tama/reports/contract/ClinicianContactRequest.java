@@ -18,6 +18,6 @@ public class ClinicianContactRequest implements Serializable {
     }
 
     public void setClinicianId(String id) {
-        setId(id);
+        this.setId(id);
     }
 }

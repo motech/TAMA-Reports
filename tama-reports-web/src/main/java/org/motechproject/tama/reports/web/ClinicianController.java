@@ -2,10 +2,9 @@ package org.motechproject.tama.reports.web;
 
 import org.apache.log4j.Logger;
 import org.motechproject.tama.reports.contract.ClinicianRequest;
-import org.motechproject.tama.reports.domain.Clinician;
 import org.motechproject.tama.reports.domain.export.ReportingService;
 import org.motechproject.tama.reports.domain.service.ClinicianService;
-import org.motechproject.tama.reports.mapping.RequestMapper;
+import org.motechproject.tama.reports.mapping.ClinicianMapper;
 import org.motechproject.tama.reports.web.excel.ClinicianParameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,14 +36,15 @@ public class ClinicianController {
     @ResponseStatus(HttpStatus.OK)
     public void save(@RequestBody ClinicianRequest clinicianRequest) {
         logger.info("Creating clinician");
-        clinicianService.save(new RequestMapper<ClinicianRequest, Clinician>().map(clinicianRequest, Clinician.class));
+
+        clinicianService.save(new ClinicianMapper(clinicianRequest).map());
     }
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody ClinicianRequest clinicianRequest) {
         logger.info("Updating clinician");
-        clinicianService.update(new RequestMapper<ClinicianRequest, Clinician>().map(clinicianRequest, Clinician.class));
+        clinicianService.update(new ClinicianMapper(clinicianRequest).map());
     }
 
     @RequestMapping(value = "report", method = RequestMethod.GET)

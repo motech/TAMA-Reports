@@ -6,7 +6,7 @@ import org.motechproject.tama.reports.domain.PatientEvent;
 
 import static org.apache.commons.lang.StringUtils.isNotBlank;
 
-public class PatientEventRequestMapper {
+public class PatientEventRequestMapper extends RequestMapper<PatientEventRequest, PatientEvent> {
 
     private PatientEventRequest request;
 
@@ -15,13 +15,10 @@ public class PatientEventRequestMapper {
     }
 
     public PatientEvent map() {
-        PatientEvent patientEvent = new PatientEvent();
-        patientEvent.setPatientDocumentId(request.getPatientDocumentId());
-        patientEvent.setEventName(nonEmptyStringValue(request.getEventName()));
-        patientEvent.setDateTime(request.getDateTime());
-        patientEvent.setNewValue(nonEmptyStringValue(request.getNewValue()));
-        patientEvent.setPerformedBy(nonEmptyStringValue(request.getPerformedBy()));
-        return patientEvent;
+        PatientEvent event = super.map(request, PatientEvent.class);
+        event.setEventName(nonEmptyStringValue(request.getEventName()));
+        event.setNewValue(nonEmptyStringValue(request.getNewValue()));
+        return event;
     }
 
     private String nonEmptyStringValue(String value) {

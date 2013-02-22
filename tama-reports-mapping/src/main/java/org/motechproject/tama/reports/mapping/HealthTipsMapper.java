@@ -4,7 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.motechproject.tama.reports.contract.HealthTipsRequest;
 import org.motechproject.tama.reports.domain.HealthTips;
 
-public class HealthTipsMapper {
+public class HealthTipsMapper implements Mapper<HealthTips> {
 
     private HealthTipsRequest healthTipsRequest;
 

@@ -38,6 +38,9 @@ public class Clinician {
     @Column(name = "user_name")
     private String userName;
 
+    @Column(name = "type")
+    private String type;
+
     @NotNull
     @Column(name = "clinician_name")
     private String name;
@@ -46,6 +49,7 @@ public class Clinician {
         setContactNumber(clinician.getContactNumber());
         setAlternateNumber(clinician.getAlternateNumber());
         setRole(clinician.getRole());
+        setType(clinician.getType());
         setUserName(clinician.getUserName());
         setName(clinician.getName());
     }

@@ -4,10 +4,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.ClinicRequest;
+import org.motechproject.tama.reports.domain.Clinic;
 import org.motechproject.tama.reports.domain.service.ClinicService;
-import org.motechproject.tama.reports.mapping.ClinicRequestMapper;
 import org.springframework.http.MediaType;
 
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
@@ -36,7 +37,7 @@ public class ClinicControllerTest extends BaseControllerTest {
                 .build()
                 .perform(post("/clinic").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
-        verify(clinicService).save(new ClinicRequestMapper(request).map());
+        verify(clinicService).save(any(Clinic.class));
     }
 
     @Test
@@ -48,6 +49,6 @@ public class ClinicControllerTest extends BaseControllerTest {
                 .build()
                 .perform(put("/clinic").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
-        verify(clinicService).update(new ClinicRequestMapper(request).map());
+        verify(clinicService).update(any(Clinic.class));
     }
 }

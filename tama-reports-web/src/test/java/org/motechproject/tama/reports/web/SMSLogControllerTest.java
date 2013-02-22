@@ -4,10 +4,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.SMSLogRequest;
+import org.motechproject.tama.reports.domain.SMSLog;
 import org.motechproject.tama.reports.domain.service.SMSLogService;
-import org.motechproject.tama.reports.mapping.SMSLogMapper;
 import org.springframework.http.MediaType;
 
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
@@ -34,6 +35,6 @@ public class SMSLogControllerTest extends BaseControllerTest {
                 .build()
                 .perform(post("/smsLog").contentType(MediaType.APPLICATION_JSON).body(getJSON(request).getBytes()))
                 .andExpect(status().isOk());
-        verify(smsLogService).save(new SMSLogMapper(request).map());
+        verify(smsLogService).save(any(SMSLog.class));
     }
 }

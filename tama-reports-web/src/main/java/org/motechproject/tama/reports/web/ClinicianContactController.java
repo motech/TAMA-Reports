@@ -2,9 +2,8 @@ package org.motechproject.tama.reports.web;
 
 import org.apache.log4j.Logger;
 import org.motechproject.tama.reports.contract.ClinicianContactRequest;
-import org.motechproject.tama.reports.domain.Clinician;
 import org.motechproject.tama.reports.domain.service.ClinicianService;
-import org.motechproject.tama.reports.mapping.RequestMapper;
+import org.motechproject.tama.reports.mapping.ClinicianContactMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,17 +31,13 @@ public class ClinicianContactController {
     @ResponseStatus(HttpStatus.OK)
     public void save(@RequestBody List<ClinicianContactRequest> clinicianContactsRequest) {
         logger.info("Creating clinician from clinicianContact");
-
-        String[] ignoreFields = {"id"};
-        clinicianService.save(new RequestMapper<ClinicianContactRequest, Clinician>().map(clinicianContactsRequest, Clinician.class, ignoreFields));
+        clinicianService.save(new ClinicianContactMapper(clinicianContactsRequest).map());
     }
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody List<ClinicianContactRequest> clinicianContactsRequest) {
         logger.info("Creating clinician from clinicianContact");
-
-        String[] ignoreFields = {"id"};
-        clinicianService.update(new RequestMapper<ClinicianContactRequest, Clinician>().map(clinicianContactsRequest, Clinician.class, ignoreFields));
+        clinicianService.update(new ClinicianContactMapper(clinicianContactsRequest).map());
     }
 }

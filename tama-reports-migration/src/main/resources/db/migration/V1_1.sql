@@ -1,5 +1,5 @@
 create table tama_reports.patient (
-    id serial,
+    id serial PRIMARY KEY,
     patient_id varchar(100),
     patient_document_id varchar(100),
     date_of_birth date,
@@ -20,25 +20,26 @@ create table tama_reports.patient (
 );
 
 create table tama_reports.clinic (
-    id serial,
+    id serial PRIMARY KEY,
     clinic_id varchar(100),
     clinic_name varchar(100),
     city_name varchar(100)
 );
 
 create table tama_reports.clinician (
-    id serial,
+    id serial PRIMARY KEY,
     clinician_id varchar(100),
     clinic_id varchar(100),
     clinician_name varchar(100),
     user_name varchar(100),
     contact_number varchar(20),
     alternate_number varchar(20),
+    type varchar(2),
     role varchar(50)
 );
 
 create table tama_reports.medical_history (
-    id serial,
+    id serial PRIMARY KEY,
 
     patient_id varchar(100),
     patient_document_id varchar(100),
@@ -135,7 +136,7 @@ create table tama_reports.medical_history (
 );
 
 create table tama_reports.patient_event (
-    id bigserial,
+    id bigserial PRIMARY KEY,
     patient_document_id varchar(100),
     event_name varchar(50),
     new_value text,
@@ -144,7 +145,7 @@ create table tama_reports.patient_event (
 );
 
 create table tama_reports.health_tips (
-    id bigserial,
+    id bigserial PRIMARY KEY,
     patient_document_id varchar(100),
     call_date date,
     call_made_by varchar(10),
@@ -155,7 +156,7 @@ create table tama_reports.health_tips (
 );
 
 create table tama_reports.sms_log (
-    id bigserial,
+    id bigserial PRIMARY KEY,
     external_id varchar(100),
     sms_type varchar(1),
     content text,

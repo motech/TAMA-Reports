@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.motechproject.tama.reports.contract.SMSLogRequest;
 import org.motechproject.tama.reports.domain.SMSLog;
 import org.motechproject.tama.reports.domain.service.SMSLogService;
+import org.motechproject.tama.reports.mapping.RequestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,6 +30,6 @@ public class SMSLogController {
     @ResponseStatus(HttpStatus.OK)
     public void save(@RequestBody SMSLogRequest request) {
         logger.info("Saving SMS Log");
-        smsLogService.save(new SMSLog());
+        smsLogService.save(new RequestMapper<SMSLogRequest, SMSLog>().map(request, SMSLog.class));
     }
 }
