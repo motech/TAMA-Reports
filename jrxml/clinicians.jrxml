@@ -75,7 +75,9 @@
        cn.alternate_number,
        cn.role
 FROM tama_reports.clinician cn
-JOIN tama_reports.clinic cl ON cl.clinic_id = cn.clinic_id;]]>
+JOIN tama_reports.clinic cl ON cl.clinic_id = cn.clinic_id
+where cn.type='C'
+Order by cl.clinic_name, cn.clinician_name;]]>
 		</queryString>
 		<field name="clinician_name" class="java.lang.String"/>
 		<field name="user_name" class="java.lang.String"/>
@@ -86,9 +88,9 @@ JOIN tama_reports.clinic cl ON cl.clinic_id = cn.clinic_id;]]>
 		<field name="role" class="java.lang.String"/>
 	</subDataset>
 	<queryString>
-		<![CDATA[select count(*) from tama_reports.clinician;]]>
+		<![CDATA[select 1 as dummy;]]>
 	</queryString>
-	<field name="count" class="java.lang.Long"/>
+	<field name="dummy" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
