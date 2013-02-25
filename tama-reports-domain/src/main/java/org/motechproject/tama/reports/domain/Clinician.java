@@ -34,7 +34,6 @@ public class Clinician {
     @Column(name = "clinic_id")
     private String clinicId;
 
-    @NotNull
     @Column(name = "user_name")
     private String userName;
 

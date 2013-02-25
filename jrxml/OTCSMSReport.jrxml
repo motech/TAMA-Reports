@@ -31,7 +31,7 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.sms_log a , tama_reports.patient b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='O' and a.external_id=patient_document_id and c.clinic_name ilike $P{CLINIC_NAME} and b.patient_id like $P{PATIENT_ID} and a.time_stamp >= to_date($P{START_DATE}, 'dd/MM/yyyy') and a.time_stamp <= to_date($P{END_DATE}, 'dd/MM/yyyy') ]]>
+			<![CDATA[select * from tama_reports.sms_log a , tama_reports.patient b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='O' and a.external_id=patient_document_id and c.clinic_name ilike $P{CLINIC_NAME} and b.patient_id like $P{PATIENT_ID} and a.time_stamp >= to_date($P{START_DATE}, 'dd/MM/yyyy') and a.time_stamp <= to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
 		</queryString>
 		<field name="id" class="java.lang.Long"/>
 		<field name="external_id" class="java.lang.String"/>
@@ -99,7 +99,7 @@
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30"/>
 						<jr:detailCell style="table_TD" height="20">
-							<textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 								<reportElement uuid="3d6ccf2b-b541-433b-917d-0a5cbbe1e2d9" x="0" y="0" width="90" height="20"/>
 								<textElement/>
 								<textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
@@ -116,7 +116,7 @@
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30"/>
 						<jr:detailCell style="table_TD" height="20">
-							<textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 								<reportElement uuid="f1293c0a-8f78-404d-8a8f-c48d82a9e4ca" x="0" y="0" width="90" height="20"/>
 								<textElement/>
 								<textFieldExpression><![CDATA[$F{recipient_number}]]></textFieldExpression>
@@ -133,7 +133,7 @@
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30"/>
 						<jr:detailCell style="table_TD" height="20">
-							<textField>
+							<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy hh:mm" isBlankWhenNull="true">
 								<reportElement uuid="dc418036-04db-46d3-a1f3-52e857defe95" x="0" y="0" width="90" height="20"/>
 								<textElement/>
 								<textFieldExpression><![CDATA[$F{time_stamp}]]></textFieldExpression>
@@ -150,7 +150,7 @@
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30"/>
 						<jr:detailCell style="table_TD" height="20">
-							<textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 								<reportElement uuid="56698671-2604-488d-a7af-c70596dce82b" x="0" y="0" width="90" height="20"/>
 								<textElement/>
 								<textFieldExpression><![CDATA[$F{content}]]></textFieldExpression>

@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.tama.reports.contract.ClinicianContactRequest;
+import org.motechproject.tama.reports.contract.ClinicianContactRequests;
 import org.motechproject.tama.reports.domain.Clinician;
 import org.motechproject.tama.reports.domain.service.ClinicianService;
 import org.springframework.http.MediaType;
@@ -38,7 +39,7 @@ public class ClinicianContactControllerTest extends BaseControllerTest {
 
         standaloneSetup(clinicianContactController)
                 .build()
-                .perform(post("/clinicianContact").contentType(MediaType.APPLICATION_JSON).body(getJSON(asList(request)).getBytes()))
+                .perform(post("/clinicianContact").contentType(MediaType.APPLICATION_JSON).body(getJSON(new ClinicianContactRequests(asList(request))).getBytes()))
                 .andExpect(status().isOk());
         verify(clinicianService).save(anyListOf(Clinician.class));
     }
@@ -52,7 +53,7 @@ public class ClinicianContactControllerTest extends BaseControllerTest {
 
         standaloneSetup(clinicianContactController)
                 .build()
-                .perform(put("/clinicianContact").contentType(MediaType.APPLICATION_JSON).body(getJSON(asList(request)).getBytes()))
+                .perform(put("/clinicianContact").contentType(MediaType.APPLICATION_JSON).body(getJSON(new ClinicianContactRequests(asList(request))).getBytes()))
                 .andExpect(status().isOk());
         verify(clinicianService).update(anyListOf(Clinician.class));
     }

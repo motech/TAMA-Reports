@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="smsReport" language="groovy" pageWidth="595" pageHeight="7200" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4d9928e-b7c8-411e-85ce-77ea68ff12bd">
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="smsReport" uuid="c3f3e85d-9bba-4ac7-a0b8-e35bb9d1d865">
+		<parameter name="CLINICIAN_NAME" class="java.lang.String"/>
+		<parameter name="CLINIC_NAME" class="java.lang.String"/>
+		<parameter name="START_DATE" class="java.lang.String"/>
+		<parameter name="END_DATE" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select * from tama_reports.sms_log a , tama_reports.clinician b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='C' and a.external_id=b.clinician_id and c.clinic_name ilike $P{CLINIC_NAME} and b.clinician_name like $P{CLINICIAN_NAME} and a.time_stamp >= to_date($P{START_DATE}, 'dd/MM/yyyy') and a.time_stamp <= to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
+		</queryString>
+		<field name="id" class="java.lang.Long"/>
+		<field name="external_id" class="java.lang.String"/>
+		<field name="sms_type" class="java.lang.String"/>
+		<field name="content" class="java.lang.String"/>
+		<field name="recipient_number" class="java.lang.String"/>
+		<field name="time_stamp" class="java.sql.Timestamp"/>
+		<field name="clinician_id" class="java.lang.String"/>
+		<field name="clinic_id" class="java.lang.String"/>
+		<field name="clinician_name" class="java.lang.String"/>
+		<field name="user_name" class="java.lang.String"/>
+		<field name="contact_number" class="java.lang.String"/>
+		<field name="alternate_number" class="java.lang.String"/>
+		<field name="type" class="java.lang.String"/>
+		<field name="role" class="java.lang.String"/>
+		<field name="clinic_name" class="java.lang.String"/>
+		<field name="city_name" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="CLINICIAN_NAME" class="java.lang.String"/>
+	<parameter name="CLINIC_NAME" class="java.lang.String"/>
+	<parameter name="START_DATE" class="java.lang.String"/>
+	<parameter name="END_DATE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<summary>
+		<band height="86" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="3162afd5-16e7-44af-8d6f-456745227c66" key="table 1" style="table 1" x="101" y="6" width="360" height="80"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="smsReport" uuid="7d834ed5-6655-4100-aa6a-8cea08cb0476">
+						<datasetParameter name="CLINICIAN_NAME">
+							<datasetParameterExpression><![CDATA[$P{CLINICIAN_NAME}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CLINIC_NAME">
+							<datasetParameterExpression><![CDATA[$P{CLINIC_NAME}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="START_DATE">
+							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="END_DATE">
+							<datasetParameterExpression><![CDATA[$P{END_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="1058c597-d28a-4ccc-852a-1daecf2414b6">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="560a88d4-efc7-4a5a-9cfa-fd9efe6334bd" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Clinician Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30"/>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement uuid="3477eba9-a09b-4905-8354-3a4e49c0ed37" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{clinician_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="58c4a079-1934-42bb-8857-92a141f24091">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="cca3da7b-9dcb-4c89-acf0-3dfd2aa06f1e" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Clinician Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30"/>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement uuid="45ecd5fe-9a55-4dea-b6df-a07af5b2525f" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{recipient_number}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="aca1a551-0504-4cf8-88b6-5f43f8b75df1">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="943bd1ba-49eb-4b14-8cb1-ceca93b75a1c" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Clinic Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30"/>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement uuid="89e4fa8c-d913-4feb-bf58-40fc3366b373" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{clinic_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="d7de616e-6c48-4865-a428-46458e5d7f4c">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="d45ccc7d-aef0-49d4-844e-43ec73666b3d" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Date and Time of sending SMS (dd/mm/yyyy hh:mm)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30"/>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy hh:mm" isBlankWhenNull="true">
+								<reportElement uuid="d6526338-6a29-463e-9c75-375df821d23d" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{time_stamp}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="e35d19b8-dc98-47e1-884d-070dcf21ae56">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="1d2bfe8c-53cc-4983-a3b0-4056496a8d0d" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[Message]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30"/>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement uuid="3cd6048d-fa8a-4b9f-9212-30ea55bb7bba" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{content}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
