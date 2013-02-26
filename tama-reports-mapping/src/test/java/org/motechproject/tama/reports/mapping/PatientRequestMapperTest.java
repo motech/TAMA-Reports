@@ -115,6 +115,16 @@ public class PatientRequestMapperTest {
     }
 
     @Test
+    public void shouldMapDayOfWeeklyCall() {
+        PatientRequest request = new PatientRequest();
+        PatientRequestMapper mapper = new PatientRequestMapper(request);
+        assertNull(mapper.map().getDayOfWeeklyCall());
+
+        request.setDayOfWeeklyCall("Monday");
+        assertEquals("Monday", mapper.map().getDayOfWeeklyCall());
+    }
+
+    @Test
     public void shouldMapReceiveOTCAdvice() {
         PatientRequest request = new PatientRequest();
         PatientRequestMapper mapper = new PatientRequestMapper(request);

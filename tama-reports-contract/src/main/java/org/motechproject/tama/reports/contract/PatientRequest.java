@@ -20,6 +20,7 @@ public class PatientRequest implements Serializable {
     private String ivrLanguage;
     private String callPreference;
     private String bestCallTime;
+    private String dayOfWeeklyCall;
     private Boolean receiveOTCAdvice;
     private Boolean receiveAppointmentReminder;
     private Date registeredOn;

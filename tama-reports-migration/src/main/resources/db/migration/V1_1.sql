@@ -12,6 +12,7 @@ create table tama_reports.patient (
     ivr_language varchar(10),
     call_preference varchar(10),
     best_call_time time,
+    day_of_weekly_call varchar(10),
     receive_otc_advice varchar(10),
     receive_appointment_reminder varchar(10),
     registered_on timestamp,

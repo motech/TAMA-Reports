@@ -58,6 +58,8 @@ public class Patient {
     private Time eveningPillTime;
     @Column(name = "best_call_time")
     private Time bestCallTime;
+    @Column(name = "day_of_weekly_call")
+    private String dayOfWeeklyCall;
     @NotNull
     @Column(name = "receive_otc_advice")
     private Boolean receiveOTCAdvice;
@@ -83,6 +85,7 @@ public class Patient {
 
     public void merge(Patient patient) {
         this.setBestCallTime(patient.getBestCallTime());
+        this.setDayOfWeeklyCall(patient.getDayOfWeeklyCall());
         this.setPatientDocumentId(patient.getPatientDocumentId());
         this.setGender(patient.getGender());
         this.setCallPreference(patient.getCallPreference());
