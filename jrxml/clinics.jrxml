@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="clinics" language="groovy" pageWidth="1050" pageHeight="7200" columnWidth="1010" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1256b91a-68d7-4a4c-88b0-333cba5cb562">
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<subDataset name="Clinics" uuid="31a3c47c-8f5f-4910-b3a0-95f17ef89648">
+		<queryString>
+			<![CDATA[With clinics AS(
+Select cl.clinic_name,
+       cl.greeting_name,
+       cl.address,
+       cl.contact_number,
+       cl.city_name,
+       array_agg(cn.clinician_name Order by cn.id) clinician_names,
+       array_agg(cn.contact_number Order by cn.id) contact_numbers
+from tama_reports.clinic cl
+inner join tama_reports.clinician cn on cn.clinic_id = cl.clinic_id and cn.type = 'CC'
+group by clinic_name, greeting_name, address, cl.contact_number, city_name
+)
+Select clinic_name, greeting_name, address, contact_number, city_name,
+       clinician_names[1] clinician_name_one, contact_numbers[1] contact_number_one,
+       clinician_names[2] clinician_name_two, contact_numbers[2] contact_number_two,
+       clinician_names[3] clinician_name_three, contact_numbers[3] contact_number_three from clinics]]>
+		</queryString>
+		<field name="clinic_name" class="java.lang.String"/>
+		<field name="greeting_name" class="java.lang.String"/>
+		<field name="address" class="java.lang.String"/>
+		<field name="contact_number" class="java.lang.String"/>
+		<field name="city_name" class="java.lang.String"/>
+		<field name="clinician_name_one" class="java.lang.String"/>
+		<field name="contact_number_one" class="java.lang.String"/>
+		<field name="clinician_name_two" class="java.lang.String"/>
+		<field name="contact_number_two" class="java.lang.String"/>
+		<field name="clinician_name_three" class="java.lang.String"/>
+		<field name="contact_number_three" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[select 1 as dummy;]]>
+	</queryString>
+	<field name="dummy" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e07a1e28-401e-4073-9a34-d889b5b4ec78" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Clinics Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8a114e88-31f3-4a6b-8337-0b1786dc1044" x="0" y="20" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="a6fe64a9-5aac-4e2e-a35c-edbea5faf606" x="100" y="20" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="84" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="7ada1544-943e-4cba-bb1f-24fff9293765" key="table 3" style="table 3" x="0" y="0" width="1010" height="84"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Clinics" uuid="1b1a7368-5ad5-4e34-9747-2376fdba0078">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="a9e4493b-ca58-427d-a7b6-3ff7b1e9f299">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="06076fff-6edd-42bb-81c0-208567216ab9" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Clinic Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="32aff78a-7f57-494c-943f-ebc482372219" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{clinic_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="f80d22df-224c-46f8-a401-91ec1eb63137">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="baa6d885-3346-4a13-bf30-56962bec024f" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Greeting Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="f0079650-be2c-4b7c-bfbb-d53748160bc7" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{greeting_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="8ab143d0-4a55-4d68-a4a4-e3d8b5ddb010">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="44eb77d5-a910-40c9-a48c-b1a9d3efa6a8" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Address]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="01c68980-841a-404e-aac4-e60c8cf96dd6" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c142e609-4411-477a-a77d-3137145ea179">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="b8c9969a-e018-47b5-9c3e-766728cdaa95" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Contact Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="0eddaac2-ae72-4fd5-9509-6e439aca4986" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{contact_number}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="7d56a32c-1d95-426a-b6d6-e079aab141d8">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="ef9aba02-9a79-4904-b189-18092b04165f" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[City Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="467cfa78-ed08-4ca7-b3e4-4b377410fe61" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{city_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="e8cab444-2bd2-4c75-9d1c-be33b3a1455e">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="eeabb55c-5d8e-41d5-8600-4af0a9d554a5" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Clinician Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="7813d35d-f02f-40ff-be7a-ff6e7a7a6c57" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{clinician_name_one}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="28818e77-5372-4c5f-8988-13690f92c47e">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="bb1edc91-5c60-472a-89a9-e9e88c616c29" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Contact Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="1a51f1e9-025b-4640-8031-fed0245a6f84" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{contact_number_one}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="b07308ca-926d-4192-b1b9-a513b8bcdad9">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="33e419b5-e59b-4af6-bfca-871455b4ff80" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Clinician Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="924d3e99-e2dd-4bb5-8083-3f7e8c932a43" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{clinician_name_two}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="b861a231-a30d-4723-86e1-78cbd44f4123">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="8cabf319-268e-40d3-aabc-69dc75d479f9" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Contact Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="4ea4c7da-dfe9-4b76-a0c5-89679c618473" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{contact_number_two}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="3057fa51-9bb6-4e42-ba88-3118f038e3a8">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="ea9421b7-fe28-4458-8cef-35ed8d968eb3" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Clinician Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="45371010-8353-4890-89ed-8884fe2f8af3" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{clinician_name_three}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="8bae19bc-c48d-452f-8216-65bb7153af87">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="6312cbd9-ff4d-44da-afbf-85cf3a420603" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Contact Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="8593d713-bf93-467c-9cfc-f2eb28828bd9" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{contact_number_three}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
