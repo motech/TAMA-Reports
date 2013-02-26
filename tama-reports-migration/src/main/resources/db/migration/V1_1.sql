@@ -25,7 +25,7 @@ create table tama_reports.clinic (
     clinic_name varchar(100),
     city_name varchar(100),
     greeting_name varchar(100),
-    address varchar(200),
+    address text,
     contact_number varchar(20)
 );
 
