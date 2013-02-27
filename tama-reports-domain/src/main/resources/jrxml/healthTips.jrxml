@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="healthTips" language="java" pageWidth="595" pageHeight="7200" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1256b91a-68d7-4a4c-88b0-333cba5cb562">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="healthTips" pageWidth="595" pageHeight="7200" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1256b91a-68d7-4a4c-88b0-333cba5cb562">
 	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -51,7 +51,13 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select *, to_char(a.call_date, 'dd/MM/yyyy') as formatted_call_date from tama_reports.health_tips a, tama_reports.clinic b, tama_reports.patient c where c.patient_id like $P{PATIENT_ID} and b.clinic_name ilike $P{CLINIC_NAME} and a.call_date >= to_date($P{START_DATE}, 'dd/MM/yyyy') and a.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
+			<![CDATA[select *, to_char(ht.call_date, 'dd/MM/yyyy') as formatted_call_date
+from tama_reports.health_tips ht
+join tama_reports.patient pa on pa.patient_document_id = ht.patient_document_id
+join tama_reports.clinic cl on pa.clinic_id = cl.clinic_id
+where pa.patient_id like $P{PATIENT_ID} and cl.clinic_name ilike $P{CLINIC_NAME}
+and ht.call_date >= to_date($P{START_DATE}, 'dd/MM/yyyy')
+and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		</queryString>
 		<field name="id" class="java.lang.Long"/>
 		<field name="patient_document_id" class="java.lang.String"/>
@@ -61,14 +67,12 @@
 		<field name="number_of_times_health_tips_accessed" class="java.math.BigDecimal"/>
 		<field name="individual_health_tips_access_durations" class="java.lang.String"/>
 		<field name="total_health_tips_access_duration" class="java.lang.Long"/>
-		<field name="clinic_id" class="java.lang.String"/>
-		<field name="clinic_name" class="java.lang.String"/>
-		<field name="city_name" class="java.lang.String"/>
 		<field name="patient_id" class="java.lang.String"/>
 		<field name="date_of_birth" class="java.sql.Date"/>
 		<field name="gender" class="java.lang.String"/>
 		<field name="morning_pill_time" class="java.sql.Time"/>
 		<field name="evening_pill_time" class="java.sql.Time"/>
+		<field name="clinic_id" class="java.lang.String"/>
 		<field name="travel_time_to_clinic" class="java.lang.String"/>
 		<field name="ivr_pass_code" class="java.lang.String"/>
 		<field name="ivr_language" class="java.lang.String"/>
@@ -79,6 +83,11 @@
 		<field name="registered_on" class="java.sql.Timestamp"/>
 		<field name="status" class="java.lang.String"/>
 		<field name="notes" class="java.lang.String"/>
+		<field name="clinic_name" class="java.lang.String"/>
+		<field name="city_name" class="java.lang.String"/>
+		<field name="greeting_name" class="java.lang.String"/>
+		<field name="address" class="java.lang.String"/>
+		<field name="contact_number" class="java.lang.String"/>
 		<field name="formatted_call_date" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
