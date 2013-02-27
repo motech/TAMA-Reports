@@ -47,7 +47,7 @@ public class HealthTipsController {
         HealthTipsParameters parameters = new HealthTipsParameters();
         ServletOutputStream outputStream = response.getOutputStream();
         parameters
-                .setClinicName(clinicName)
+                .setClinicId(clinicName)
                 .setPatientId(patientId)
                 .setStartDate(startDate)
                 .setEndDate(endDate);

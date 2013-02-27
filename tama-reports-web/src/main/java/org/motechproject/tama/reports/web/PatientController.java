@@ -63,7 +63,7 @@ public class PatientController {
         PatientRegistrationParameters parameters = new PatientRegistrationParameters();
         ServletOutputStream outputStream = response.getOutputStream();
         parameters
-                .setClinicName(clinicName)
+                .setClinicId(clinicName)
                 .setPatientId(patientId)
                 .setStartDate(startDate)
                 .setEndDate(endDate);

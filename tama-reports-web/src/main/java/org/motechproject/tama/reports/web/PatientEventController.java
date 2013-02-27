@@ -37,7 +37,7 @@ public class PatientEventController {
     }
 
     @RequestMapping(value = "report", method = RequestMethod.GET)
-    public void report(@RequestParam("clinicName") String clinicName,
+    public void report(@RequestParam("clinicId") String clinicId,
                        @RequestParam("patientId") String patientId,
                        @RequestParam("startDate") String startDate,
                        @RequestParam("endDate") String endDate,
@@ -48,7 +48,7 @@ public class PatientEventController {
         PatientEventParameters parameters = new PatientEventParameters();
         ServletOutputStream outputStream = response.getOutputStream();
         parameters
-                .setClinicName(clinicName)
+                .setClinicId(clinicId)
                 .setPatientId(patientId)
                 .setStartDate(startDate)
                 .setEndDate(endDate);

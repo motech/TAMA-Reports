@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="patientEvent" language="groovy" pageWidth="595" pageHeight="7200" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="763c405b-c15e-4320-a7ce-bb9af19d7c91">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="patientEvent" language="java" pageWidth="595" pageHeight="7200" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="763c405b-c15e-4320-a7ce-bb9af19d7c91">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -66,13 +66,13 @@
 		</box>
 	</style>
 	<subDataset name="patientEventDataSet" uuid="0736b92c-3648-4134-891a-434fd4102279">
-		<parameter name="CLINIC_NAME" class="java.lang.String"/>
+		<parameter name="CLINIC_ID" class="java.lang.String"/>
 		<parameter name="PATIENT_ID" class="java.lang.String"/>
 		<parameter name="STATUS" class="java.lang.String"/>
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and c.patient_id ilike $P{PATIENT_ID} and b.clinic_name ilike $P{CLINIC_NAME} and a.event_name like $P{STATUS} and ($P{START_DATE} = '' or a.date_time::date >= to_date($P{START_DATE}, 'dd/MM/yyyy')) and ($P{END_DATE} = '' or a.date_time::date <= to_date($P{END_DATE}, 'dd/MM/yyyy')) order by (b.clinic_name,c.patient_id,a.date_time);]]>
+			<![CDATA[select * from tama_reports.patient_event a, tama_reports.clinic b, tama_reports.patient c where a.patient_document_id = c.patient_document_id and c.clinic_id = b.clinic_id and c.patient_id ilike $P{PATIENT_ID} and b.clinic_id ilike $P{CLINIC_ID} and a.event_name like $P{STATUS} and ($P{START_DATE} = '' or a.date_time::date >= to_date($P{START_DATE}, 'dd/MM/yyyy')) and ($P{END_DATE} = '' or a.date_time::date <= to_date($P{END_DATE}, 'dd/MM/yyyy')) order by (b.clinic_name,c.patient_id,a.date_time);]]>
 		</queryString>
 		<field name="id" class="java.lang.Long"/>
 		<field name="patient_document_id" class="java.lang.String"/>
@@ -99,13 +99,13 @@
 		<field name="status" class="java.lang.String"/>
 		<field name="notes" class="java.lang.String"/>
 	</subDataset>
-	<parameter name="CLINIC_NAME" class="java.lang.String"/>
+	<parameter name="CLINIC_ID" class="java.lang.String"/>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
 	<parameter name="STATUS" class="java.lang.String"/>
 	<parameter name="START_DATE" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[select * from tama_reports.patient_event;]]>
+		<![CDATA[select 1 as dummy;]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer"/>
 	<field name="patient_document_id" class="java.lang.String"/>
@@ -140,8 +140,8 @@
 				<reportElement uuid="1b9712e2-7189-4692-afc1-dfbd74542702" key="table 2" style="table 2" x="38" y="12" width="360" height="80"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="patientEventDataSet" uuid="b3c26ea8-6ce9-4b16-8f32-4934724bde39">
-						<datasetParameter name="CLINIC_NAME">
-							<datasetParameterExpression><![CDATA[$P{CLINIC_NAME}]]></datasetParameterExpression>
+						<datasetParameter name="CLINIC_ID">
+							<datasetParameterExpression><![CDATA[$P{CLINIC_ID}]]></datasetParameterExpression>
 						</datasetParameter>
 						<datasetParameter name="PATIENT_ID">
 							<datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>

@@ -63,7 +63,7 @@ public class SMSLogController {
     private void reportOTCAdviceSMS(String clinicName, String externalId, String startDate, String endDate, HttpServletResponse response) throws Exception {
         OTCSMSLogParameters parameters = new OTCSMSLogParameters();
         parameters
-                .setClinicName(clinicName)
+                .setClinicId(clinicName)
                 .setPatientId(externalId)
                 .setStartDate(startDate)
                 .setEndDate(endDate);
