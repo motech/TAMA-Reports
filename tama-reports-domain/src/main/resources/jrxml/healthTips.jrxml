@@ -102,7 +102,7 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="52" splitType="Stretch">
+		<band height="40" splitType="Stretch">
 			<staticText>
 				<reportElement uuid="e07e1e28-401e-4073-9034-d889b5b4ec78" x="0" y="0" width="100" height="20"/>
 				<textElement/>
@@ -121,9 +121,9 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		</band>
 	</pageHeader>
 	<summary>
-		<band height="84" splitType="Stretch">
+		<band height="50" splitType="Stretch">
 			<componentElement>
-				<reportElement uuid="11c7ba61-ad34-4539-b2d8-ab7e7e3c67ad" key="table 1" style="table 1" x="0" y="0" width="360" height="80"/>
+				<reportElement uuid="11c7ba61-ad34-4539-b2d8-ab7e7e3c67ad" key="table 1" style="table 1" x="0" y="0" width="555" height="50"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="HealthTips" uuid="12515dab-8911-4db8-a32e-05c9a9ab5659">
 						<datasetParameter name="PATIENT_ID">
@@ -148,7 +148,6 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 								<text><![CDATA[Patient ID]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 1_CH" height="30"/>
 						<jr:detailCell style="table 1_TD" height="20">
 							<textField>
 								<reportElement uuid="0eaa442c-023e-4167-90d4-dbdb537f646e" x="0" y="0" width="90" height="20"/>
@@ -165,7 +164,6 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 								<text><![CDATA[Clinic Name]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 1_CH" height="30"/>
 						<jr:detailCell style="table 1_TD" height="20">
 							<textField>
 								<reportElement uuid="dd920021-4ab6-4600-b031-00d1bca29df7" x="0" y="0" width="90" height="20"/>
@@ -182,7 +180,6 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 								<text><![CDATA[Called on (dd/mm/yyyy)]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 1_CH" height="30"/>
 						<jr:detailCell style="table 1_TD" height="20">
 							<textField>
 								<reportElement uuid="e8b7c23d-0c12-4e40-b829-98b7bbe550e2" x="0" y="0" width="90" height="20"/>
@@ -199,7 +196,6 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 								<text><![CDATA[Call Made By]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 1_CH" height="30"/>
 						<jr:detailCell style="table 1_TD" height="20">
 							<textField>
 								<reportElement uuid="11875386-dae9-49f2-939e-3510e0a508e5" x="0" y="0" width="90" height="20"/>
@@ -216,7 +212,6 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 								<text><![CDATA[Health Tips Played]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 1_CH" height="30"/>
 						<jr:detailCell style="table 1_TD" height="20">
 							<textField>
 								<reportElement uuid="68b60549-8b49-4e9c-a794-2d875e0d082e" x="0" y="0" width="90" height="20"/>
@@ -233,7 +228,6 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 								<text><![CDATA[Health Tips Accessed (No. of times)]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 1_CH" height="30"/>
 						<jr:detailCell style="table 1_TD" height="20">
 							<textField>
 								<reportElement uuid="72e34c75-a644-4d22-8584-5f8f3d9060c0" x="0" y="0" width="90" height="20"/>
@@ -250,7 +244,6 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 								<text><![CDATA[Health Tips - Individual Durations (Seconds)]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 1_CH" height="30"/>
 						<jr:detailCell style="table 1_TD" height="20">
 							<textField>
 								<reportElement uuid="98a31fe5-9d48-4aeb-bcc7-d5dbe4016e92" x="0" y="0" width="90" height="20"/>
@@ -267,7 +260,6 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 								<text><![CDATA[Health Tips - Total Duration (Seconds)]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table 1_CH" height="30"/>
 						<jr:detailCell style="table 1_TD" height="20">
 							<textField>
 								<reportElement uuid="f29c9bd3-2223-498c-8b1b-0f9bf79bfa7c" x="0" y="0" width="90" height="20"/>
