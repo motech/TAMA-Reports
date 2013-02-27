@@ -387,7 +387,7 @@
 	</style>
 	<subDataset name="Patient" uuid="b0056990-caaf-4647-ad3a-29b51ae144d3">
 		<parameter name="PATIENT_ID" class="java.lang.String"/>
-		<parameter name="CLINIC_NAME" class="java.lang.String"/>
+		<parameter name="CLINIC_ID" class="java.lang.String"/>
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
@@ -486,7 +486,7 @@ from
 where
 	c.patient_document_id = a.patient_document_id
  and 	a.clinic_id = b.clinic_id
- and 	b.clinic_name like $P{CLINIC_NAME}
+ and 	b.clinic_id like $P{CLINIC_ID}
  and 	a.patient_id like $P{PATIENT_ID}
  and 	($P{START_DATE} = '' or a.registered_on >= to_date($P{START_DATE},'dd/MM/yyyy')) 	 and 	($P{END_DATE} = '' or a.registered_on <= to_date($P{END_DATE},'dd/MM/yyyy')) order by
 	 (b.clinic_name, a.patient_id);]]>
@@ -579,7 +579,7 @@ where
 		<field name="pregnant_months" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
-	<parameter name="CLINIC_NAME" class="java.lang.String"/>
+	<parameter name="CLINIC_ID" class="java.lang.String"/>
 	<parameter name="START_DATE" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString language="SQL">
@@ -631,8 +631,8 @@ where
 						<datasetParameter name="PATIENT_ID">
 							<datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="CLINIC_NAME">
-							<datasetParameterExpression><![CDATA[$P{CLINIC_NAME}]]></datasetParameterExpression>
+						<datasetParameter name="CLINIC_ID">
+							<datasetParameterExpression><![CDATA[$P{CLINIC_ID}]]></datasetParameterExpression>
 						</datasetParameter>
 						<datasetParameter name="START_DATE">
 							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>

@@ -3,7 +3,7 @@ package org.motechproject.tama.reports.web.excel;
 
 public class ClinicianSMSLogParameters extends AbstractReportParameters {
 
-    public static String CLINIC_NAME = "CLINIC_NAME";
+    public static String CLINIC_ID = "CLINIC_ID";
     public static String CLINICIAN_NAME = "CLINICIAN_NAME";
     public static String START_DATE = "START_DATE";
     public static String END_DATE = "END_DATE";
@@ -18,8 +18,8 @@ public class ClinicianSMSLogParameters extends AbstractReportParameters {
         return this;
     }
 
-    public ClinicianSMSLogParameters setClinicName(String clinicName) {
-        subStringMatchParameter(CLINIC_NAME, clinicName, true);
+    public ClinicianSMSLogParameters clinicId(String clinicName) {
+        subStringMatchParameter(CLINIC_ID, clinicName, true);
         return this;
     }
 

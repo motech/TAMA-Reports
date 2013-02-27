@@ -50,7 +50,7 @@ public class PatientEventControllerTest extends BaseControllerTest {
     public void shouldCreatePatientEventReport() throws Exception {
         standaloneSetup(patientEventController)
                 .build()
-                .perform(get("/patientEvent/report").param("patientId", "").param("eventName", "").param("clinicName", "").param("startDate", "").param("endDate", ""))
+                .perform(get("/patientEvent/report").param("patientId", "").param("eventName", "").param("clinicId", "").param("startDate", "").param("endDate", ""))
                 .andExpect(status().isOk())
                 .andExpect(content().type("application/vnd.ms-excel"));
         verify(reportingService).export(any(ReportParameters.class), any(OutputStream.class), eq("patientEvent.jasper"));

@@ -74,7 +74,7 @@ public class PatientControllerTest extends BaseControllerTest {
     public void shouldGeneratePatientRegistrationReport() throws Exception {
         standaloneSetup(patientController)
                 .build()
-                .perform(get("/patient/report").param("clinicName", "new").param("patientId", "patientId").param("startDate", "02/01/2013").param("endDate", "02/01/2013"))
+                .perform(get("/patient/report").param("clinicId", "new").param("patientId", "patientId").param("startDate", "02/01/2013").param("endDate", "02/01/2013"))
                 .andExpect(status().isOk())
                 .andExpect(content().type("application/vnd.ms-excel"));
     }

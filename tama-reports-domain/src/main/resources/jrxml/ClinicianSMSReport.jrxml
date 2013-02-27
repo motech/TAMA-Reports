@@ -47,11 +47,11 @@
 	</style>
 	<subDataset name="smsReport" uuid="c3f3e85d-9bba-4ac7-a0b8-e35bb9d1d865">
 		<parameter name="CLINICIAN_NAME" class="java.lang.String"/>
-		<parameter name="CLINIC_NAME" class="java.lang.String"/>
+		<parameter name="CLINIC_ID" class="java.lang.String"/>
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.sms_log a , tama_reports.clinician b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='C' and a.external_id=b.clinician_id and c.clinic_name ilike $P{CLINIC_NAME} and b.clinician_name like $P{CLINICIAN_NAME} and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
+			<![CDATA[select * from tama_reports.sms_log a , tama_reports.clinician b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='C' and a.external_id=b.clinician_id and c.clinic_id ilike $P{CLINIC_ID} and b.clinician_name like $P{CLINICIAN_NAME} and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
 		</queryString>
 		<field name="id" class="java.lang.Long"/>
 		<field name="external_id" class="java.lang.String"/>
@@ -73,7 +73,7 @@
 		<field name="address" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="CLINICIAN_NAME" class="java.lang.String"/>
-	<parameter name="CLINIC_NAME" class="java.lang.String"/>
+	<parameter name="CLINIC_ID" class="java.lang.String"/>
 	<parameter name="START_DATE" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString>
@@ -111,8 +111,8 @@
 						<datasetParameter name="CLINICIAN_NAME">
 							<datasetParameterExpression><![CDATA[$P{CLINICIAN_NAME}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="CLINIC_NAME">
-							<datasetParameterExpression><![CDATA[$P{CLINIC_NAME}]]></datasetParameterExpression>
+						<datasetParameter name="CLINIC_ID">
+							<datasetParameterExpression><![CDATA[$P{CLINIC_ID}]]></datasetParameterExpression>
 						</datasetParameter>
 						<datasetParameter name="START_DATE">
 							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>

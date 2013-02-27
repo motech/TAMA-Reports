@@ -45,7 +45,7 @@ public class SMSLogController {
 
     @RequestMapping(value = "report", method = RequestMethod.GET)
     public void report(@RequestParam("type") String smsType,
-                       @RequestParam("clinicName") String clinicName,
+                       @RequestParam("clinicId") String clinicId,
                        @RequestParam("externalId") String externalId,
                        @RequestParam("startDate") String startDate,
                        @RequestParam("endDate") String endDate,
@@ -54,26 +54,26 @@ public class SMSLogController {
         response.setContentType("application/vnd.ms-excel");
         ServletOutputStream outputStream = response.getOutputStream();
         if (equalsIgnoreCase(CLINICIAN_SMS, smsType)) {
-            reportClinicianSMS(clinicName, externalId, startDate, endDate, response);
+            reportClinicianSMS(clinicId, externalId, startDate, endDate, response);
         } else {
-            reportOTCAdviceSMS(clinicName, externalId, startDate, endDate, response);
+            reportOTCAdviceSMS(clinicId, externalId, startDate, endDate, response);
         }
     }
 
-    private void reportOTCAdviceSMS(String clinicName, String externalId, String startDate, String endDate, HttpServletResponse response) throws Exception {
+    private void reportOTCAdviceSMS(String clinicId, String externalId, String startDate, String endDate, HttpServletResponse response) throws Exception {
         OTCSMSLogParameters parameters = new OTCSMSLogParameters();
         parameters
-                .setClinicId(clinicName)
+                .setClinicId(clinicId)
                 .setPatientId(externalId)
                 .setStartDate(startDate)
                 .setEndDate(endDate);
         exportReport(response, parameters, "OTCSMSReport.jasper");
     }
 
-    private void reportClinicianSMS(String clinicName, String externalId, String startDate, String endDate, HttpServletResponse response) throws Exception {
+    private void reportClinicianSMS(String clinicId, String externalId, String startDate, String endDate, HttpServletResponse response) throws Exception {
         ClinicianSMSLogParameters parameters = new ClinicianSMSLogParameters();
         parameters
-                .setClinicName(clinicName)
+                .clinicId(clinicId)
                 .setClinicianName(externalId)
                 .setStartDate(startDate)
                 .setEndDate(endDate);

@@ -50,7 +50,7 @@ public class SMSLogControllerTest extends BaseControllerTest {
     public void shouldReportOTCSMSLogs() throws Exception {
         standaloneSetup(smsLogController)
                 .build()
-                .perform(get("/smsLog/report").param("type", "OTCSMS").param("externalId", "").param("clinicName", "").param("startDate", "12/11/2013").param("endDate", "12/11/2013"))
+                .perform(get("/smsLog/report").param("type", "OTCSMS").param("externalId", "").param("clinicId", "").param("startDate", "12/11/2013").param("endDate", "12/11/2013"))
                 .andExpect(status().isOk());
         verify(reportingService).export(any(HealthTipsParameters.class), any(OutputStream.class), eq("OTCSMSReport.jasper"));
     }
@@ -59,7 +59,7 @@ public class SMSLogControllerTest extends BaseControllerTest {
     public void shouldReportClinicianSMSLogs() throws Exception {
         standaloneSetup(smsLogController)
                 .build()
-                .perform(get("/smsLog/report").param("type", "ClinicianSMS").param("externalId", "").param("clinicName", "").param("startDate", "12/11/2013").param("endDate", "12/11/2013"))
+                .perform(get("/smsLog/report").param("type", "ClinicianSMS").param("externalId", "").param("clinicId", "").param("startDate", "12/11/2013").param("endDate", "12/11/2013"))
                 .andExpect(status().isOk());
         verify(reportingService).export(any(HealthTipsParameters.class), any(OutputStream.class), eq("ClinicianSMSReport.jasper"));
     }

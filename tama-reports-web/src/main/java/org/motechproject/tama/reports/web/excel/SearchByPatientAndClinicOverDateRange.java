@@ -3,7 +3,7 @@ package org.motechproject.tama.reports.web.excel;
 
 public class SearchByPatientAndClinicOverDateRange extends AbstractReportParameters {
 
-    public static String CLINIC_NAME = "CLINIC_ID";
+    public static String CLINIC_ID = "CLINIC_ID";
     public static String PATIENT_ID = "PATIENT_ID";
     public static String START_DATE = "START_DATE";
     public static String END_DATE = "END_DATE";
@@ -19,7 +19,7 @@ public class SearchByPatientAndClinicOverDateRange extends AbstractReportParamet
     }
 
     public SearchByPatientAndClinicOverDateRange setClinicId(String clinicName) {
-        subStringMatchParameter(CLINIC_NAME, clinicName, true);
+        subStringMatchParameter(CLINIC_ID, clinicName, true);
         return this;
     }
 
