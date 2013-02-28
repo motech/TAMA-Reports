@@ -49,7 +49,7 @@ public class HealthTipsControllerTest extends BaseControllerTest {
     public void shouldReportHealthTips() throws Exception {
         standaloneSetup(healthTipsController)
                 .build()
-                .perform(get("/healthTips/report").param("patientId", "").param("clinicName", "").param("startDate", "12/11/2013").param("endDate", "12/11/2013"))
+                .perform(get("/healthTips/report").param("patientId", "").param("clinicId", "").param("startDate", "12/11/2013").param("endDate", "12/11/2013"))
                 .andExpect(status().isOk());
         verify(reportingService).export(any(HealthTipsParameters.class), any(OutputStream.class), eq("healthTips.jasper"));
     }
