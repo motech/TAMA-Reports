@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="healthTips" pageWidth="1240" pageHeight="7200" columnWidth="1200" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1256b91a-68d7-4a4c-88b0-333cba5cb562">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="healthTips" pageWidth="1390" pageHeight="7200" columnWidth="1350" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1256b91a-68d7-4a4c-88b0-333cba5cb562">
 	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -124,7 +124,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 	<summary>
 		<band height="60" splitType="Stretch">
 			<componentElement>
-				<reportElement uuid="11c7ba61-ad34-4539-b2d8-ab7e7e3c67ad" key="table 1" style="table 1" x="0" y="0" width="1200" height="60"/>
+				<reportElement uuid="11c7ba61-ad34-4539-b2d8-ab7e7e3c67ad" key="table 1" style="table 1" x="0" y="0" width="1350" height="60"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="HealthTips" uuid="12515dab-8911-4db8-a32e-05c9a9ab5659">
 						<datasetParameter name="PATIENT_ID">
@@ -141,7 +141,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="150" uuid="5f4096fb-08a6-43ae-9372-88adddb70944">
+					<jr:column uuid="5f4096fb-08a6-43ae-9372-88adddb70944" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="c63d9cd3-fbfd-4962-ad43-b8a822c279c9" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -163,7 +163,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="30f6069a-b564-4af3-a2d3-51686f07c388">
+					<jr:column uuid="30f6069a-b564-4af3-a2d3-51686f07c388" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="0e696ca7-b59b-4e0d-847a-21dbb8717104" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -185,7 +185,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="fa19c0f4-33f6-4545-b063-936aacf5b9ad">
+					<jr:column uuid="fa19c0f4-33f6-4545-b063-936aacf5b9ad" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="4c1cc591-fe7c-43e0-8c1a-3b2b38050870" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -197,7 +197,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
-							<textField pattern="" isBlankWhenNull="true">
+							<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
 								<reportElement uuid="e8b7c23d-0c12-4e40-b829-98b7bbe550e2" mode="Transparent" x="0" y="0" width="150" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
@@ -207,10 +207,32 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="0e10e90d-bd05-44b9-8b81-f4d335f99661">
+					<jr:column uuid="fa1aa0f4-33f6-4545-b063-936aacf5b9ad" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
-								<reportElement uuid="aa72e61b-afe6-4807-ba10-916936c6f8fc" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
+								<reportElement uuid="4c1aa591-fe7c-43e0-8c1a-3b2b3805aa70" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Called on (hh:mm)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField pattern="h.mm a" isBlankWhenNull="true">
+								<reportElement uuid="e8b7c23d-0c12-4e40-b829-98b7bbe550e2" mode="Transparent" x="0" y="0" width="150" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{formatted_call_date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column uuid="0eaae90d-bd05-44b9-8b81-f4d335f99661" width="150">
+						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
+							<staticText>
+								<reportElement uuid="aa72aa1b-afe6-4807-ba10-916936c6f8fc" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single"/>
@@ -229,7 +251,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="696f2b0b-beb2-42a4-9ff6-e057e4a3ddca">
+					<jr:column uuid="696f2b0b-beb2-42a4-9ff6-e057e4a3ddca" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="c64cd50e-0cb0-44f7-925e-8a2d9ffd332f" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -251,7 +273,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="574cbb27-c3bc-4b09-ae6a-3dd0223fad0f">
+					<jr:column uuid="574cbb27-c3bc-4b09-ae6a-3dd0223fad0f" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="454cc0e0-bbf5-4fcb-90a8-bc2343cbe663" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -273,7 +295,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="dfe6acd6-0f20-4064-9498-fa20aab6c2de">
+					<jr:column uuid="dfe6acd6-0f20-4064-9498-fa20aab6c2de" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="f4555d73-4d68-4b6a-9df7-3ed9f97ddeef" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -295,7 +317,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="36a89866-be7b-40ea-b8a0-5e6eaee8d9fe">
+					<jr:column uuid="36a89866-be7b-40ea-b8a0-5e6eaee8d9fe" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="1c77db54-0cd9-4008-9afd-c35cf30568a8" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
