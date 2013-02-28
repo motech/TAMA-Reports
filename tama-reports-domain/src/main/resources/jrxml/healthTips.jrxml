@@ -47,7 +47,7 @@
 	</style>
 	<subDataset name="HealthTips" uuid="31a3c47c-8f5f-4910-b3a0-95f17ef89648">
 		<parameter name="PATIENT_ID" class="java.lang.String"/>
-		<parameter name="CLINIC_NAME" class="java.lang.String"/>
+		<parameter name="CLINIC_ID" class="java.lang.String"/>
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
@@ -55,9 +55,9 @@
 from tama_reports.health_tips ht
 join tama_reports.patient pa on pa.patient_document_id = ht.patient_document_id
 join tama_reports.clinic cl on pa.clinic_id = cl.clinic_id
-where pa.patient_id like $P{PATIENT_ID} and cl.clinic_name ilike $P{CLINIC_NAME}
-and ht.call_date >= to_date($P{START_DATE}, 'dd/MM/yyyy')
-and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
+where pa.patient_id like $P{PATIENT_ID} and cl.clinic_id ilike $P{CLINIC_ID}
+and ht.call_date::date >= to_date($P{START_DATE}, 'dd/MM/yyyy')
+and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		</queryString>
 		<field name="id" class="java.lang.Long"/>
 		<field name="patient_document_id" class="java.lang.String"/>
@@ -78,6 +78,7 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		<field name="ivr_language" class="java.lang.String"/>
 		<field name="call_preference" class="java.lang.String"/>
 		<field name="best_call_time" class="java.sql.Time"/>
+		<field name="day_of_weekly_call" class="java.lang.String"/>
 		<field name="receive_otc_advice" class="java.lang.String"/>
 		<field name="receive_appointment_reminder" class="java.lang.String"/>
 		<field name="registered_on" class="java.sql.Timestamp"/>
@@ -91,7 +92,7 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		<field name="formatted_call_date" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
-	<parameter name="CLINIC_NAME" class="java.lang.String"/>
+	<parameter name="CLINIC_ID" class="java.lang.String"/>
 	<parameter name="START_DATE" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString language="SQL">
@@ -104,17 +105,17 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 	<pageHeader>
 		<band height="40" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="e07e1e28-401e-4073-9034-d889b5b4ec78" x="0" y="0" width="100" height="20"/>
+				<reportElement uuid="e07e1e28-401e-4073-9034-d889b5b4ec78" x="0" y="0" width="90" height="20"/>
 				<textElement/>
 				<text><![CDATA[Health Tips Report]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="8f114e88-31f3-486b-8337-0b1786dc1044" x="0" y="20" width="100" height="20"/>
+				<reportElement uuid="8f114e88-31f3-486b-8337-0b1786dc1044" x="0" y="20" width="90" height="20"/>
 				<textElement/>
 				<text><![CDATA[Date :]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="a6fe64a9-55ac-4e2e-a35c-edbed5faf606" x="100" y="20" width="100" height="20"/>
+				<reportElement uuid="a6fe64a9-55ac-4e2e-a35c-edbed5faf606" x="90" y="20" width="100" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
@@ -129,8 +130,8 @@ and ht.call_date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 						<datasetParameter name="PATIENT_ID">
 							<datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="CLINIC_NAME">
-							<datasetParameterExpression><![CDATA[$P{CLINIC_NAME}]]></datasetParameterExpression>
+						<datasetParameter name="CLINIC_ID">
+							<datasetParameterExpression><![CDATA[$P{CLINIC_ID}]]></datasetParameterExpression>
 						</datasetParameter>
 						<datasetParameter name="START_DATE">
 							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>
