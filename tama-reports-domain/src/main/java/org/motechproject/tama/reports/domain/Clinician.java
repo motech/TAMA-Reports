@@ -46,6 +46,7 @@ public class Clinician {
 
     public void merge(Clinician clinician) {
         setContactNumber(clinician.getContactNumber());
+        setClinicId(clinician.getClinicId());
         setAlternateNumber(clinician.getAlternateNumber());
         setRole(clinician.getRole());
         setType(clinician.getType());

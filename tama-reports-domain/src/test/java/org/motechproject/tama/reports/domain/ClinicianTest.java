@@ -28,6 +28,16 @@ public class ClinicianTest {
     }
 
     @Test
+    public void shouldMergeClinicId() {
+        String clinicId = "clinicId";
+        clinician.setClinicId(clinicId);
+
+        assertNull(mergedClinician.getClinicId());
+        mergedClinician.merge(clinician);
+        assertEquals(clinicId, mergedClinician.getClinicId());
+    }
+
+    @Test
     public void shouldMergeContactNumber() {
         clinician.setContactNumber("newContactNumber");
 
