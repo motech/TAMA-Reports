@@ -34,4 +34,17 @@ public class PatientTest {
         assertEquals(Time.valueOf("10:10:10"), patient.getMorningPillTime());
         assertEquals(Time.valueOf("14:10:10"), patient.getEveningPillTime());
     }
+
+    @Test
+    public void shouldSetPillTimesToEmptyWhenUpdatedWithEmptyValues() {
+        Patient patient = new Patient();
+
+        /*Merge with non empty values*/
+        patient.mergePillTimes("10:10:10", "14:10:10");
+        /* And merge with empty value*/
+        patient.mergePillTimes(null, null);
+
+        assertNull(patient.getMorningPillTime());
+        assertNull(patient.getEveningPillTime());
+    }
 }

@@ -104,11 +104,11 @@ public class Patient {
     }
 
     public void mergePillTimes(String morningPillTime, String eveningPillTime) {
-        if (isNotBlank(morningPillTime)) {
-            setMorningPillTime(Time.valueOf(morningPillTime));
-        }
-        if (isNotBlank(eveningPillTime)) {
-            setEveningPillTime(Time.valueOf(eveningPillTime));
-        }
+        setMorningPillTime(pillTimeValue(morningPillTime));
+        setEveningPillTime(pillTimeValue(eveningPillTime));
+    }
+
+    private Time pillTimeValue(String pillTimeString) {
+        return isNotBlank(pillTimeString) ? Time.valueOf(pillTimeString) : null;
     }
 }
