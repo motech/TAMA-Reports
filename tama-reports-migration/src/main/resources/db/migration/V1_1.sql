@@ -151,7 +151,7 @@ create table tama_reports.patient_event (
 create table tama_reports.health_tips (
     id bigserial PRIMARY KEY,
     patient_document_id varchar(100),
-    call_date date,
+    call_date timestamp,
     call_made_by varchar(10),
     health_tips_played text,
     number_of_times_health_tips_accessed numeric,
