@@ -1,12 +1,7 @@
-
-create type clinician_type AS ENUM ('C', 'CC');
-
-create type sms_type AS ENUM ('O', 'C', 'A');
-
 create table tama_reports.patient (
     id serial PRIMARY KEY,
     patient_id varchar(100),
-    patient_document_id varchar(100),
+    patient_document_id varchar(100) UNIQUE,
     date_of_birth date,
     gender varchar(10),
     morning_pill_time time,
@@ -27,7 +22,7 @@ create table tama_reports.patient (
 
 create table tama_reports.clinic (
     id serial PRIMARY KEY,
-    clinic_id varchar(100),
+    clinic_id varchar(100) UNIQUE,
     clinic_name varchar(100),
     city_name varchar(100),
     greeting_name varchar(100),
@@ -37,13 +32,13 @@ create table tama_reports.clinic (
 
 create table tama_reports.clinician (
     id serial PRIMARY KEY,
-    clinician_id varchar(100),
+    clinician_id varchar(100) UNIQUE,
     clinic_id varchar(100),
     clinician_name varchar(100),
     user_name varchar(100),
     contact_number varchar(20),
     alternate_number varchar(20),
-    type clinician_type,
+    type varchar(2),
     role varchar(50)
 );
 
@@ -167,7 +162,7 @@ create table tama_reports.health_tips (
 create table tama_reports.sms_log (
     id bigserial PRIMARY KEY,
     external_id varchar(100),
-    sms_type sms_type,
+    sms_type varchar(1),
     content text,
     recipient_number varchar(15),
     time_stamp timestamp
