@@ -1,8 +1,8 @@
 package org.motechproject.tama.reports.mapping;
 
+import org.joda.time.LocalDate;
 import org.junit.Test;
 import org.motechproject.tama.reports.contract.PatientRequest;
-import org.motechproject.util.DateUtil;
 
 import java.sql.Time;
 import java.util.Date;
@@ -39,7 +39,7 @@ public class PatientRequestMapperTest {
         PatientRequestMapper mapper = new PatientRequestMapper(request);
         assertNull(mapper.map().getDateOfBirth());
 
-        Date dateOfBirth = DateUtil.today().toDate();
+        Date dateOfBirth = LocalDate.now().toDate();
         request.setDateOfBirth(dateOfBirth);
         assertEquals(dateOfBirth, mapper.map().getDateOfBirth());
     }
@@ -149,7 +149,7 @@ public class PatientRequestMapperTest {
         PatientRequest request = new PatientRequest();
         PatientRequestMapper mapper = new PatientRequestMapper(request);
         assertNull(mapper.map().getRegisteredOn());
-        Date registeredOn = DateUtil.now().toDate();
+        Date registeredOn = LocalDate.now().toDate();
 
         request.setRegisteredOn(registeredOn);
         assertEquals(registeredOn, mapper.map().getRegisteredOn());

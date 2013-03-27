@@ -1,9 +1,9 @@
 package org.motechproject.tama.reports.mapping;
 
+import org.joda.time.DateTime;
 import org.junit.Test;
 import org.motechproject.tama.reports.contract.HealthTipsRequest;
 import org.motechproject.tama.reports.domain.HealthTips;
-import org.motechproject.util.DateUtil;
 
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
@@ -22,7 +22,7 @@ public class HealthTipsMapperTest {
     @Test
     public void shouldMapCallDate() {
         HealthTipsRequest healthTipsRequest = new HealthTipsRequest();
-        healthTipsRequest.setCallDate(DateUtil.now().toDate());
+        healthTipsRequest.setCallDate(DateTime.now().toDate());
 
         HealthTips healthTips = new HealthTipsMapper(healthTipsRequest).map();
         assertEquals(healthTipsRequest.getCallDate(), healthTips.getCallDate());

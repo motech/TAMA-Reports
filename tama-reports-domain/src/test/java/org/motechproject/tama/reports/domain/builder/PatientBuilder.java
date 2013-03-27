@@ -1,7 +1,7 @@
 package org.motechproject.tama.reports.domain.builder;
 
+import org.joda.time.LocalDate;
 import org.motechproject.tama.reports.domain.Patient;
-import org.motechproject.util.DateUtil;
 
 import java.sql.Time;
 
@@ -16,7 +16,7 @@ public class PatientBuilder {
         patient.setReceiveAppointmentReminder(true);
         patient.setReceiveOTCAdvice(true);
         patient.setClinicId("clinicId");
-        patient.setDateOfBirth(DateUtil.today().toDate());
+        patient.setDateOfBirth(LocalDate.now().toDate());
         patient.setGender("M");
         patient.setIvrPassCode("1234");
         patient.setPatientId("patientId");

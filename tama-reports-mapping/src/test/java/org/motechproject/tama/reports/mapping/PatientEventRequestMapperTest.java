@@ -1,12 +1,12 @@
 package org.motechproject.tama.reports.mapping;
 
+import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
 import org.motechproject.tama.reports.contract.PatientEventRequest;
 import org.motechproject.tama.reports.domain.PatientEvent;
 
 import static org.junit.Assert.assertEquals;
-import static org.motechproject.util.DateUtil.now;
 
 public class PatientEventRequestMapperTest {
 
@@ -25,7 +25,7 @@ public class PatientEventRequestMapperTest {
         request.setNewValue("value");
         request.setPerformedBy("user");
         request.setPatientDocumentId("patientDocId");
-        request.setDateTime(now().toDate());
+        request.setDateTime(DateTime.now().toDate());
     }
 
     @Test

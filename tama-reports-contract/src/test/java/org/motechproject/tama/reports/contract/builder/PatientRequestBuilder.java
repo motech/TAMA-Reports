@@ -1,8 +1,8 @@
 package org.motechproject.tama.reports.contract.builder;
 
 
+import org.joda.time.LocalDate;
 import org.motechproject.tama.reports.contract.PatientRequest;
-import org.motechproject.util.DateUtil;
 
 public class PatientRequestBuilder {
 
@@ -15,7 +15,7 @@ public class PatientRequestBuilder {
         request.setReceiveAppointmentReminder(true);
         request.setReceiveOTCAdvice(true);
         request.setClinicId("clinicId");
-        request.setDateOfBirth(DateUtil.today().toDate());
+        request.setDateOfBirth(LocalDate.now().toDate());
         request.setGender("m");
         request.setIvrPassCode("1234");
         request.setPatientId("patientId");
