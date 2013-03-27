@@ -37,6 +37,17 @@
             <groupId>org.motechproject.tama.reports</groupId>
             <artifactId>tama-reports-mapping</artifactId>
         </dependency>
+        <!-- Motech -->
+        <dependency>
+            <groupId>org.motechproject.tama-motech-contrib</groupId>
+            <artifactId>motech-diagnostics</artifactId>
+            <version>${motech.contrib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.motechproject.tama-motech-contrib</groupId>
+            <artifactId>motech-diagnostics-web</artifactId>
+            <version>${motech.contrib.version}</version>
+        </dependency>
         <!-- Spring Core -->
         <dependency>
             <groupId>org.springframework</groupId>

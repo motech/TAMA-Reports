@@ -2,12 +2,40 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
 
     <context:annotation-config/>
     <context:spring-configured/>
     <context:component-scan base-package="org.motechproject.tama.reports"/>
     <import resource="classpath*:applicationPersistenceContext.xml"/>
     <context:property-placeholder location="classpath*:*.properties"/>
+
+    <util:properties id="diagnosticProperties" location="classpath:diagnostics.properties"/>
+
+    <util:properties id="postgresProperties" location="classpath:hibernate.properties"/>
+
+    <bean id="configurationDiagnostic" class="org.motechproject.diagnostics.diagnostics.ConfigurationDiagnostic">
+        <constructor-arg>
+            <map>
+                <entry key="activemq">
+                    <util:properties location="classpath:activemq.properties"/>
+                </entry>
+                <entry key="httpClient">
+                    <util:properties location="classpath:httpclient.properties"/>
+                </entry>
+                <entry key="couchdb">
+                    <util:properties location="classpath:couchdb.properties"/>
+                </entry>
+                <entry key="jasperreports">
+                    <util:properties location="classpath:jasperreports.properties"/>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <import resource="classpath:applicationContext-DiagnosticsWeb.xml"/>
+
 </beans>

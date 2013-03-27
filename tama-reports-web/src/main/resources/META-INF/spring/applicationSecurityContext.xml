@@ -10,6 +10,9 @@
 
 
     <http pattern="/500.html" security="none"/>
+    <http pattern="/diagnostics/**" security="none"/>
+    <http pattern="/diagnostics-web/**" security="none"/>
+    <http pattern="/assets/**" security="none"/>
 
     <http auto-config="false" use-expressions="true" entry-point-ref="reportsEntryPoint">
         <http-basic />

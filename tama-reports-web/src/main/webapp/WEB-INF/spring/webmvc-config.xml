@@ -7,6 +7,9 @@
     <context:component-scan base-package="org.motechproject.tama.reports" use-default-filters="false">
         <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
+    <context:component-scan base-package="org.motechproject.diagnosticsweb.controller" use-default-filters="false">
+        <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+    </context:component-scan>
 
     <context:annotation-config/>
 
@@ -29,6 +32,8 @@
             <property name="useCacheControlNoStore" value="true"/>
         </bean>
     </mvc:interceptors>
+
+    <mvc:resources mapping="/diagnostics-web/**" location="classpath:/diagnostics-web/"/>
 
     <bean id="localeChangeInterceptor"
           class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
