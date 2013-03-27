@@ -51,33 +51,20 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.sms_log a , tama_reports.clinician b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='C' and a.external_id=b.clinician_id and c.clinic_id ilike $P{CLINIC_ID} and b.clinician_name like $P{CLINICIAN_NAME} and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
+			<![CDATA[select clinician_name,recipient_number, clinic_name, time_stamp, content from tama_reports.sms_log a , tama_reports.clinician b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='C' and a.external_id=b.clinician_id and c.clinic_id ilike $P{CLINIC_ID} and b.clinician_name like $P{CLINICIAN_NAME} and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
 		</queryString>
-		<field name="id" class="java.lang.Long"/>
-		<field name="external_id" class="java.lang.String"/>
-		<field name="sms_type" class="java.lang.String"/>
-		<field name="content" class="java.lang.String"/>
+        <field name="content" class="java.lang.String"/>
 		<field name="recipient_number" class="java.lang.String"/>
 		<field name="time_stamp" class="java.sql.Timestamp"/>
-		<field name="clinician_id" class="java.lang.String"/>
-		<field name="clinic_id" class="java.lang.String"/>
 		<field name="clinician_name" class="java.lang.String"/>
-		<field name="user_name" class="java.lang.String"/>
-		<field name="contact_number" class="java.lang.String"/>
-		<field name="alternate_number" class="java.lang.String"/>
-		<field name="type" class="java.lang.String"/>
-		<field name="role" class="java.lang.String"/>
-		<field name="clinic_name" class="java.lang.String"/>
-		<field name="city_name" class="java.lang.String"/>
-		<field name="greeting_name" class="java.lang.String"/>
-		<field name="address" class="java.lang.String"/>
+		<field name="clinic_name" class="java.lang.String"/>		
 	</subDataset>
 	<parameter name="CLINICIAN_NAME" class="java.lang.String"/>
 	<parameter name="CLINIC_ID" class="java.lang.String"/>
 	<parameter name="START_DATE" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select 1;]]>
+		<![CDATA[select 1 as dummy;]]>
 	</queryString>
 	<field name="?column?" class="java.lang.Integer"/>
 	<background>

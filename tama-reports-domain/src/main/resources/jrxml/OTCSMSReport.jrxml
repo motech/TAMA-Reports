@@ -31,43 +31,19 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select * from tama_reports.sms_log a , tama_reports.patient b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='O' and a.external_id=patient_document_id and c.clinic_id ilike $P{CLINIC_ID} and b.patient_id like $P{PATIENT_ID} and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
+			<![CDATA[select  patient_id, clinic_name, time_stamp, content from tama_reports.sms_log a , tama_reports.patient b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='O' and a.external_id=patient_document_id and c.clinic_id ilike $P{CLINIC_ID} and b.patient_id like $P{PATIENT_ID} and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
 		</queryString>
-		<field name="id" class="java.lang.Long"/>
-		<field name="external_id" class="java.lang.String"/>
-		<field name="sms_type" class="java.lang.String"/>
 		<field name="content" class="java.lang.String"/>
-		<field name="recipient_number" class="java.lang.String"/>
 		<field name="time_stamp" class="java.sql.Timestamp"/>
 		<field name="patient_id" class="java.lang.String"/>
-		<field name="patient_document_id" class="java.lang.String"/>
-		<field name="date_of_birth" class="java.sql.Date"/>
-		<field name="gender" class="java.lang.String"/>
-		<field name="morning_pill_time" class="java.sql.Time"/>
-		<field name="evening_pill_time" class="java.sql.Time"/>
-		<field name="clinic_id" class="java.lang.String"/>
-		<field name="travel_time_to_clinic" class="java.lang.String"/>
-		<field name="ivr_pass_code" class="java.lang.String"/>
-		<field name="ivr_language" class="java.lang.String"/>
-		<field name="call_preference" class="java.lang.String"/>
-		<field name="best_call_time" class="java.sql.Time"/>
-		<field name="receive_otc_advice" class="java.lang.String"/>
-		<field name="receive_appointment_reminder" class="java.lang.String"/>
-		<field name="registered_on" class="java.sql.Timestamp"/>
-		<field name="status" class="java.lang.String"/>
-		<field name="notes" class="java.lang.String"/>
 		<field name="clinic_name" class="java.lang.String"/>
-		<field name="city_name" class="java.lang.String"/>
-		<field name="greeting_name" class="java.lang.String"/>
-		<field name="address" class="java.lang.String"/>
-		<field name="contact_number" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
 	<parameter name="CLINIC_ID" class="java.lang.String"/>
 	<parameter name="START_DATE" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select 1;]]>
+		<![CDATA[select 1 as dummy;]]>
 	</queryString>
 	<field name="?column?" class="java.lang.Integer"/>
 	<background>
@@ -112,7 +88,7 @@
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="180" uuid="0ca885da-27f2-4dcd-884e-17782c788edb">
+					<jr:column uuid="0ca885da-27f2-4dcd-884e-17782c788edb" width="180">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="587c086a-ab86-4042-8cd4-82f56cc0245e" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -134,7 +110,7 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="180" uuid="bff820bd-0aba-4a81-9641-6fc7f5e6fae4">
+					<jr:column uuid="bff820bd-0aba-4a81-9641-6fc7f5e6fae4" width="180">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="9cf7bd49-a3c4-4099-85ad-81c49878210b" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -156,7 +132,7 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="180" uuid="214eb7db-be84-491e-a19d-df9910a37ced">
+					<jr:column uuid="214eb7db-be84-491e-a19d-df9910a37ced" width="180">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="e231104a-eafa-40a4-bab0-1bc4eb16b36c" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -178,7 +154,7 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="180" uuid="05ced450-816f-11e2-9e96-0800200c9a66">
+					<jr:column uuid="05ced450-816f-11e2-9e96-0800200c9a66" width="180">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="e231104a-eafa-40a4-bab0-1bc4eb16b37a" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -200,7 +176,7 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="180" uuid="e3cba993-5f8a-416e-aaf3-141f3d8e1164">
+					<jr:column uuid="e3cba993-5f8a-416e-aaf3-141f3d8e1164" width="180">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement uuid="f0a6a17a-f7db-4434-b6f4-9039c288167b" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>

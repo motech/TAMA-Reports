@@ -51,7 +51,7 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select *
+			<![CDATA[select patient_id, clinic_name, call_date, call_made_by, health_tips_played, number_of_times_health_tips_accessed, individual_health_tips_access_durations, total_health_tips_access_duration
 from tama_reports.health_tips ht
 join tama_reports.patient pa on pa.patient_document_id = ht.patient_document_id
 join tama_reports.clinic cl on pa.clinic_id = cl.clinic_id
@@ -59,8 +59,6 @@ where pa.patient_id like $P{PATIENT_ID} and cl.clinic_id ilike $P{CLINIC_ID}
 and ht.call_date::date >= to_date($P{START_DATE}, 'dd/MM/yyyy')
 and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		</queryString>
-		<field name="id" class="java.lang.Long"/>
-		<field name="patient_document_id" class="java.lang.String"/>
 		<field name="call_date" class="java.sql.Timestamp"/>
 		<field name="call_made_by" class="java.lang.String"/>
 		<field name="health_tips_played" class="java.lang.String"/>
@@ -68,36 +66,16 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		<field name="individual_health_tips_access_durations" class="java.lang.String"/>
 		<field name="total_health_tips_access_duration" class="java.lang.Long"/>
 		<field name="patient_id" class="java.lang.String"/>
-		<field name="date_of_birth" class="java.sql.Date"/>
-		<field name="gender" class="java.lang.String"/>
-		<field name="morning_pill_time" class="java.sql.Time"/>
-		<field name="evening_pill_time" class="java.sql.Time"/>
-		<field name="clinic_id" class="java.lang.String"/>
-		<field name="travel_time_to_clinic" class="java.lang.String"/>
-		<field name="ivr_pass_code" class="java.lang.String"/>
-		<field name="ivr_language" class="java.lang.String"/>
-		<field name="call_preference" class="java.lang.String"/>
-		<field name="best_call_time" class="java.sql.Time"/>
-		<field name="day_of_weekly_call" class="java.lang.String"/>
-		<field name="receive_otc_advice" class="java.lang.String"/>
-		<field name="receive_appointment_reminder" class="java.lang.String"/>
-		<field name="registered_on" class="java.sql.Timestamp"/>
-		<field name="status" class="java.lang.String"/>
-		<field name="notes" class="java.lang.String"/>
 		<field name="clinic_name" class="java.lang.String"/>
-		<field name="city_name" class="java.lang.String"/>
-		<field name="greeting_name" class="java.lang.String"/>
-		<field name="address" class="java.lang.String"/>
-		<field name="contact_number" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
 	<parameter name="CLINIC_ID" class="java.lang.String"/>
 	<parameter name="START_DATE" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.lang.String"/>
-	<queryString language="SQL">
-		<![CDATA[select count(*) from tama_reports.health_tips;]]>
+	<queryString>
+		<![CDATA[select 1 as dummy]]>
 	</queryString>
-	<field name="count" class="java.lang.Long"/>
+	<field name="dummy" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -140,7 +118,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="150" uuid="5f4096fb-08a6-43ae-9372-88adddb70944">
+					<jr:column uuid="5f4096fb-08a6-43ae-9372-88adddb70944" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="c63d9cd3-fbfd-4962-ad43-b8a822c279c9" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -162,7 +140,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="30f6069a-b564-4af3-a2d3-51686f07c388">
+					<jr:column uuid="30f6069a-b564-4af3-a2d3-51686f07c388" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="0e696ca7-b59b-4e0d-847a-21dbb8717104" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -184,7 +162,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="fa19c0f4-33f6-4545-b063-936aacf5b9ad">
+					<jr:column uuid="fa19c0f4-33f6-4545-b063-936aacf5b9ad" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="4c1cc591-fe7c-43e0-8c1a-3b2b38050870" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -206,7 +184,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="fa1aa0f4-33f6-4545-b063-936aacf5b9ad">
+					<jr:column uuid="fa1aa0f4-33f6-4545-b063-936aacf5b9ad" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="4c1aa591-fe7c-43e0-8c1a-3b2b3805aa70" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -228,7 +206,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="0eaae90d-bd05-44b9-8b81-f4d335f99661">
+					<jr:column uuid="0eaae90d-bd05-44b9-8b81-f4d335f99661" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="aa72aa1b-afe6-4807-ba10-916936c6f8fc" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -250,7 +228,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="696f2b0b-beb2-42a4-9ff6-e057e4a3ddca">
+					<jr:column uuid="696f2b0b-beb2-42a4-9ff6-e057e4a3ddca" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="c64cd50e-0cb0-44f7-925e-8a2d9ffd332f" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -272,7 +250,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="574cbb27-c3bc-4b09-ae6a-3dd0223fad0f">
+					<jr:column uuid="574cbb27-c3bc-4b09-ae6a-3dd0223fad0f" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="454cc0e0-bbf5-4fcb-90a8-bc2343cbe663" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -294,7 +272,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="dfe6acd6-0f20-4064-9498-fa20aab6c2de">
+					<jr:column uuid="dfe6acd6-0f20-4064-9498-fa20aab6c2de" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="f4555d73-4d68-4b6a-9df7-3ed9f97ddeef" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -316,7 +294,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="36a89866-be7b-40ea-b8a0-5e6eaee8d9fe">
+					<jr:column uuid="36a89866-be7b-40ea-b8a0-5e6eaee8d9fe" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>
 								<reportElement uuid="1c77db54-0cd9-4008-9afd-c35cf30568a8" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
