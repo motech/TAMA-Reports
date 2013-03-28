@@ -21,6 +21,33 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <target name="init">
+                                <echo message="init db"/>
+                                <exec executable="createdb" failonerror="false">
+                                    <arg line="-U postgres tama"/>
+                                </exec>
+                                <echo message="Setting up schema"/>
+                                <exec executable="psql">
+                                    <arg line="-U postgres"/>
+                                    <arg line="-d tama"/>
+                                    <arg line="-f ${project.basedir}/../tama-reports-migration/src/main/resources/db/setup/base_setup.sql"/>
+                                </exec>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.googlecode.flyway</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>1.6.1</version>
