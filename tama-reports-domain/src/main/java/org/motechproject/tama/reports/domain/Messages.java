@@ -6,9 +6,9 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@Table(name = "health_tips")
+@Table(name = "messages")
 @Entity
-public class HealthTips {
+public class Messages {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,19 +24,19 @@ public class HealthTips {
     @Column(name = "call_made_by")
     private String callMadeBy;
 
-    @Column(name = "health_tips_played")
-    private String healthTipsPlayed;
+    @Column(name = "messages_played")
+    private String messagesPlayed;
 
     @Column(name = "pushed_messages")
     private String pushedMessages;
 
-    @Column(name = "number_of_times_health_tips_accessed")
-    private Integer numberOfTimesHealthTipsAccessed;
+    @Column(name = "number_of_times_messages_accessed")
+    private Integer numberOfTimesMessagesAccessed;
 
-    @Column(name = "individual_health_tips_access_durations")
-    private String individualHealthTipsAccessDurations;
+    @Column(name = "individual_messages_access_durations")
+    private String individualMessagesAccessDurations;
 
-    @Column(name = "total_health_tips_access_duration")
-    private Long totalHealthTipsAccessDuration;
+    @Column(name = "total_messages_access_duration")
+    private Long totalMessagesAccessDuration;
 
 }

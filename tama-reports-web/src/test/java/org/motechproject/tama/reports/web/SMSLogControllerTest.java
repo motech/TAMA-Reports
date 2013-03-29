@@ -7,7 +7,7 @@ import org.motechproject.tama.reports.contract.SMSLogRequest;
 import org.motechproject.tama.reports.domain.SMSLog;
 import org.motechproject.tama.reports.domain.export.ReportingService;
 import org.motechproject.tama.reports.domain.service.SMSLogService;
-import org.motechproject.tama.reports.web.excel.HealthTipsParameters;
+import org.motechproject.tama.reports.web.excel.MessagesParameters;
 import org.springframework.http.MediaType;
 
 import java.io.OutputStream;
@@ -52,7 +52,7 @@ public class SMSLogControllerTest extends BaseControllerTest {
                 .build()
                 .perform(get("/smsLog/report").param("type", "OTCSMS").param("externalId", "").param("clinicId", "").param("startDate", "12/11/2013").param("endDate", "12/11/2013"))
                 .andExpect(status().isOk());
-        verify(reportingService).export(any(HealthTipsParameters.class), any(OutputStream.class), eq("OTCSMSReport.jasper"));
+        verify(reportingService).export(any(MessagesParameters.class), any(OutputStream.class), eq("OTCSMSReport.jasper"));
     }
 
     @Test
@@ -61,6 +61,6 @@ public class SMSLogControllerTest extends BaseControllerTest {
                 .build()
                 .perform(get("/smsLog/report").param("type", "ClinicianSMS").param("externalId", "").param("clinicId", "").param("startDate", "12/11/2013").param("endDate", "12/11/2013"))
                 .andExpect(status().isOk());
-        verify(reportingService).export(any(HealthTipsParameters.class), any(OutputStream.class), eq("ClinicianSMSReport.jasper"));
+        verify(reportingService).export(any(MessagesParameters.class), any(OutputStream.class), eq("ClinicianSMSReport.jasper"));
     }
 }

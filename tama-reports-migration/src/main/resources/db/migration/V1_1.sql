@@ -148,15 +148,15 @@ create table tama_reports.patient_event (
     performed_by varchar(100)
 );
 
-create table tama_reports.health_tips (
+create table tama_reports.messages (
     id bigserial PRIMARY KEY,
     patient_document_id varchar(100),
     call_date timestamp,
     call_made_by varchar(10),
-    health_tips_played text,
-    number_of_times_health_tips_accessed numeric,
-    individual_health_tips_access_durations text,
-    total_health_tips_access_duration bigint,
+    messages_played text,
+    number_of_times_messages_accessed numeric,
+    individual_messages_access_durations text,
+    total_messages_access_duration bigint,
     pushed_messages text
 );
 

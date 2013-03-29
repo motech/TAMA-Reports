@@ -7,17 +7,17 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class HealthTipsRequest implements Serializable {
+public class MessagesRequest implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String patientDocumentId;
     private Date callDate;
     private String callDirection;
-    private List<String> healthTipsPlayed;
-    private Integer numberOfTimesHealthTipsAccessed;
-    private List<Integer> individualHealthTipsAccessDurations;
-    private Long totalHealthTipsAccessDuration;
+    private List<String> messagesPlayed;
+    private Integer numberOfTimesMessagesAccessed;
+    private List<Integer> individualMessagesAccessDurations;
+    private Long totalMessagesAccessDuration;
     private List<String> pushedMessages;
 
 }
