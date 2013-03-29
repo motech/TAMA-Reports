@@ -18,5 +18,6 @@ public class HealthTipsRequest implements Serializable {
     private Integer numberOfTimesHealthTipsAccessed;
     private List<Integer> individualHealthTipsAccessDurations;
     private Long totalHealthTipsAccessDuration;
+    private List<String> pushedMessages;
 
 }

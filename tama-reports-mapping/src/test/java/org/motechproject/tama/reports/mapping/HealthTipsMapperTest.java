@@ -28,6 +28,7 @@ public class HealthTipsMapperTest {
         assertEquals(healthTipsRequest.getCallDate(), healthTips.getCallDate());
     }
 
+
     @Test
     public void shouldMapCallMadeByDuringIncomingCall() {
         HealthTipsRequest healthTipsRequest = new HealthTipsRequest();
@@ -53,6 +54,15 @@ public class HealthTipsMapperTest {
 
         HealthTips healthTips = new HealthTipsMapper(healthTipsRequest).map();
         assertEquals("healthTip1, healthTip2", healthTips.getHealthTipsPlayed());
+    }
+
+    @Test
+    public void shouldMapPushedMessages() {
+        HealthTipsRequest healthTipsRequest = new HealthTipsRequest();
+        healthTipsRequest.setPushedMessages(asList("message1", "message2"));
+
+        HealthTips healthTips = new HealthTipsMapper(healthTipsRequest).map();
+        assertEquals("message1, message2", healthTips.getPushedMessages());
     }
 
     @Test

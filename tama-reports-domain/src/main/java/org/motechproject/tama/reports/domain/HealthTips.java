@@ -27,6 +27,9 @@ public class HealthTips {
     @Column(name = "health_tips_played")
     private String healthTipsPlayed;
 
+    @Column(name = "pushed_messages")
+    private String pushedMessages;
+
     @Column(name = "number_of_times_health_tips_accessed")
     private Integer numberOfTimesHealthTipsAccessed;
 

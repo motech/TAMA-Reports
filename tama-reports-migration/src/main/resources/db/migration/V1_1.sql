@@ -156,7 +156,8 @@ create table tama_reports.health_tips (
     health_tips_played text,
     number_of_times_health_tips_accessed numeric,
     individual_health_tips_access_durations text,
-    total_health_tips_access_duration bigint
+    total_health_tips_access_duration bigint,
+    pushed_messages text
 );
 
 create table tama_reports.sms_log (

@@ -51,7 +51,7 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select patient_id, clinic_name, call_date, call_made_by, health_tips_played, number_of_times_health_tips_accessed, individual_health_tips_access_durations, total_health_tips_access_duration
+			<![CDATA[select patient_id, clinic_name, call_date, call_made_by, health_tips_played, number_of_times_health_tips_accessed, individual_health_tips_access_durations, total_health_tips_access_duration, pushed_messages
 from tama_reports.health_tips ht
 join tama_reports.patient pa on pa.patient_document_id = ht.patient_document_id
 join tama_reports.clinic cl on pa.clinic_id = cl.clinic_id
@@ -62,6 +62,7 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		<field name="call_date" class="java.sql.Timestamp"/>
 		<field name="call_made_by" class="java.lang.String"/>
 		<field name="health_tips_played" class="java.lang.String"/>
+		<field name="pushed_messages" class="java.lang.String"/>
 		<field name="number_of_times_health_tips_accessed" class="java.math.BigDecimal"/>
 		<field name="individual_health_tips_access_durations" class="java.lang.String"/>
 		<field name="total_health_tips_access_duration" class="java.lang.Long"/>
@@ -250,6 +251,28 @@ and ht.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
+					<jr:column uuid="2a903ed8-ef2f-481f-9715-be20101c5e6f" width="150">
+                        <jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
+                            <staticText>
+                                <reportElement uuid="22f9c229-2701-464c-95f5-094a1c4df2ba" mode="Transparent" x="0" y="0" width="150" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+                                    <font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                                    <paragraph lineSpacing="Single"/>
+                                </textElement>
+                                <text><![CDATA[Pushed Messages]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+                            <textField pattern="" isBlankWhenNull="true">
+                                <reportElement uuid="907e0b37-561f-4447-8575-9870403e41af" mode="Transparent" x="0" y="0" width="150" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+                                    <font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                                    <paragraph lineSpacing="Single"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{pushed_messages}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
 					<jr:column uuid="574cbb27-c3bc-4b09-ae6a-3dd0223fad0f" width="150">
 						<jr:columnHeader style="table 1_CH" height="40" rowSpan="1">
 							<staticText>

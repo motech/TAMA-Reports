@@ -17,6 +17,7 @@ public class HealthTipsMapper implements Mapper<HealthTips> {
         healthTips.setPatientDocumentId(healthTipsRequest.getPatientDocumentId());
         healthTips.setCallDate(healthTipsRequest.getCallDate());
         healthTips.setCallMadeBy(callMadeBy());
+        healthTips.setPushedMessages(StringUtils.join(healthTipsRequest.getPushedMessages(), ", "));
         healthTips.setHealthTipsPlayed(StringUtils.join(healthTipsRequest.getHealthTipsPlayed(), ", "));
         healthTips.setNumberOfTimesHealthTipsAccessed(healthTipsRequest.getNumberOfTimesHealthTipsAccessed());
         healthTips.setIndividualHealthTipsAccessDurations(StringUtils.join(healthTipsRequest.getIndividualHealthTipsAccessDurations(), ", "));
