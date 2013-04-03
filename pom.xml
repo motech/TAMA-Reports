@@ -280,7 +280,6 @@
                 <artifactId>jcl-over-slf4j</artifactId>
                 <groupId>org.slf4j</groupId>
                 <version>${slf4j.version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <artifactId>slf4j-api</artifactId>
@@ -291,7 +290,6 @@
                 <artifactId>slf4j-log4j12</artifactId>
                 <groupId>org.slf4j</groupId>
                 <version>${slf4j.version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>javax.transaction</groupId>
@@ -484,21 +482,6 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
                 <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>jcl-over-slf4j</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>log4j</groupId>
