@@ -40,13 +40,15 @@
         <!-- Motech -->
         <dependency>
             <groupId>org.motechproject.tama-motech-contrib</groupId>
+            <artifactId>motech-web-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.motechproject.tama-motech-contrib</groupId>
             <artifactId>motech-diagnostics</artifactId>
-            <version>${motech.contrib.version}</version>
         </dependency>
         <dependency>
             <groupId>org.motechproject.tama-motech-contrib</groupId>
             <artifactId>motech-diagnostics-web</artifactId>
-            <version>${motech.contrib.version}</version>
         </dependency>
         <!-- Spring Core -->
         <dependency>
