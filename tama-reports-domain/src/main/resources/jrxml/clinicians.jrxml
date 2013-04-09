@@ -90,7 +90,6 @@ Order by cl.clinic_name, cn.clinician_name;]]>
 	<queryString>
 		<![CDATA[select 1 as dummy;]]>
 	</queryString>
-	<field name="dummy" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>

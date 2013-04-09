@@ -74,9 +74,8 @@ and msg.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 	<parameter name="START_DATE" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select 1 as dummy]]>
+		<![CDATA[select 1 as dummy;]]>
 	</queryString>
-	<field name="dummy" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>

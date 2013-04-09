@@ -51,7 +51,7 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select clinician_name,recipient_number, clinic_name, time_stamp, content from tama_reports.sms_log a , tama_reports.clinician b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='C' and a.external_id=b.clinician_id and c.clinic_id ilike $P{CLINIC_ID} and b.clinician_name like $P{CLINICIAN_NAME} and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy')]]>
+			<![CDATA[select clinician_name,recipient_number, clinic_name, time_stamp, content from tama_reports.sms_log a , tama_reports.clinician b , tama_reports.clinic c where b.clinic_id = c.clinic_id and a.sms_type='C' and a.external_id=b.clinician_id and c.clinic_id ilike $P{CLINIC_ID} and b.clinician_name like $P{CLINICIAN_NAME} and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
 		</queryString>
         <field name="content" class="java.lang.String"/>
 		<field name="recipient_number" class="java.lang.String"/>
@@ -66,7 +66,6 @@
 	<queryString>
 		<![CDATA[select 1 as dummy;]]>
 	</queryString>
-	<field name="?column?" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>

@@ -103,7 +103,7 @@ Select clinic_name, greeting_name, address, contact_number, city_name,
        clinician_names[1] clinician_name_one, contact_numbers[1] contact_number_one,
        clinician_names[2] clinician_name_two, contact_numbers[2] contact_number_two,
        clinician_names[3] clinician_name_three, contact_numbers[3] contact_number_three from clinics
-Order by clinic_name]]>
+Order by clinic_name;]]>
 		</queryString>
 		<field name="clinic_name" class="java.lang.String"/>
 		<field name="greeting_name" class="java.lang.String"/>
@@ -120,7 +120,6 @@ Order by clinic_name]]>
 	<queryString>
 		<![CDATA[select 1 as dummy;]]>
 	</queryString>
-	<field name="dummy" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>

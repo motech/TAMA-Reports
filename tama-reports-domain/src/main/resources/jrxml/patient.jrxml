@@ -591,21 +591,6 @@
 	<queryString language="SQL">
 		<![CDATA[select 1 as dummy;]]>
 	</queryString>
-	<field name="id" class="java.lang.Integer"/>
-	<field name="patient_id" class="java.lang.String"/>
-	<field name="date_of_birth" class="java.sql.Date"/>
-	<field name="gender" class="java.lang.String"/>
-	<field name="clinic_id" class="java.lang.String"/>
-	<field name="travel_time_to_clinic" class="java.lang.String"/>
-	<field name="ivr_pass_code" class="java.lang.String"/>
-	<field name="ivr_language" class="java.lang.String"/>
-	<field name="call_preference" class="java.lang.String"/>
-	<field name="best_call_time" class="java.lang.String"/>
-	<field name="receive_otc_advice" class="java.lang.String"/>
-	<field name="receive_appointment_reminder" class="java.lang.String"/>
-	<field name="registered_on" class="java.sql.Timestamp"/>
-	<field name="status" class="java.lang.String"/>
-	<field name="notes" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
