@@ -33,7 +33,7 @@ public class GeneralHistory {
     private String rashToEfavirenzOrSustivaOrStocrinOrEfv;
     @Column(name = "pregnant")
     private String pregnant;
-    @Column(name = "pregnant_months")
+    @Column(name = "pregnant_weeks")
     private String pregnantMonths;
     @Column(name = "baseline_pre_therapy_hb_less_than_10")
     private String baselinePreTherapyHbLessThan10;

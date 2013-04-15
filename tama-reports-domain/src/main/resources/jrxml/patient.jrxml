@@ -402,13 +402,19 @@
                             a.clinic_id,
                             a.travel_time_to_clinic,
                             a.ivr_pass_code,
-                            to_char(morning_pill_time,'HH12:mm pm') AS morning_time,
-                            to_char(evening_pill_time,'HH12:mm pm') AS evening_time,
+                            CASE
+                                 WHEN a.morning_pill_time IS NULL THEN 'NA'
+                                 ELSE  to_char(morning_pill_time,'HH12:MI pm')
+                            END  AS morning_time,
+                            CASE
+                                 WHEN a.evening_pill_time IS NULL THEN 'NA'
+                                 ELSE to_char(evening_pill_time,'HH12:MI pm')
+                                 END  AS evening_time,
                             a.ivr_language,
                             a.call_preference,
                             CASE
                                 WHEN a.best_call_time IS NULL THEN 'NA'
-                                ELSE to_char(a.best_call_time,'HH12:mm pm')
+                                ELSE to_char(a.best_call_time,'HH12:MI pm')
                             END AS best_call_time,
                             a.receive_otc_advice,
                             a.receive_appointment_reminder,
@@ -482,7 +488,7 @@
                             c.arv_allergy_remarks,
                             c.rash_to_nevirapine_viramune_nvp,
                             c.rash_to_etravirine_intelence_tmc125,
-                            c.pregnant_months
+                            c.pregnant_weeks
                      FROM tama_reports.patient a,
                           tama_reports.clinic b,
                           tama_reports.medical_history c
@@ -582,7 +588,7 @@
 		<field name="arv_allergy_remarks" class="java.lang.String"/>
 		<field name="rash_to_nevirapine_viramune_nvp" class="java.lang.String"/>
 		<field name="rash_to_etravirine_intelence_tmc125" class="java.lang.String"/>
-		<field name="pregnant_months" class="java.lang.String"/>
+		<field name="pregnant_weeks" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PATIENT_ID" class="java.lang.String"/>
 	<parameter name="CLINIC_ID" class="java.lang.String"/>
@@ -1162,7 +1168,7 @@
 									<staticText>
 										<reportElement uuid="ebeab9c7-a313-48d9-9201-b8164e926228" x="0" y="0" width="150" height="30"/>
 										<textElement/>
-										<text><![CDATA[pregnant]]></text>
+										<text><![CDATA[Pregnant]]></text>
 									</staticText>
 								</jr:columnHeader>
 								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
@@ -1178,14 +1184,14 @@
 									<staticText>
 										<reportElement uuid="ebeab9c7-a313-48d9-9201-b8164e926228" x="0" y="0" width="150" height="30"/>
 										<textElement/>
-										<text><![CDATA[Pregnant Months]]></text>
+										<text><![CDATA[Pregnant Weeks]]></text>
 									</staticText>
 								</jr:columnHeader>
 								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
 									<textField isBlankWhenNull="true">
 										<reportElement uuid="daf9bcb9-d918-456e-89b9-be28ebd099d5" x="0" y="0" width="150" height="30"/>
 										<textElement/>
-										<textFieldExpression><![CDATA[$F{pregnant_months}]]></textFieldExpression>
+										<textFieldExpression><![CDATA[$F{pregnant_weeks}]]></textFieldExpression>
 									</textField>
 								</jr:detailCell>
 							</jr:column>
