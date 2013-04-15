@@ -2043,7 +2043,7 @@
 										<text><![CDATA[NonHIV other]]></text>
 									</staticText>
 								</jr:columnHeader>
-								<jr:detailCell height="30" rowSpan="1">
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
 									<textField isBlankWhenNull="true">
 										<reportElement uuid="f3208951-8474-4609-ae6d-c2a6f8ffaaeb" x="0" y="0" width="150" height="30"/>
 										<textElement/>
@@ -2059,7 +2059,7 @@
 										<text><![CDATA[Non HIV other remarks]]></text>
 									</staticText>
 								</jr:columnHeader>
-								<jr:detailCell height="30" rowSpan="1">
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
 									<textField isBlankWhenNull="true">
 										<reportElement uuid="70dd9262-5f9b-48fc-98bd-7532c64bf06e" x="0" y="0" width="150" height="30"/>
 										<textElement/>
@@ -2075,7 +2075,7 @@
 										<text><![CDATA[NonHIV other]]></text>
 									</staticText>
 								</jr:columnHeader>
-								<jr:detailCell height="30" rowSpan="1">
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
 									<textField isBlankWhenNull="true">
 										<reportElement uuid="f3208951-8474-4609-ae6d-c2a6f8ffaaeb" x="0" y="0" width="150" height="30"/>
 										<textElement/>
@@ -2091,7 +2091,7 @@
 										<text><![CDATA[Non HIV other remarks]]></text>
 									</staticText>
 								</jr:columnHeader>
-								<jr:detailCell height="30" rowSpan="1">
+								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
 									<textField isBlankWhenNull="true">
 										<reportElement uuid="70dd9262-5f9b-48fc-98bd-7532c64bf06e" x="0" y="0" width="150" height="30"/>
 										<textElement/>
