@@ -89,8 +89,6 @@ public class Patient {
         this.setPatientDocumentId(patient.getPatientDocumentId());
         this.setGender(patient.getGender());
         this.setCallPreference(patient.getCallPreference());
-        this.setMorningPillTime(patient.getMorningPillTime());
-        this.setEveningPillTime(patient.getEveningPillTime());
         this.setDateOfBirth(patient.getDateOfBirth());
         this.setClinicId(patient.getClinicId());
         this.setNotes(patient.getNotes());
