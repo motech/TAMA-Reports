@@ -66,6 +66,8 @@ public class Patient {
     @NotNull
     @Column(name = "receive_appointment_reminder")
     private Boolean receiveAppointmentReminder;
+    @Column(name = "complete")
+    private Boolean complete;
 
     @Column(name = "registered_on")
     private Date registeredOn;
@@ -99,6 +101,7 @@ public class Patient {
         this.setIvrPassCode(patient.getIvrPassCode());
         this.setRegisteredOn(patient.getRegisteredOn());
         this.setStatus(patient.getStatus());
+        this.setComplete(patient.getComplete());
     }
 
     public void mergePillTimes(String morningPillTime, String eveningPillTime) {
