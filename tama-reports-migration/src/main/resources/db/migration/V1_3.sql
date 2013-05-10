@@ -1,1 +1,1 @@
-ALTER TABLE tama_reports.patient ADD COLUMN complete varchar(5);
+ALTER TABLE tama_reports.patient ADD COLUMN complete varchar(5) default false;
