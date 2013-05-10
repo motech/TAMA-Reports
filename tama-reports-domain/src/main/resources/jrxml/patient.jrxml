@@ -784,7 +784,7 @@
 									<staticText>
 										<reportElement uuid="5cca0392-6916-4130-a622-6928758c47ea" x="0" y="0" width="150" height="30"/>
 										<textElement/>
-										<text><![CDATA[Complete]]></text>
+										<text><![CDATA[Registration Complete]]></text>
 									</staticText>
 								</jr:columnHeader>
 								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
