@@ -313,14 +313,14 @@
                <jr:columnGroup width="150" uuid="42512891-c732-45f7-962c-3fa76962b95a">
                      <jr:columnHeader height="33" rowSpan="1" />
                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7a">
-                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
                            <staticText>
                               <reportElement uuid="9929d50f-36aa-4845-b23d-12e51de1329d" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[Patient Id]]></text>
                            </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="0be7096c-b400-40f5-b527-5b91bcf49dea" x="0" y="0" width="150" height="33" />
                               <textElement />
@@ -331,14 +331,14 @@
                 </jr:columnGroup>
                      <jr:columnGroup width="150" uuid="42511891-c732-45f7-962c-3fa76962b95a">
                       <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7b">
-                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
                            <staticText>
                               <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[Clinic Name]]></text>
                            </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                               <textElement />
@@ -349,14 +349,14 @@
                       </jr:columnGroup>
                      <jr:columnGroup width="150" uuid="42510891-c732-45f7-962c-3fa76962b95a">
                       <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7c">
-                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
                            <staticText>
                               <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[ART Start Date (DD/MM/YYYY)]]></text>
                            </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                               <textElement />
@@ -367,14 +367,14 @@
                       </jr:columnGroup>
                      <jr:columnGroup width="150" uuid="42599891-c732-45f7-962c-3fa76962b95a">
                       <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7d">
-                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
                            <staticText>
                               <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[Treatment Advice]]></text>
                            </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                               <textElement />
@@ -385,14 +385,14 @@
                       </jr:columnGroup>
                      <jr:columnGroup width="150" uuid="42598891-c732-45f7-962c-3fa76962b95a">
                       <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7e">
-                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
                            <staticText>
                               <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[Start Date (DD/MM/YYYY)]]></text>
                            </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                               <textElement />
@@ -403,14 +403,14 @@
                       </jr:columnGroup>
                      <jr:columnGroup width="150" uuid="42597891-c732-45f7-962c-3fa76962b95a">
                       <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7f">
-                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
                            <staticText>
                               <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[Week Start Date (DD/MM/YYYY)]]></text>
                            </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                               <textElement />
@@ -421,14 +421,14 @@
                       </jr:columnGroup>
                      <jr:columnGroup width="150" uuid="42596891-c732-45f7-962c-3fa76962b95a">
                       <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae72">
-                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
                            <staticText>
                               <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[Adherence Reported On Date (DD/MM/YYYY)]]></text>
                            </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                               <textElement />
@@ -439,14 +439,14 @@
                       </jr:columnGroup>
                      <jr:columnGroup width="150" uuid="42596991-c732-45f7-962c-3fa76962b95a">
                       <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae76">
-                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
                            <staticText>
                               <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[No of Doses Missed]]></text>
                            </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                               <textElement />
