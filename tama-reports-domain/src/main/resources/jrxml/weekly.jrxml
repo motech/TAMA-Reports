@@ -1,1800 +1,463 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="patient" pageWidth="12640" pageHeight="7200" columnWidth="12600" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b816333a-bc2e-4e97-9ace-98c5283c0024">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="10673"/>
-	<property name="ireport.y" value="0"/>
-	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
-	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
-	<style name="table">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 1">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 2">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 3">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 4">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 5">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 6">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 7">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 7_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 7_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 8">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 8_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 8_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 9">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 9_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 9_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 10">
-		<box>
-			<pen lineWidth="1.0" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 10_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 10_CH" mode="Opaque" backcolor="#BFE1FF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="table 10_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<pen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="weekly" pageWidth="12640" pageHeight="7200" columnWidth="12600" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b816333a-bc2e-4e97-9ace-98c5283c0024">
+   <property name="ireport.zoom" value="1.0" />
+   <property name="ireport.x" value="10673" />
+   <property name="ireport.y" value="0" />
+   <property name="net.sf.jasperreports.print.keep.full.text" value="true" />
+   <property name="net.sf.jasperreports.text.truncate.at.char" value="true" />
+   <style name="table">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 1">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 2">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 3">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 4">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 5">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 6">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 7">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 8">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 8_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 8_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 9">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 9_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 9_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 10">
+      <box>
+         <pen lineWidth="1.0" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 10_TH" mode="Opaque" backcolor="#F0F8FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 10_CH" mode="Opaque" backcolor="#BFE1FF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <style name="table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+      <box>
+         <pen lineWidth="0.5" lineColor="#000000" />
+      </box>
+   </style>
+   <subDataset name="Weekly" uuid="b0056990-caaf-4647-ad3a-29b51ae144d3">
+      <parameter name="PATIENT_ID" class="java.lang.String" />
+      <parameter name="CLINIC_ID" class="java.lang.String" />
+      <parameter name="START_DATE" class="java.lang.String" />
+      <parameter name="END_DATE" class="java.lang.String" />
+      <queryString><![CDATA[SELECT a.patient_id,
+                                a.patient_document_id,
+                                b.clinic_name,
+                                c.art_start_date,
+                                c.treatmentAdviceId,
+                                c.start_date,
+                                c.week_start_date,
+                                c.adherence_reported_on,
+                                c.no_of_doses_missed
+    
+                                FROM tama_reports.patient a,
+                              tama_reports.clinic b,
+                              tama_reports.weeklyAdherenceLog c
+                         WHERE c.patient_document_id = a.patient_document_id
+                           AND a.clinic_id = b.clinic_id
+                           AND b.clinic_id LIKE $P{CLINIC_ID}
+                           AND a.patient_id LIKE $P{PATIENT_ID}
+                           AND ($P{START_DATE} = ''
+                                OR a.registered_on >= to_date($P{START_DATE},'dd/MM/yyyy'))
+                           AND ($P{END_DATE} = ''
+                                OR a.registered_on <= to_date($P{END_DATE},'dd/MM/yyyy'))
+                         ORDER BY (b.clinic_name,
+                                   a.patient_id);]]></queryString>
+      <field name="patient_id" class="java.lang.String" />
+      <field name="patient_document_id" class="java.lang.String" />
+      <field name="clinic_Name" class="java.lang.String" />
+      <field name="art_start_date" class="java.lang.String" />
+      <field name="treatmentAdviceId" class="java.lang.String" />
+      <field name="start_date" class="java.lang.String" />
+      <field name="week_start_date" class="java.lang.String" />
+      <field name="adherence_reported_on" class="java.lang.String" />
+      <field name="no_of_doses_missed" class="java.lang.String" />
+   </subDataset>
+   <parameter name="PATIENT_ID" class="java.lang.String" />
+   <parameter name="CLINIC_ID" class="java.lang.String" />
+   <parameter name="START_DATE" class="java.lang.String" />
+   <parameter name="END_DATE" class="java.lang.String" />
+   <queryString language="SQL"><![CDATA[select 1 as dummy;]]></queryString>
+   <background>
+      <band splitType="Stretch" />
+   </background>
+   <pageHeader>
+      <band height="80" splitType="Stretch">
+         <textField pattern="dd/MM/yyyy">
+            <reportElement uuid="4a33bccb-2a39-4804-a8cb-f2d8e88269b1" x="150" y="20" width="150" height="20" />
+            <textElement />
+            <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+         </textField>
+         <staticText>
+            <reportElement uuid="fe798db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="0" width="150" height="20" />
+            <textElement />
+            <text><![CDATA[Weekly Adherence Report]]></text>
+         </staticText>
+         <staticText>
+            <reportElement uuid="fe798db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="20" width="150" height="20" />
+            <textElement />
+            <text><![CDATA[Date]]></text>
+         </staticText>
+      </band>
+   </pageHeader>
+   <summary>
+      <band height="168" splitType="Stretch">
+         <componentElement>
+            <reportElement uuid="b2bc5efb-689e-4aff-84b5-eb3bb61e272f" key="table 18" style="table 18" x="0" y="0" width="12450" height="168" />
+            <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+               <datasetRun subDataset="Weekly" uuid="cf3f1d81-55d9-4ebf-97d9-fa36722ee035">
+                  <datasetParameter name="PATIENT_ID">
+                     <datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>
+                  </datasetParameter>
+                  <datasetParameter name="CLINIC_ID">
+                     <datasetParameterExpression><![CDATA[$P{CLINIC_ID}]]></datasetParameterExpression>
+                  </datasetParameter>
+                  <datasetParameter name="START_DATE">
+                     <datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>
+                  </datasetParameter>
+                  <datasetParameter name="END_DATE">
+                     <datasetParameterExpression><![CDATA[$P{END_DATE}]]></datasetParameterExpression>
+                  </datasetParameter>
+                  <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+               </datasetRun>
+               <jr:columnGroup width="150" uuid="42512891-c732-45f7-962c-3fa76962b95a">
+                     <jr:columnHeader height="33" rowSpan="1" />
+                     <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7a">
+                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                           <staticText>
+                              <reportElement uuid="9929d50f-36aa-4845-b23d-12e51de1329d" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[Patient Id]]></text>
+                           </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                           <textField isBlankWhenNull="true">
+                              <reportElement uuid="0be7096c-b400-40f5-b527-5b91bcf49dea" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
+                           </textField>
+                        </jr:detailCell>
+                     </jr:column>
+                </jr:columnGroup>
+                     <jr:columnGroup width="150" uuid="42511891-c732-45f7-962c-3fa76962b95a">
+                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7b">
+                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                           <staticText>
+                              <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[Clinic Name]]></text>
+                           </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                           <textField isBlankWhenNull="true">
+                              <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <textFieldExpression><![CDATA[$F{clinic_Name}]]></textFieldExpression>
+                           </textField>
+                        </jr:detailCell>
+                     </jr:column>
+                      </jr:columnGroup>
+                     <jr:columnGroup width="150" uuid="42510891-c732-45f7-962c-3fa76962b95a">
+                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7c">
+                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                           <staticText>
+                              <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[ART Start Date (DD/MM/YYYY)]]></text>
+                           </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                           <textField isBlankWhenNull="true">
+                              <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <textFieldExpression><![CDATA[$F{art_start_date}]]></textFieldExpression>
+                           </textField>
+                        </jr:detailCell>
+                     </jr:column>
+                      </jr:columnGroup>
+                     <jr:columnGroup width="150" uuid="42599891-c732-45f7-962c-3fa76962b95a">
+                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7d">
+                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                           <staticText>
+                              <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[Treatment Advice]]></text>
+                           </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                           <textField isBlankWhenNull="true">
+                              <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <textFieldExpression><![CDATA[$F{treatmentAdviceId}]]></textFieldExpression>
+                           </textField>
+                        </jr:detailCell>
+                     </jr:column>
+                      </jr:columnGroup>
+                     <jr:columnGroup width="150" uuid="42598891-c732-45f7-962c-3fa76962b95a">
+                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7e">
+                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                           <staticText>
+                              <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[Start Date (DD/MM/YYYY)]]></text>
+                           </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                           <textField isBlankWhenNull="true">
+                              <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <textFieldExpression><![CDATA[$F{start_date}]]></textFieldExpression>
+                           </textField>
+                        </jr:detailCell>
+                     </jr:column>
+                      </jr:columnGroup>
+                     <jr:columnGroup width="150" uuid="42597891-c732-45f7-962c-3fa76962b95a">
+                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7f">
+                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                           <staticText>
+                              <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[Week Start Date (DD/MM/YYYY)]]></text>
+                           </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                           <textField isBlankWhenNull="true">
+                              <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <textFieldExpression><![CDATA[$F{week_start_date}]]></textFieldExpression>
+                           </textField>
+                        </jr:detailCell>
+                     </jr:column>
+                      </jr:columnGroup>
+                     <jr:columnGroup width="150" uuid="42596891-c732-45f7-962c-3fa76962b95a">
+                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae72">
+                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                           <staticText>
+                              <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[Adherence Reported On Date (DD/MM/YYYY)]]></text>
+                           </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                           <textField isBlankWhenNull="true">
+                              <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <textFieldExpression><![CDATA[$F{adherence_reported_on}]]></textFieldExpression>
+                           </textField>
+                        </jr:detailCell>
+                     </jr:column>
+                      </jr:columnGroup>
+                     <jr:columnGroup width="150" uuid="42596991-c732-45f7-962c-3fa76962b95a">
+                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae76">
+                        <jr:columnHeader style="table 18_CH" height="33" rowSpan="1">
+                           <staticText>
+                              <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[No of Doses Missed]]></text>
+                           </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 18_TD" height="33" rowSpan="1">
+                           <textField isBlankWhenNull="true">
+                              <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <textFieldExpression><![CDATA[$F{no_of_doses_missed}]]></textFieldExpression>
+                           </textField>
+                        </jr:detailCell>
+                     </jr:column>
+                  </jr:columnGroup>
 
-	<subDataset name="Weekly" uuid="b0056990-caaf-4647-ad3a-29b51ae144d3">
-		<parameter name="PATIENT_ID" class="java.lang.String"/>
-		<parameter name="CLINIC_ID" class="java.lang.String"/>
-		<parameter name="START_DATE" class="java.lang.String"/>
-		<parameter name="END_DATE" class="java.lang.String"/>
-		<queryString>
-			<![CDATA[SELECT a.patient_id,
-                            a.patient_document_id,
-                            b.clinic_name,
-                            c.art_start_date,
-                            c.treatmentAdviceId,
-                            c.start_date,
-                            c.week_start_date,
-                            c.adherence_reported_on,
-                            c.no_of_doses_missed
-
-                            FROM tama_reports.patient a,
-                          tama_reports.clinic b,
-                          tama_reports.weeklyAdherenceLog c
-                     WHERE c.patient_document_id = a.patient_document_id
-                       AND a.clinic_id = b.clinic_id
-                       AND b.clinic_id LIKE $P{CLINIC_ID}
-                       AND a.patient_id LIKE $P{PATIENT_ID}
-                       AND ($P{START_DATE} = ''
-                            OR a.registered_on >= to_date($P{START_DATE},'dd/MM/yyyy'))
-                       AND ($P{END_DATE} = ''
-                            OR a.registered_on <= to_date($P{END_DATE},'dd/MM/yyyy'))
-                     ORDER BY (b.clinic_name,
-                               a.patient_id);]]>
-		</queryString>
-		<field name="patient_id" class="java.lang.String"/>
-		<field name="patient_document_id" class="java.lang.String"/>
-		<field name="clinic_Name" class="java.lang.String"/>
-		<field name="art_start_date" class="java.lang.String"/>
-		<field name="treatmentAdviceId" class="java.lang.String"/>
-		<field name="start_date" class="java.lang.String"/>
-		<field name="week_start_date" class="java.lang.String"/>
-		<field name="adherence_reported_on" class="java.lang.String"/>
-		<field name="no_of_doses_missed" class="java.lang.String"/>
-	</subDataset>
-	<parameter name="PATIENT_ID" class="java.lang.String"/>
-	<parameter name="CLINIC_ID" class="java.lang.String"/>
-	<parameter name="START_DATE" class="java.lang.String"/>
-	<parameter name="END_DATE" class="java.lang.String"/>
-	<queryString language="SQL">
-		<![CDATA[select 1 as dummy;]]>
-	</queryString>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<pageHeader>
-		<band height="40" splitType="Stretch">
-			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="4a33bccb-2a39-4804-a8cb-f2d8e88269b1" x="150" y="20" width="150" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement uuid="fe798db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="0" width="150" height="20"/>
-				<textElement/>
-				<text><![CDATA[Patient Registration]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="fe798db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="20" width="150" height="20"/>
-				<textElement/>
-				<text><![CDATA[Date]]></text>
-			</staticText>
-		</band>
-	</pageHeader>
-	<summary>
-		<band height="168" splitType="Stretch">
-			<componentElement>
-				<reportElement uuid="b2bc5efb-689e-4aff-84b5-eb3bb61e272f" key="table 18" style="table 18" x="0" y="0" width="12450" height="168"/>
-				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="Patient" uuid="cf3f1d81-55d9-4ebf-97d9-fa36722ee035">
-						<datasetParameter name="PATIENT_ID">
-							<datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="CLINIC_ID">
-							<datasetParameterExpression><![CDATA[$P{CLINIC_ID}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="START_DATE">
-							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="END_DATE">
-							<datasetParameterExpression><![CDATA[$P{END_DATE}]]></datasetParameterExpression>
-						</datasetParameter>
-						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					</datasetRun>
-					<jr:columnGroup width="750" uuid="5529148a-778d-4e66-a781-586273ff0fc1">
-						<jr:columnHeader height="75" rowSpan="1">
-							<staticText>
-								<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="750" height="75"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font size="16"/>
-								</textElement>
-								<text><![CDATA[Basic Information]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:columnGroup width="750" uuid="42596891-c732-45f7-962c-3fa76962b95a">
-							<jr:columnHeader height="33" rowSpan="1"/>
-							<jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7a">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="9929d50f-36aa-4845-b23d-12e51de1329d" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Patient Id]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="0be7096c-b400-40f5-b527-5b91bcf49dea" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="ff78c131-24bb-4e02-9449-08caa1a551ab">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Date of birth (DD/MM/YYYY) ]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{date_of_birth}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="3fc27f83-94bd-471a-a238-7d3c606f5d9c">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="d4f13ef1-71dd-4233-8f09-15a0140c7a7c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Gender]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="b560b725-1431-4c1e-81cd-3a4ac0aea9a3" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="b3060e28-1b8d-4b71-bb9c-c6fc8adfe332">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="11d00ac8-9aa6-499c-972d-c1afc205f9b9" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Clinic]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="5a13afc1-f6d7-4fb7-937e-2aa7cea336ab" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{clinic_name}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="5313d8d8-fa45-4b76-87b3-25fd35e3948d">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="e7f61f20-9094-459d-bd3e-3f9f8baf586e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Travel time to clinic]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="bddd24c6-9c76-4bc8-82b8-0b0b66bb4198" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{travel_time_to_clinic}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="450" uuid="f3a41eb1-350f-4a5b-af87-484db71aabc1">
-						<jr:columnHeader height="75" rowSpan="1">
-							<staticText>
-								<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="450" height="75"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font size="16"/>
-								</textElement>
-								<text><![CDATA[TAMA Status]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:columnGroup width="450" uuid="68a51152-1c33-49c8-9c80-2f5bc38d4a2a">
-							<jr:columnHeader height="33" rowSpan="1"/>
-							<jr:column width="150" uuid="d63c9cf5-7562-4ec8-b051-3eb9fa247ce5">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="a0937499-64f3-40ae-a527-405cf0ed48e3" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Registered on (DD/MM/YYYY) ]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f7e61a73-8a05-49c8-a3de-c164ede2b31f" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{registered_on}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="ac7f5530-5b71-4d3e-b7ce-f9495bd424fb">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="8a1ca1c8-4183-4ff6-9c5e-810b5ea2d242" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Status]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="9720823a-2cd6-446e-a5ce-0989eb3407a5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="7d4a884c-22a0-48b5-b355-281b79a80b20">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="5cca0392-6916-4130-a622-6928758c47ea" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Registration Complete]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="9cfd1921-32a0-42a4-a0ba-3740a19ebd08" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{complete}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="1350" uuid="7e6bd8fa-ed92-4762-a0bc-0ea0b2feec52">
-						<jr:columnHeader height="75" rowSpan="1">
-							<staticText>
-								<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="1350" height="75"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font size="16"/>
-								</textElement>
-								<text><![CDATA[TAMA Preference]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:columnGroup width="1350" uuid="17b693d2-1a8a-400e-94b2-66b2e34ca29d">
-							<jr:columnHeader height="33" rowSpan="1"/>
-							<jr:column width="150" uuid="6f6769ae-a751-4124-b30b-bebb454a7896">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="463dcb2a-34b9-4b3a-90aa-b72c2c9b0296" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[IVR Language]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="4c92d614-b0a3-4d5f-b7e5-2532c79bdb59" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{ivr_language}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="221da1a8-b7d5-4b1b-8b0d-1ae50db1fdc8">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2aa9681d-f9d8-4621-8745-d4d95e3394bf" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Adherence calls (Daily/Weekly)]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="a5329d25-eaa2-4a49-bee9-581951bebf13" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{call_preference}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="8246137f-03ea-4b89-8efb-39d6e00cc5d5">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2aa9681d-f9d8-4621-8745-d4d95e3394bf" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Morning pill time]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="a5329d25-eaa2-4a49-bee9-581951bebf13" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{morning_time}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="920b4ab4-2ad9-4596-bedc-355b9cc193db">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2aa9681d-f9d8-4621-8745-d4d95e3394bf" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Evening pill time]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="a5329d25-eaa2-4a49-bee9-581951bebf13" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{evening_time}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="de16d59f-f499-457b-b93a-505c5d0013d8">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="33d95f4c-c332-4a5b-b0cf-6dc95867c0b5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Best call time]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f8b969b4-b62b-4008-b3fa-56b28b93e62c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{best_call_time}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="7e45cb89-cdec-4678-ab44-8a18cc1c106f">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="33d95f4c-c332-4a5b-b0cf-6dc95867c0b5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Day of weekly call]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f8b969b4-b62b-4008-b3fa-56b28b93e62c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{day_of_weekly_call}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="5f51754e-dd8a-4b13-bef6-79ccd469d804">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="af5b6e44-842c-4d55-8bf4-b140e8c9167f" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Receive OTC Advice]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="0ba9c90e-1860-4968-8d40-8a682fdf76a3" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{receive_otc_advice}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="8359c101-63df-489d-aa13-a7669619ca5a">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="4744219a-16b4-40a2-a632-ab80c3de53ee" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Receive appointment reminder]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="3204261b-5056-41fa-bfce-129b3e136ec1" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{receive_appointment_reminder}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="a9d3929b-a9df-4ad2-a436-33c83039a705">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="9ceaada8-5cf1-43b6-a46c-777781a014d9" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Notes]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f56c6d76-1abe-4f1a-9655-31b215529027" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{notes}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="300" uuid="e5a154ef-fd27-4991-bb4f-aa3a44d6017f">
-						<jr:columnHeader height="75" rowSpan="1">
-							<staticText>
-								<reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="300" height="75"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font size="16"/>
-								</textElement>
-								<text><![CDATA[HIV Related Medical History]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:columnGroup width="300" uuid="b9573359-5d89-4038-a20c-0e09b64d40a1">
-							<jr:columnHeader height="33" rowSpan="1"/>
-							<jr:column width="150" uuid="4082c956-3514-420a-b221-63c76ace0d0c">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="8ab84bb3-565f-4922-a22c-e6479bbdb58a" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Reason for HIV Test]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="aae1607d-a96b-4eeb-87ea-e8739b428770" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{test_reason}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="f859002b-c4f4-455c-9f05-56ecc5b6b2eb">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2cb440bd-b3ec-4ab7-b852-43922e1c1e65" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Modes of Transmission]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="846a980d-bdb7-48e7-8010-9f5c7c7598c1" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{modes_of_transmission}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="2100" uuid="aef7be0d-6914-4d7e-916a-7100b2be9976">
-						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="2100" uuid="af4f5780-7b12-4481-acb5-946f8a2be4d6">
-							<jr:columnHeader height="33" rowSpan="1"/>
-							<jr:column width="150" uuid="24ee9d53-9f12-495f-bda6-09bd182c7e03">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="b9250695-7a4f-4408-bdcb-2cd1af6907c4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[History of drug allergy/hypersensitivity]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="a0d1ba40-c042-4ffa-a0b0-e8db51e71233" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{history_of_drug_allergy}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="67c5726c-c790-4328-9d61-41bd941b26ad">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="d700ce5f-26f9-430c-9430-87478a414de4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[History of rash while receving NNRTIs]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="5811f3f5-e212-47d2-8bdb-c00779ffc0e5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{history_of_rash}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="bd90e268-3b67-493b-988c-5ba5297b5f0c">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="d700ce5f-26f9-430c-9430-87478a414de4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Rash To Nevirapine/Viramune/NVP]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="5811f3f5-e212-47d2-8bdb-c00779ffc0e5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{rash_to_nevirapine_viramune_nvp}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="71b69f8a-5125-4824-8d03-07c31f8f7d37">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="d700ce5f-26f9-430c-9430-87478a414de4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Rash To Etravirine/Intelence/TMC125]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="5811f3f5-e212-47d2-8bdb-c00779ffc0e5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{rash_to_etravirine_intelence_tmc125}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="0830fc0d-6d18-4ed1-9d24-d860a354c27a">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="91a4b77a-6c23-4d4d-8e3d-a094428bf6f8" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Sulfonamide allergy]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="b98d94a5-952b-4ab8-a3f9-a316ca8b8ae5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{sulfonamide_allergy}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="d8f50ce2-56ca-4e17-b401-b576ac23b591">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="bd2441d7-09b0-495d-aad3-1668acf5c2ef" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Arv allergy]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="132f9d21-57e3-4728-bd04-c4268e65e8b5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{arv_allergy}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="d5efe0d5-34e1-4d3d-9c63-0c38f2ac37c1">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="bd2441d7-09b0-495d-aad3-1668acf5c2ef" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Arv Allergy Remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="132f9d21-57e3-4728-bd04-c4268e65e8b5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{arv_allergy_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="ba3c0730-46ca-4b28-8741-fe8f5bc4741d">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="0b930e28-7958-4bc6-a938-9b748d20f87d" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Other]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="178b5992-a2a8-4b21-a59d-dd5a6d6e62ca" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{other}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="8d8c5e37-8d4c-45a0-baa5-299213b66d32">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="9fff2760-057d-4359-96e4-bdef4ac90be4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Other details]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="968bd372-fa05-4065-bc21-c5f04ced3ab9" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{other_details}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="c741a570-4d74-457b-b250-d3f090898568">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="c811f1b7-547b-46ff-a0ed-ab27f49645e6" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Rash to Delaviridine / Rescriptor / DLV]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="b9a375f4-93ce-4841-8457-514c0ad0a844" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{rash_to_delaviridine_or_rescriptor_or_dlv}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="746af4fc-39cb-470e-bfbe-5a298c591930">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="195ec11c-12cf-402d-8c3f-afe7c6b67949" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Rash to Efavirenz / Sustiva / Stocrin / EFV]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="47932ccb-3511-433c-ab30-406b3de6a2b0" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{rash_to_efavirenz_or_sustiva_or_stocrin_or_efv}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="de9e377d-dc31-44db-a34d-6813275d8492">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="ebeab9c7-a313-48d9-9201-b8164e926228" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Pregnant]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="daf9bcb9-d918-456e-89b9-be28ebd099d5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{pregnant}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="63bf81c6-31a0-405f-96b0-3eb7a824f5cc">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="ebeab9c7-a313-48d9-9201-b8164e926228" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Pregnant Weeks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="daf9bcb9-d918-456e-89b9-be28ebd099d5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{pregnant_weeks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="5c5ca2e7-812d-4d77-b4ad-b46d114d5f49">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="844783f0-9bbe-4d35-9321-af35cadf5b3a" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Baseline pre-therapy hb<10]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="8335ca20-8315-41ca-8c21-6e970a4e9683" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{baseline_pre_therapy_hb_less_than_10}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="1500" uuid="ee2372ae-be65-4ba0-a92d-806bf65125de">
-						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="1500" uuid="ce3c947f-5a03-4ea5-b0e1-5e0e7bb565ce">
-							<jr:columnHeader height="33" rowSpan="1">
-								<staticText>
-									<reportElement uuid="b9250695-7a4f-4408-bdcb-2cd1af6907c4" x="0" y="0" width="1500" height="33"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[Allergic / Immunologic]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:column width="150" uuid="7e7fbdfe-f82c-4a47-b03c-845f13798b21">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="0248667c-4a7c-4834-b46a-48f161ebea99" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Asthma]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="3e578951-ec5d-43c7-8aed-19099082ac15" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{asthma}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="c2573af3-6e0e-4f2d-a8e7-b254cb44bf56">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="e073ca95-fcec-4683-8bcb-6bb90929bb4f" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Psoriasis]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="192240a4-d1bf-4371-8f16-548c65f2c8a0" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{psoriasis}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="f5dc94cc-da56-4344-af44-054a35a5db24">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="a9e374bf-8295-41e8-ad86-f4b75f72ed95" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Hay fever]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="ba5107e9-0115-4cd8-9699-d8eb111ee141" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{hay_fever}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="4abd7542-8326-4b75-a508-64e1e1265ed8">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="11e6e656-911e-4853-99b2-f6d5ed1c494c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Sinusitis]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="983e911b-1195-4ff5-94c2-e43206e60e38" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{sinusitis}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="f0ecc0d1-0212-41fe-8b1d-be6c3d7ac8a2">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="efaf6790-6af1-418c-9071-abc10ce502e4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Hives]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="2768a521-f040-48e2-aac0-4248fad15f45" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{hives}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="093aa778-0ba9-4b0d-9de0-fc6c9bf0b632">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="6c37becc-07e7-432b-bb3b-d5c3efb25f68" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Allergic dermititis /eczema]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="1bf73449-7560-4a50-bb97-3481ffb62bb9" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{allergic_dermititis_eczema}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="1f7a068d-9a2a-4a22-a1ef-6ec080537e93">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="6c37becc-07e7-432b-bb3b-d5c3efb25f68" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Atopic Dermatitis]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="1bf73449-7560-4a50-bb97-3481ffb62bb9" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{atopic_dermatitis}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="4b4eeb0f-56c7-431b-ad72-e853a8ad2714">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="205cabdc-f0f8-4803-90dc-7d3517e7ac02" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Inherited childhood eczema / dermititus]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="edf0760b-678d-42ed-b777-d66c2a61d35c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{inherited_childhood_eczema_dermititus}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="0cf5e084-ac4d-4d3f-9df8-ec8e6200da30">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="26199c70-23dd-48ec-8d50-7b003061e290" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Others]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="b12a4978-7ffb-4d73-a5ff-c5d30ce5b907" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{allergic_others}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="2b034605-8333-4cc1-98ea-ab0752ad0496">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2c2c5685-ad51-4141-8355-0648f64b52dd" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="22a188cb-9d9a-4e93-8f2a-4b54cb9d76fd" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{allergic_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="600" uuid="9da066e9-c17d-43ef-b382-b7467ca310c4">
-						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="600" uuid="6e73fc6a-211d-4a3b-baed-bf08c4d4a8d5">
-							<jr:columnHeader height="33" rowSpan="1"/>
-							<jr:column width="150" uuid="645fae6b-bc0b-4eab-bd1c-443a293a1a5c">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="d2dc0be2-3171-4ece-87d9-5614c9666f84" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Dermatological]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="3f95f660-6915-4142-a0bf-d08952653ab6" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{dermatological}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="8b4524cb-5361-4444-b57e-f93e2e2baec7">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="4c839248-d106-45a9-b54e-e7710dea323c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Dermatological remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="75dba97e-2413-4119-8605-5bde327d29b3" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{dermatological_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="4b29baf8-0a0f-4c86-b573-d35e248486b0">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="a3af0e59-80d6-436c-a3de-6746a8980f9e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Respiratory]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="16604b66-2eb7-478c-93b6-8df6e4ebe52e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{respiratory}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="be4879b1-28c8-475c-bb44-97fc4a4d9cb5">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="f5637bc5-25f8-47ee-812f-caa0b751aa58" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Respiratory remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="39a09c4e-6a73-423f-9311-9fcbd3e89a6e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{respiratory_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="450" uuid="3bfc2fca-31b0-4182-a891-ab51387c77af">
-						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="450" uuid="54f3c705-b4ec-4354-87d4-e9910aa92ec3">
-							<jr:columnHeader height="33" rowSpan="1">
-								<staticText>
-									<reportElement uuid="b9250695-7a4f-4408-bdcb-2cd1af6907c4" x="0" y="0" width="450" height="33"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle">
-										<font size="12"/>
-									</textElement>
-									<text><![CDATA[Cardio Vascular]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:column width="150" uuid="075d9f96-df7a-4715-a7db-57c654b02792">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="46dc22ef-f3d7-49c0-a415-a97abb26067f" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Coronary disease]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="294b83c4-3637-4b1e-80a8-646690af4a93" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{coronary_disease}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="59b41639-ebf3-46f1-9283-bbe860cc75f8">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="3dd0937c-7657-43f1-b36a-5094a9414ef7" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Coronary other]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="b012f3f9-5878-44b4-9ece-561c22eca21f" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{coronary_other}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="c30c7b1f-ca23-4134-8402-4ba12403e38b">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="36a059e9-7535-488f-82da-6cd00b68dd70" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Coronary remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="c1795b9f-990e-4e19-9495-5c09180891dc" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{coronary_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="1500" uuid="3bf1f37d-6f81-4378-ac61-18dee88d4874">
-						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="1500" uuid="154c94aa-260a-4eb7-abb2-4206074f788e">
-							<jr:columnHeader height="33" rowSpan="1"/>
-							<jr:column width="150" uuid="f5929f51-8f98-4f9e-b202-b929fcad3213">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="ffc91c11-859b-47ed-8079-946c77dd9385" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Endocrine]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="2c0df924-18a4-4d3d-ab0f-254fa51bb4e7" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{endocrine}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="ca9516f7-ce18-43c2-94e2-487f02917a79">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="085b4532-9492-470e-b010-13e3f5d44100" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Endocrine remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="b877fba5-6185-4018-a5ac-7c5019183b6a" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{endocrine_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="fb4ae9bf-29ec-42e6-a18a-15d1e7e77f98">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="5cfb6b97-7771-4a92-ad0d-a1558914a46c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Gastrointestinal]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="bf1f1653-8dfe-4973-a3f0-61d3f0ed947c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{gastrointestinal}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="be78b1df-4c1a-4a98-96a6-1c3590874b47">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="ec1724ac-7b51-498b-847c-6cceab9fe06a" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Gastrointestinal remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="b1c8191c-38d5-443d-95d4-5fe1b97d9bfa" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{gastrointestinal_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="2d99e5dc-33a7-441e-b22c-cfec4b51cd8d">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="ba9e4472-0228-4373-a24f-a8a90eb8264d" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Genito urinary]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="71ba13a7-ab22-4e55-8fe1-31ce393816de" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{genito_urinary}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="1864fd5c-49c1-4cef-8613-1e83ecd6286b">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="32308907-d5e7-40d6-8956-2e90e2ca4376" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Genito urinary remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="00c0200f-1457-43b0-8026-7af853ba7fc0" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{genito_urinary_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="c3a9b996-0fe1-4bad-8fc9-a90e8f463b61">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2884b086-c000-48ff-a5d8-c9ce3a594d3b" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Hematological]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="7d7afc6a-75f3-4165-a6a2-d24f52bdc9b1" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{hematological}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="2d09f969-9d0a-4cd1-9fbf-0a7e64fce4d8">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="cdfbbeb6-fc0c-4c69-9ef3-34bda88cbd99" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Hematological remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="2a15ae78-feb4-475d-9a98-261ec7b61bed" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{hematological_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="112827b1-d8ed-467a-9e86-aebe789627dd">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="9145bbd9-b6bb-48d3-88d4-c9693c751503" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Musculo skeletal]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="228e5a59-973f-4c27-ae19-6c8353e4c765" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{musculo_skeletal}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="7f2105ba-3469-48f2-bd49-77334c68dfc2">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="5bbe1520-31fe-4f74-81df-efb5a5594c11" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Musculo skeletal remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="231bf968-2173-479e-87c5-5c16f5749b7d" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{musculo_skeletal_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="1050" uuid="49b19153-f24f-487f-a232-60bb9f113ce6">
-						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="1050" uuid="5abe660b-ad05-4140-8225-f83255748f42">
-							<jr:columnHeader height="33" rowSpan="1">
-								<staticText>
-									<reportElement uuid="b9250695-7a4f-4408-bdcb-2cd1af6907c4" x="0" y="0" width="1050" height="33"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle">
-										<font size="12"/>
-									</textElement>
-									<text><![CDATA[Nuerological]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:column width="150" uuid="958b81a7-85c0-4267-9878-0d335d35c0a3">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="4610862f-1a30-4446-998d-c67b74c9770c" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Dizziness]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="e745045c-ee82-4ba8-832a-185f61ed83fe" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{dizziness}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="2ccd9ca6-efcb-425c-a3f5-eb4963da0c66">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="fda1d03e-b934-4b98-b9e3-16abff19dbec" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Insomnia]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="e8c2a1a4-2b51-4da9-a886-322003fb9502" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{insomnia}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="327f8c0e-0956-48ef-afa5-4854c925d1dc">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="dbd501bf-a976-46c6-9101-e4fc6d45eb49" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Impaired concentration]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="eb274148-ad58-49f0-b9ae-f64a6e9c4a60" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{impaired_concentration}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="066498e1-3df3-4fc6-a79f-16f96f138834">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="1c88b9b9-2973-447e-9498-526ccd0f8429" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Somnolence]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="466c79fc-cac8-42fb-979a-1cf8619c84c4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{somnolence}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="9e056d0d-8527-41c9-86ea-84104609eef8">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="27746d5a-5e02-4135-8e70-c6cd211817a5" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Abnormal dreams / Nightmare]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="141beb07-7ecd-42c2-9c01-299ff041e49e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{abnormal_dreams_nightmare}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="1cc3bab3-aa0d-4e0f-bce7-5d67cd4820fd">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="d0acd053-28d2-4abb-a524-b880422d1e22" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Nuerological others]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="b317bb9f-7644-411d-889a-8ae02d1cb14f" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{nuerological_others}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="3c3cf89c-8b79-4732-b2b5-fbc2c9642fd8">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="aaf4a508-8d3a-490f-933e-01e86e925fe3" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Nuerological remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="466be516-7a11-4cfc-946e-460466103889" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{nuerological_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="900" uuid="26703e23-8345-46cd-8dac-3bda24a4547e">
-						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="900" uuid="425aa217-9799-43c9-94de-11159707909b">
-							<jr:columnHeader height="33" rowSpan="1"/>
-							<jr:column width="150" uuid="49fcda78-4656-481f-b07e-e930d02a8200">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="86a5e57a-3570-4031-a049-3ecebe3a1b4e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Psychiatric]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f3817562-d6db-4e9e-bd0b-4fadc902efac" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{psychiatric}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="372273e7-7f72-46da-9234-3a0eada28818">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="ba8f1604-2244-4b43-8163-a5849c050e27" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Psychiatric remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="ff238144-a89b-45b7-92da-5180a7afdbd0" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{psychiatric_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="b574c40a-04d4-46eb-bdb0-24850033f160">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="35ead66e-54bf-4ea1-a5c1-5989d4f60b5a" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Eyes]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="cac34076-a44a-4906-905d-197425e7cb24" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{eyes}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="14fb9981-9e50-422e-9d85-51b8e7fc1147">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="feee1db2-88a3-4342-a177-fadac56b3074" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Eyes remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="ba4c3e85-6dac-43a8-9c32-8e59fe3762c7" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{eyes_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="391649da-9e61-483b-b6a5-d358f0f0527c">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="71608f8d-ae34-469a-87b5-7da8a12689b4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[ENT]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="4f486f98-3547-454d-8cb5-fd1a52b4f207" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{ent}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="fde175fc-fff4-451c-ad57-7ea8d10e9edf">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="0f4c1124-ba9f-4350-8d77-967de53485f4" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[ENT remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="4509faef-1cda-4788-aaac-cb401c1ffb7d" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{ent_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-					<jr:columnGroup width="1650" uuid="aca0cd22-bbff-4746-b238-72c4c283be21">
-						<jr:columnHeader height="75" rowSpan="1"/>
-						<jr:columnGroup width="1650" uuid="904137da-eed3-4adc-b428-58a18e849963">
-							<jr:columnHeader height="33" rowSpan="1">
-								<staticText>
-									<reportElement uuid="b9250695-7a4f-4408-bdcb-2cd1af6907c4" x="0" y="0" width="1650" height="33"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle">
-										<font size="12"/>
-									</textElement>
-									<text><![CDATA[Other]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:column width="150" uuid="12c7beb1-5568-4b64-af79-b8c688196431">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="618b86e4-31e2-4fb8-9fb2-a4503d84f6d0" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Hypertension]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="3321da01-899d-496b-8117-af9b0e1e28ed" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{hypertension}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="e273e6a6-be3f-43aa-b55e-f7045a57b8cf">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="408c9023-78c1-47b4-88fa-f4529aa60efd" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Nephrotoxicity]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f85ad6cb-a10f-4e80-bd64-d61043e2927e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{nephrotoxicity}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="0975c1d8-affc-4820-bba3-a2443308ce36">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="cd619d6d-c60f-427e-903d-71f0cd20973a" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Diabetes]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="483afbb0-bca8-4ce5-8234-e983efeceb96" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{diabetes}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="edf01cd3-46c2-4a05-b958-74e7915cacc0">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="69355eb9-eea2-4629-9f52-39e7d1d0b71f" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[TB]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="c0761a00-75fa-49f9-ba4d-80ca6a58c06b" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{tb}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="50f27cf3-0a15-4987-80ed-7119271da124">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="fd05d5a5-4607-4116-91a2-f54b52654887" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Alcoholism]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="0a35d8e9-c89c-4aec-a4c4-27262c55a7f6" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{alcoholism}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="e1d62b4e-ed19-48bf-90fd-ad750a8274fa">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[NonHIV other]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f3208951-8474-4609-ae6d-c2a6f8ffaaeb" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{non_hiv_other1}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="930027d8-22b9-43e8-b9b5-209b59453fe3">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<text><![CDATA[Non HIV other remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="70dd9262-5f9b-48fc-98bd-7532c64bf06e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{non_hiv_other1_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="06444201-0db1-4284-b997-e6c769c2e54d">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="150" height="30" backcolor="#92B17D"/>
-										<textElement/>
-										<text><![CDATA[NonHIV other]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f3208951-8474-4609-ae6d-c2a6f8ffaaeb" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{non_hiv_other2}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="4ab13987-02c4-464b-aa03-d0e13a17dd45">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="150" height="30" backcolor="#92B17D"/>
-										<textElement/>
-										<text><![CDATA[Non HIV other remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="70dd9262-5f9b-48fc-98bd-7532c64bf06e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{non_hiv_other2_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="d628a535-5d8e-4bee-a5ac-cc3c252ff570">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="2e65b6d1-6efb-4442-ade5-c224dccde21d" x="0" y="0" width="150" height="30" backcolor="#92B17D"/>
-										<textElement/>
-										<text><![CDATA[NonHIV other]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="f3208951-8474-4609-ae6d-c2a6f8ffaaeb" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{non_hiv_other3}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-							<jr:column width="150" uuid="3d7f6feb-e9b8-485e-9057-e6e0c9b0619c">
-								<jr:columnHeader style="table 18_CH" height="30" rowSpan="1">
-									<staticText>
-										<reportElement uuid="464ace11-068a-40f4-afaf-ed0f757c42d0" x="0" y="0" width="150" height="30" backcolor="#92B17D"/>
-										<textElement/>
-										<text><![CDATA[Non HIV other remarks]]></text>
-									</staticText>
-								</jr:columnHeader>
-								<jr:detailCell style="table 18_TD" height="30" rowSpan="1">
-									<textField isBlankWhenNull="true">
-										<reportElement uuid="70dd9262-5f9b-48fc-98bd-7532c64bf06e" x="0" y="0" width="150" height="30"/>
-										<textElement/>
-										<textFieldExpression><![CDATA[$F{non_hiv_other3_remarks}]]></textFieldExpression>
-									</textField>
-								</jr:detailCell>
-							</jr:column>
-						</jr:columnGroup>
-					</jr:columnGroup>
-				</jr:table>
-			</componentElement>
-		</band>
-	</summary>
+            </jr:table>
+         </componentElement>
+      </band>
+   </summary>
 </jasperReport>
