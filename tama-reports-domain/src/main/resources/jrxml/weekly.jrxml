@@ -293,7 +293,7 @@
    <summary>
       <band height="168" splitType="Stretch">
          <componentElement>
-            <reportElement uuid="b2bc5efb-689e-4aff-84b5-eb3bb61e272f" key="table 18" style="table 18" x="0" y="0" width="12450" height="168" />
+            <reportElement uuid="b2bc5efb-689e-4aff-84b5-eb3bb61e272f" key="table 1" style="table 1" x="0" y="0" width="12450" height="168" />
             <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
                <datasetRun subDataset="Weekly" uuid="cf3f1d81-55d9-4ebf-97d9-fa36722ee035">
                   <datasetParameter name="PATIENT_ID">
