@@ -24,7 +24,7 @@ public class WeeklyAdherenceService {
     public void update(WeeklyAdherence weeklyAdherence) {
         WeeklyAdherence persistedWeeklyAdherence = new WeeklyAdherence();
         //TODO REMOVE commented code
-        //allWeeklyAdherence.findByAdherenceByPatientIdAndDate(weeklyAdherence.getPatientDocumentId(), weeklyAdherence.getWeekStartDate().toString());
+        persistedWeeklyAdherence =allWeeklyAdherence.findWeeklyAdherenceById(weeklyAdherence.getPatientDocumentId(),weeklyAdherence.getClinicName(), weeklyAdherence.getWeekStartDate().toString());
         //new WeeklyAdherence();
 
         //allWeeklyAdherence.findSimilarWeeklyLog(weeklyAdherence.getPatientDocumentId());
