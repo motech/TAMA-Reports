@@ -314,14 +314,11 @@
                      <jr:columnHeader height="33" rowSpan="1" />
                      <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7a">
                         <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
-                         <staticText>
-                           <reportElement uuid="9228da0a-1ed0-4791-b637-35f28c08d209" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
-                           <textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
-                           <font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
-                           <paragraph lineSpacing="Single"/>
-                           </textElement>
-                         <text><![CDATA[Patient ID]]></text>
-                         </staticText>
+                            <staticText>
+                              <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                              <textElement />
+                              <text><![CDATA[Patient ID]]></text>
+                            </staticText>
                         </jr:columnHeader>
                         <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
