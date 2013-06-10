@@ -312,15 +312,15 @@
                </datasetRun>
                <jr:columnGroup width="150" uuid="42512891-c732-45f7-962c-3fa76962b95a">
                      <jr:columnHeader height="33" rowSpan="1" />
-                     <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7a">
-                        <jr:columnHeader style="table 1_CH" height="33" rowSpan="1">
+                     <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c148dae7a">
+                        <jr:columnHeader style="table 2_CH" height="33" rowSpan="1">
                             <staticText>
                               <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                               <textElement />
                               <text><![CDATA[Patient ID]]></text>
                             </staticText>
                         </jr:columnHeader>
-                        <jr:detailCell style="table 1_TD" height="33" rowSpan="1">
+                        <jr:detailCell style="table 2_TD" height="33" rowSpan="1">
                            <textField isBlankWhenNull="true">
                               <reportElement uuid="0be7096c-b400-40f5-b527-5b91bcf49dea" x="0" y="0" width="150" height="33" />
                               <textElement />
