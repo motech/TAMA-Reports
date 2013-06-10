@@ -233,11 +233,11 @@
       <queryString><![CDATA[SELECT a.patient_id,
                                 a.patient_document_id,
                                 b.clinic_name,
-                                to_char(c.art_start_date, 'DD-MM-YYYY'),
+                                c.art_start_date,
                                 c.treatmentAdviceId,
-                                to_char( c.start_date, 'DD-MM-YYYY'),
-                                to_char(  c.week_start_date, 'DD-MM-YYYY'),
-                                to_char(  c.adherence_reported_on, 'DD-MM-YYYY'),
+                                c.start_date,
+                                c.week_start_date,
+                                c.adherence_reported_on,
                                 c.no_of_doses_missed
 
                                 FROM tama_reports.patient a,
@@ -256,7 +256,7 @@
       <field name="patient_id" class="java.lang.String" />
       <field name="patient_document_id" class="java.lang.String" />
       <field name="clinic_Name" class="java.lang.String" />
-      <field name="art_start_date" class="java.lang.Long" />
+      <field name="art_start_date" class="java.lang.String" />
       <field name="treatmentAdviceId" class="java.lang.String" />
       <field name="start_date" class="java.lang.String" />
       <field name="week_start_date" class="java.lang.String" />
