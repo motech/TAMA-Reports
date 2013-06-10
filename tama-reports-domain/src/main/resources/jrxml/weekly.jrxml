@@ -256,7 +256,7 @@
       <field name="patient_id" class="java.lang.String" />
       <field name="patient_document_id" class="java.lang.String" />
       <field name="clinic_Name" class="java.lang.String" />
-      <field name="art_start_date" class="java.lang.String" />
+      <field name="art_start_date" class="java.lang.Long" />
       <field name="treatmentAdviceId" class="java.lang.String" />
       <field name="start_date" class="java.lang.String" />
       <field name="week_start_date" class="java.lang.String" />
