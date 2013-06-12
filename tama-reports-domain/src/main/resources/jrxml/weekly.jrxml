@@ -233,7 +233,7 @@
       <queryString><![CDATA[SELECT a.patient_id,
                                 a.patient_document_id,
                                 b.clinic_name,
-                                to_date(to_char(c.art_start_date,'DD-MM-YYYY'),'DD-MM-YYYY'),
+                                c.art_start_date,
                                 c.treatmentAdviceId,
                                 c.start_date,
                                 c.week_start_date,
@@ -262,6 +262,9 @@
       <field name="week_start_date" class="java.lang.String" />
       <field name="adherence_reported_on" class="java.lang.String" />
       <field name="no_of_doses_missed" class="java.lang.String" />
+      <variable name="dateFormat" class="java.text.DateFormat" resetType="None">
+              <variableExpression><![CDATA[new SimpleDateFormat("dd-mm-yyyy")]]></variableExpression>
+      </variable>
    </subDataset>
    <parameter name="PATIENT_ID" class="java.lang.String" />
    <parameter name="CLINIC_ID" class="java.lang.String" />
@@ -360,7 +363,7 @@
                         <textField isBlankWhenNull="true">
                            <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression><![CDATA[$F{art_start_date}]]></textFieldExpression>
+                           <textFieldExpression><![CDATA[$V{dateFormat}.format($F{art_start_date})]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
