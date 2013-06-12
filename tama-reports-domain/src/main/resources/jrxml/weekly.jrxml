@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="weekly" pageWidth="12640" pageHeight="7200" columnWidth="12600" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b816333a-bc2e-4e97-9ace-98c5283c0024">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="weekly" pageWidth="12640" pageHeight="7200" columnWidth="12600" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b816333a-bc2e-4e89-9ace-98c5283c0024">
    <property name="ireport.zoom" value="1.0" />
    <property name="ireport.x" value="10673" />
    <property name="ireport.y" value="0" />
@@ -225,7 +225,7 @@
          <pen lineWidth="0.5" lineColor="#000000" />
       </box>
    </style>
-   <subDataset name="Weekly" uuid="b0056990-caaf-4647-ad3a-29b51ae144d3">
+   <subDataset name="Weekly" uuid="b0056990-caaf-4647-ad3a-29b51ae154d3">
       <parameter name="PATIENT_ID" class="java.lang.String" />
       <parameter name="CLINIC_ID" class="java.lang.String" />
       <parameter name="START_DATE" class="java.lang.String" />
@@ -277,17 +277,17 @@
    <pageHeader>
       <band height="80" splitType="Stretch">
          <textField pattern="dd/MM/yyyy">
-            <reportElement uuid="4a43bccb-2a39-4804-a8cb-f2d8e88269b1" x="150" y="20" width="150" height="20" />
+            <reportElement uuid="4a43bccb-2a39-4804-a8cb-f2d9e88269b1" x="150" y="20" width="150" height="20" />
             <textElement />
             <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
          </textField>
          <staticText>
-            <reportElement uuid="fe794db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="0" width="150" height="20" />
+            <reportElement uuid="fe794db9-47aa-49f9-ad9b-1ca79ee6b744" x="0" y="0" width="150" height="20" />
             <textElement />
             <text><![CDATA[Weekly Adherence Report]]></text>
          </staticText>
          <staticText>
-            <reportElement uuid="fe795db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="20" width="150" height="20" />
+            <reportElement uuid="fe795db9-47aa-49f9-ad9b-1ca69ee5b744" x="0" y="20" width="150" height="20" />
             <textElement />
             <text><![CDATA[Date]]></text>
          </staticText>
@@ -296,9 +296,9 @@
    <summary>
       <band height="168" splitType="Stretch">
          <componentElement>
-            <reportElement uuid="b2bc5efb-689e-4aff-84b5-eb3bb61e272f" key="table 1" style="table 1" x="0" y="0" width="12450" height="168" />
+            <reportElement uuid="b2bc5efb-689e-4aff-84b5-eb3bb61e372f" key="table 1" style="table 1" x="0" y="0" width="12450" height="168" />
             <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-               <datasetRun subDataset="Weekly" uuid="cf3f1d61-55d9-4ebf-97d9-fa36722ee035">
+               <datasetRun subDataset="Weekly" uuid="cf3f1d61-65d9-4ebf-97d9-fa36722ee035">
                   <datasetParameter name="PATIENT_ID">
                      <datasetParameterExpression><![CDATA[$P{PATIENT_ID}]]></datasetParameterExpression>
                   </datasetParameter>
@@ -313,7 +313,7 @@
                   </datasetParameter>
                   <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
                </datasetRun>
-               <jr:columnGroup width="150" uuid="42512891-c732-45f7-962c-3fa76962b95a">
+               <jr:columnGroup width="150" uuid="42542891-c732-45f7-962c-3fa76962b95a">
                   <jr:columnHeader height="33" rowSpan="1" />
                   <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c148dae7a">
                      <jr:columnHeader style="table 2_CH" height="33" rowSpan="1">
@@ -325,36 +325,36 @@
                      </jr:columnHeader>
                      <jr:detailCell style="table 2_TD" height="33" rowSpan="1">
                         <textField isBlankWhenNull="true">
-                           <reportElement uuid="0be7096c-b400-40f5-b527-5b91bcf49dea" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="0be7896c-b400-40f5-b527-5b91bcf49dea" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
                </jr:columnGroup>
-               <jr:columnGroup width="150" uuid="42511891-c732-45f7-962c-3fa76962b95a">
-                  <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7b">
+               <jr:columnGroup width="150" uuid="42551291-c732-45f7-962c-3fa76962b95a">
+                  <jr:column width="150" uuid="4951be17-0710-4478-b900-fd4c1e8dae7b">
                      <jr:columnHeader style="table 2_CH" height="33" rowSpan="1">
                         <staticText>
-                           <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="b04c7dbc-8e3b-5c74-a424-29e043afa7b4" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <text><![CDATA[Clinic Name]]></text>
                         </staticText>
                      </jr:columnHeader>
                      <jr:detailCell style="table 2_TD" height="33" rowSpan="1">
                         <textField isBlankWhenNull="true">
-                           <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="c53d9733-d5e1-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <textFieldExpression><![CDATA[$F{clinic_Name}]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
                </jr:columnGroup>
-               <jr:columnGroup width="150" uuid="42510891-c732-45f7-962c-3fa76962b95a">
-                  <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7c">
+               <jr:columnGroup width="150" uuid="42510891-c7e4-45f7-962c-3fa76962b95a">
+                  <jr:column width="150" uuid="4951be05-0710-4f58-b900-fd4c1e8dae7c">
                      <jr:columnHeader style="table 3_CH" height="33" rowSpan="1">
                         <staticText>
-                           <reportElement uuid="b04c7dbc-8e3b-4c94-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="b04c7dbc-8e3b-4c64-a424-29e043afa7b4" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <text><![CDATA[ART Start Date (DD/MM/YYYY)]]></text>
                         </staticText>
@@ -363,31 +363,31 @@
                         <textField isBlankWhenNull="true">
                            <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{art_start_date})]]></textFieldExpression>
+                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").parse($F{art_start_date})]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
                </jr:columnGroup>
-               <jr:columnGroup width="150" uuid="42599891-c732-45f7-962c-3fa76962b95a">
-                  <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7d">
+               <jr:columnGroup width="150" uuid="42599891-c742-44f7-962c-3fa76962b95a">
+                  <jr:column width="150" uuid="4951be05-0710-4479-b900-fd4c1e8dae7d">
                      <jr:columnHeader style="table 4_CH" height="33" rowSpan="1">
                         <staticText>
-                           <reportElement uuid="b04c7dbc-8e3b-4c95-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="b04c7dbc-8e3b-5c95-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <text><![CDATA[Treatment Advice]]></text>
                         </staticText>
                      </jr:columnHeader>
                      <jr:detailCell style="table 4_TD" height="33" rowSpan="1">
                         <textField isBlankWhenNull="true">
-                           <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="c53d9733-de41-4b84-b421-efbcc43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <textFieldExpression><![CDATA[$F{treatmentAdviceId}]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
                </jr:columnGroup>
-               <jr:columnGroup width="150" uuid="42598891-c732-45f7-962c-3fa76962b95a">
-                  <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7e">
+               <jr:columnGroup width="150" uuid="42598891-c732-45f7-762c-3fa76962b95a">
+                  <jr:column width="150" uuid="4951be05-0710-4478-b999-fd4c1e8dae7e">
                      <jr:columnHeader style="table 5_CH" height="33" rowSpan="1">
                         <staticText>
                            <reportElement uuid="b04c7dbc-8e3b-4c96-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
@@ -397,61 +397,61 @@
                      </jr:columnHeader>
                      <jr:detailCell style="table 5_TD" height="33" rowSpan="1">
                         <textField isBlankWhenNull="true">
-                           <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="c53d9733-de41-4b85-b535-efbc143e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression><![CDATA[$F{start_date}]]></textFieldExpression>
+                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").parse($F{start_date})]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
                </jr:columnGroup>
-               <jr:columnGroup width="150" uuid="42597891-c732-45f7-962c-3fa76962b95a">
-                  <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae7f">
+               <jr:columnGroup width="150" uuid="42597891-c732-45f7-962c-3fa78362b95a">
+                  <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4d3e8dae7f">
                      <jr:columnHeader style="table 6_CH" height="33" rowSpan="1">
                         <staticText>
-                           <reportElement uuid="b04c7dbc-8e3b-4c97-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="b04c7dbc-8e3b-4c97-a224-27e043afa7b4" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <text><![CDATA[Week Start Date (DD/MM/YYYY)]]></text>
                         </staticText>
                      </jr:columnHeader>
                      <jr:detailCell style="table 6_TD" height="33" rowSpan="1">
                         <textField isBlankWhenNull="true">
-                           <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="c53d9733-de41-4b85-b425-27e053afa9b5" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression><![CDATA[$F{week_start_date}]]></textFieldExpression>
+                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").parse($F{week_start_date})]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
                </jr:columnGroup>
-               <jr:columnGroup width="150" uuid="42596891-c732-45f7-962c-3fa76962b95a">
-                  <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae72">
+               <jr:columnGroup width="150" uuid="42596891-c732-45f7-962c-3fa7d552b95a">
+                  <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4d5e9dae7f">
                      <jr:columnHeader style="table 7_CH" height="33" rowSpan="1">
                         <staticText>
-                           <reportElement uuid="b04c7dbc-8e3b-4c98-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="b04c7dbc-8e3b-4c98-a224-29e213afa7b4" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <text><![CDATA[Adherence Reported On Date (DD/MM/YYYY)]]></text>
                         </staticText>
                      </jr:columnHeader>
                      <jr:detailCell style="table 7_TD" height="33" rowSpan="1">
                         <textField isBlankWhenNull="true">
-                           <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="c53d9733-de41-4b85-b425-efbad43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression><![CDATA[$F{adherence_reported_on}]]></textFieldExpression>
+                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").parse($F{adherence_reported_on})]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
                </jr:columnGroup>
-               <jr:columnGroup width="150" uuid="42596991-c732-45f7-962c-3fa76962b95a">
+               <jr:columnGroup width="150" uuid="42596991-c732-45f7-962c-3fa11962b95a">
                   <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4c1e8dae76">
                      <jr:columnHeader style="table 8_CH" height="33" rowSpan="1">
                         <staticText>
-                           <reportElement uuid="b04c7dbc-8e3b-4c99-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="b04c7dbc-8e3b-4c99-a224-efbad43e8989" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <text><![CDATA[No of Doses Missed]]></text>
                         </staticText>
                      </jr:columnHeader>
                      <jr:detailCell style="table 8_TD" height="33" rowSpan="1">
                         <textField isBlankWhenNull="true">
-                           <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="c53d9733-de41-4c88-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <textFieldExpression><![CDATA[$F{no_of_doses_missed}]]></textFieldExpression>
                         </textField>
