@@ -363,7 +363,7 @@
                         <textField isBlankWhenNull="true">
                            <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression><![CDATA[$V{dateFormat}.format($F{art_start_date})]]></textFieldExpression>
+                           <textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd.MM.yyyy hh:mm").format(new java.text.SimpleDateFormat("dd.MM.yyyy hh:mm").parse($P{art_start_date}))]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
