@@ -313,18 +313,18 @@
                   </datasetParameter>
                   <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
                </datasetRun>
-               <jr:columnGroup width="150" uuid="42551291-c732-45f7-962c-3fa76962b95a">
-                  <jr:column width="150" uuid="4951be17-0710-4478-b900-fd4c1e8dae7b">
+               <jr:columnGroup width="150" uuid="fcf2e74d-d272-42f4-8874-7774a3f666c1">
+                  <jr:column width="150" uuid="6301fb67-197d-4784-aa4d-0efd12a50ba8">
                     <jr:columnHeader style="table 2_CH" height="33" rowSpan="1">
                       <staticText>
-                       <reportElement uuid="b04c7dbc-8e3b-5c74-a424-29e043afa7b4" x="0" y="0" width="150" height="33" />
+                       <reportElement uuid="38b3390c-6ce2-4e77-927a-be19141c0287" x="0" y="0" width="150" height="33" />
                        <textElement />
                        <text><![CDATA[Patient Id]]></text>
                       </staticText>
                     </jr:columnHeader>
                      <jr:detailCell style="table 2_TD" height="33" rowSpan="1">
                         <textField isBlankWhenNull="true">
-                           <reportElement uuid="0be7896c-b400-40f5-b527-5b91bcf49dea" x="0" y="0" width="150" height="33" />
+                           <reportElement uuid="f7fd220f-12a1-4e10-9a6b-80b5ff747af9" x="0" y="0" width="150" height="33" />
                            <textElement />
                            <textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
                         </textField>
