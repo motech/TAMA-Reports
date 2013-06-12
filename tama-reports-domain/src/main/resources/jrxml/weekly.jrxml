@@ -233,11 +233,11 @@
       <queryString><![CDATA[SELECT a.patient_id,
                                 a.patient_document_id,
                                 b.clinic_name,
-                                c.art_start_date,
+                                to_char(c.art_start_date, 'dd/MM/yyyy') AS art_start_date ,
                                 c.treatmentAdviceId,
-                                c.start_date,
-                                c.week_start_date,
-                                c.adherence_reported_on,
+                                to_char(c.start_date, 'dd/MM/yyyy') AS start_date,
+                                to_char(c.week_start_date, 'dd/MM/yyyy') AS week_start_date,
+                                to_char(c.adherence_reported_on, 'dd/MM/yyyy') AS adherence_reported_on,
                                 c.no_of_doses_missed
 
                                 FROM tama_reports.patient a,
@@ -362,7 +362,8 @@
                         <textField pattern="dd-mm-yyyy" isBlankWhenNull="true">
                            <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{art_start_date})]]></textFieldExpression>
+                           <textFieldExpression><![CDATA[$F{art_start_date}]]></textFieldExpression>
+
                         </textField>
                      </jr:detailCell>
                   </jr:column>
