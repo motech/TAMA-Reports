@@ -233,7 +233,7 @@
       <queryString><![CDATA[SELECT a.patient_id,
                                 a.patient_document_id,
                                 b.clinic_name,
-                                c.art_start_date,
+                                to_date(to_char(c.art_start_date,'DD-MM-YYYY'),'DD-MM-YYYY'),
                                 c.treatmentAdviceId,
                                 c.start_date,
                                 c.week_start_date,
@@ -317,7 +317,7 @@
                         <staticText>
                            <reportElement uuid="b04c7dbc-8e3b-4c93-a224-29e043afa7b4" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <text><![CDATA[Patient ID]]></text>
+                           <text><![CDATA[Patient Id]]></text>
                         </staticText>
                      </jr:columnHeader>
                      <jr:detailCell style="table 2_TD" height="33" rowSpan="1">
