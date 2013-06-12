@@ -360,10 +360,10 @@
                         </staticText>
                      </jr:columnHeader>
                      <jr:detailCell style="table 3_TD" height="33" rowSpan="1">
-                        <textField isBlankWhenNull="true">
+                        <textField pattern="dd-MMM-yyyy" isBlankWhenNull="true">
                            <reportElement uuid="c53d9733-de41-4b85-b425-efbcc43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").parse($F{art_start_date})]]></textFieldExpression>
+                           <textFieldExpression><![CDATA[$F{art_start_date}]]></textFieldExpression>
                         </textField>
                      </jr:detailCell>
                   </jr:column>
@@ -399,7 +399,8 @@
                         <textField isBlankWhenNull="true">
                            <reportElement uuid="c53d9733-de41-4b85-b535-efbc143e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").parse($F{start_date})]]></textFieldExpression>
+                           <textFieldExpression><![CDATA[$F{start_date}]]></textFieldExpression>
+
                         </textField>
                      </jr:detailCell>
                   </jr:column>
@@ -417,7 +418,8 @@
                         <textField isBlankWhenNull="true">
                            <reportElement uuid="c53d9733-de41-4b85-b425-27e053afa9b5" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").parse($F{week_start_date})]]></textFieldExpression>
+                            <textFieldExpression><![CDATA[$F{week_start_date}]]></textFieldExpression>
+
                         </textField>
                      </jr:detailCell>
                   </jr:column>
@@ -435,7 +437,8 @@
                         <textField isBlankWhenNull="true">
                            <reportElement uuid="c53d9733-de41-4b85-b425-efbad43e7949" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <textFieldExpression class="java.util.Date"><![CDATA[new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").parse($F{adherence_reported_on})]]></textFieldExpression>
+                           <textFieldExpression><![CDATA[$F{adherence_reported_on}]]></textFieldExpression>
+
                         </textField>
                      </jr:detailCell>
                   </jr:column>
