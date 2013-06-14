@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface AllWeeklyAdherence extends JpaRepository<WeeklyAdherence, Long> {
 
-    public List<WeeklyAdherence> findWeeklyAdherenceById(String patient_document_id);
+    public List<WeeklyAdherence> findWeeklyAdherenceById(List<String> patient_document_id);
 }
 
