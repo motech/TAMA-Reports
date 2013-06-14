@@ -449,7 +449,7 @@
                         <staticText>
                            <reportElement uuid="b04c7dbc-8e3b-4c99-a224-efbad43e8989" x="0" y="0" width="150" height="33" />
                            <textElement />
-                           <text><![CDATA[Number of Doses Missed]]></text>
+                           <text><![CDATA[Number of Doses Missed in last 4 days]]></text>
                         </staticText>
                      </jr:columnHeader>
                      <jr:detailCell style="table 8_TD" height="33" rowSpan="1">

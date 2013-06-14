@@ -1,0 +1,1 @@
+ALTER TABLE tama_reports.weeklyAdherenceLog ALTER COLUMN no_of_doses_missed TYPE varchar (100);
