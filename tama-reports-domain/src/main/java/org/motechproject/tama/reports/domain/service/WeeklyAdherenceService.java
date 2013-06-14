@@ -30,9 +30,7 @@ public class WeeklyAdherenceService {
     public void update(WeeklyAdherence weeklyAdherence) {
         WeeklyAdherence persistedWeeklyAdherence = new WeeklyAdherence();
         List<WeeklyAdherence> weeklyAdherences = null;
-        List<String> patientIds = new ArrayList<>();
-        patientIds.add(weeklyAdherence.getPatientDocumentId());
-        weeklyAdherences = allWeeklyAdherence.findWeeklyAdherenceById(patientIds);
+        weeklyAdherences = allWeeklyAdherence.find(weeklyAdherence.getPatientDocumentId());
         if (weeklyAdherences != null) {
             if (weeklyAdherences.size() != 0) {
                 persistedWeeklyAdherence = weeklyAdherences.get(0);
