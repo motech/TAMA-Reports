@@ -31,18 +31,7 @@ public class WeeklyAdherenceService {
         WeeklyAdherence persistedWeeklyAdherence = new WeeklyAdherence();
         List<WeeklyAdherence> weeklyAdherences = null;
         persistedWeeklyAdherence = allWeeklyAdherence.findByPatientDocumentIdAndClinicNameAndWeekStartDate(weeklyAdherence.getPatientDocumentId(),weeklyAdherence.getClinicName(),weeklyAdherence.getWeekStartDate());
-       /* if (weeklyAdherences != null) {
-            if (weeklyAdherences.size() != 0) {
-                persistedWeeklyAdherence = weeklyAdherences.get(0);
-            }
-        }*/
 
-        //allWeeklyAdherence.findWeeklyAdherenceById(weeklyAdherence.getPatientDocumentId(),weeklyAdherence.getClinicName(),
-        // weeklyAdherence.getWeekStartDate().getTime());
-        //new WeeklyAdherence();
-
-        //allWeeklyAdherence.findSimilarWeeklyLog(weeklyAdherence.getPatientDocumentId());
-        //, weeklyAdherence.getClinicName(), weeklyAdherence.getTreatmentAdviceId(), weeklyAdherence.getWeekStartDate().toString());
         persistedWeeklyAdherence.merge(weeklyAdherence);
         allWeeklyAdherence.save(persistedWeeklyAdherence);
     }

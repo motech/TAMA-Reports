@@ -13,9 +13,6 @@ import java.util.List;
 
 public interface AllWeeklyAdherence extends JpaRepository<WeeklyAdherence, Long> {
 
-//    @Query("SELECT p FROM WeeklyAdherence p WHERE p.patientDocumentId = patientDocumentId")
-//    public List<WeeklyAdherence> find(@Param("patient_document_id")String patientDocumentId);
-
     public WeeklyAdherence findByPatientDocumentIdAndClinicNameAndWeekStartDate(String patientDocumentId,String clinicName,Date weekStartDate);
 
 
