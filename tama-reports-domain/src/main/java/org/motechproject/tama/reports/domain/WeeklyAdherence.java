@@ -41,7 +41,7 @@ public class WeeklyAdherence {
     private Date adherenceReportedOn;
 
     @Column(name = "no_of_doses_missed")
-    private int numberOfDosesMissed;
+    private String numberOfDosesMissed;
 
 
 
