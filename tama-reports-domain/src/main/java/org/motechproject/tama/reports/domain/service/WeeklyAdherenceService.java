@@ -25,6 +25,7 @@ public class WeeklyAdherenceService {
 
     public void save(WeeklyAdherence weeklyAdherence) {
         weeklyAdherence.setNumberOfDosesMissed("Missed");
+        weeklyAdherence.setAdherenceReportedOn(null);
         allWeeklyAdherence.save(weeklyAdherence);
     }
 

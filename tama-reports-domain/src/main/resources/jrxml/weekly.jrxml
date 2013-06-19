@@ -248,9 +248,9 @@
                            AND b.clinic_id LIKE $P{CLINIC_ID}
                            AND a.patient_id LIKE $P{PATIENT_ID}
                            AND ($P{START_DATE} = ''
-                                OR c.adherence_reported_on >= to_date($P{START_DATE},'dd/MM/yyyy'))
+                                OR c.date_of_update_insert >= to_date($P{START_DATE},'dd/MM/yyyy'))
                            AND ($P{END_DATE} = ''
-                                OR c.adherence_reported_on <= to_date($P{END_DATE},'dd/MM/yyyy'))
+                                OR c.date_of_update_insert <= to_date($P{END_DATE},'dd/MM/yyyy'))
                          ORDER BY (b.clinic_name,
                                    a.patient_id,c.adherence_reported_on);]]></queryString>
       <field name="patient_id" class="java.lang.String" />
