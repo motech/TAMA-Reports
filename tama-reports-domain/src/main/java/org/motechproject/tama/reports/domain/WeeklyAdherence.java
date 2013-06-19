@@ -57,7 +57,5 @@ public class WeeklyAdherence {
         this.setAdherenceReportedOn(weeklyAdherence.getAdherenceReportedOn());
         this.setNumberOfDosesMissed(weeklyAdherence.getNumberOfDosesMissed());
         this.setDateOfUpdateInsert(weeklyAdherence.getDateOfUpdateInsert());
-        this.setDateOfUpdateInsert(weeklyAdherence.getDateOfUpdateInsert());
-
     }
 }
