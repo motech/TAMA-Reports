@@ -1,0 +1,1 @@
+ALTER TABLE tama_reports.weeklyAdherenceLog ADD COLUMN date_of_update_insert timestamp;

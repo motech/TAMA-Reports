@@ -43,7 +43,8 @@ public class WeeklyAdherence {
     @Column(name = "no_of_doses_missed")
     private String numberOfDosesMissed;
 
-
+    @Column(name = "date_of_update_insert")
+    private  Date dateOfUpdateInsert;
 
     public void merge(WeeklyAdherence weeklyAdherence)
     {
@@ -55,6 +56,8 @@ public class WeeklyAdherence {
         this.setWeekStartDate(weeklyAdherence.getWeekStartDate());
         this.setAdherenceReportedOn(weeklyAdherence.getAdherenceReportedOn());
         this.setNumberOfDosesMissed(weeklyAdherence.getNumberOfDosesMissed());
+        this.setDateOfUpdateInsert(weeklyAdherence.getDateOfUpdateInsert());
+        this.setDateOfUpdateInsert(weeklyAdherence.getDateOfUpdateInsert());
 
     }
 }
