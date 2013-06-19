@@ -252,7 +252,7 @@
                            AND ($P{END_DATE} = ''
                                 OR c.adherence_reported_on <= to_date($P{END_DATE},'dd/MM/yyyy'))
                          ORDER BY (b.clinic_name,
-                                   a.patient_id);]]></queryString>
+                                   a.patient_id,c.adherence_reported_on);]]></queryString>
       <field name="patient_id" class="java.lang.String" />
       <field name="patient_document_id" class="java.lang.String" />
       <field name="clinic_Name" class="java.lang.String" />
