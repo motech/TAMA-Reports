@@ -460,7 +460,7 @@
                                                       <textField isBlankWhenNull="true">
                                                          <reportElement uuid="c53d9733-de41-4b85-b425-27e053afa9b5" x="0" y="0" width="150" height="33" />
                                                          <textElement />
-                                                          <textFieldExpression><![CDATA[$F{first_call_date}]]></textFieldExpression>
+                                                          <textFieldExpression><![CDATA[$F{time_of_first_call}]]></textFieldExpression>
 
                                                       </textField>
                                                    </jr:detailCell>
