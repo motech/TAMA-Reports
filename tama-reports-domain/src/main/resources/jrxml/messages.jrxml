@@ -57,7 +57,7 @@ join tama_reports.patient pa on pa.patient_document_id = msg.patient_document_id
 join tama_reports.clinic cl on pa.clinic_id = cl.clinic_id
 where pa.patient_id like $P{PATIENT_ID} and cl.clinic_id ilike $P{CLINIC_ID}
 and msg.call_date::date >= to_date($P{START_DATE}, 'dd/MM/yyyy')
-and msg.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
+and msg.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy')  ORDER BY (call_date);]]>
 		</queryString>
 		<field name="call_date" class="java.sql.Timestamp"/>
 		<field name="call_made_by" class="java.lang.String"/>
