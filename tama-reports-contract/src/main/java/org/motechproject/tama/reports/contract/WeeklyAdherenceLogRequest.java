@@ -18,6 +18,7 @@ public class WeeklyAdherenceLogRequest implements Serializable {
     private String treatmentAdviceId;
     private Date startDate;
     private Date weekStartDate;
+    private Date firstCallDate;
     private Date adherenceLoggedDate;
     private int numberOfDaysMissed;
     private Date dateOfUpdateInsert;

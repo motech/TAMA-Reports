@@ -1,0 +1,1 @@
+ALTER TABLE tama_reports.weeklyAdherenceLog ADD COLUMN first_call_date timestamp;

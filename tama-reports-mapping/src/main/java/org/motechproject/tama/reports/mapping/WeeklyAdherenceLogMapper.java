@@ -21,6 +21,7 @@ public class WeeklyAdherenceLogMapper implements Mapper<WeeklyAdherence> {
         weeklyAdherence.setTreatmentAdviceId(weeklyAdherenceLogRequest.getTreatmentAdviceId());
         weeklyAdherence.setStartDate(weeklyAdherenceLogRequest.getStartDate());
         weeklyAdherence.setWeekStartDate(weeklyAdherenceLogRequest.getWeekStartDate());
+        weeklyAdherence.setFirstCallDate(weeklyAdherenceLogRequest.getFirstCallDate());
         weeklyAdherence.setAdherenceReportedOn(weeklyAdherenceLogRequest.getAdherenceLoggedDate());
         weeklyAdherence.setNumberOfDosesMissed(Integer.toString(weeklyAdherenceLogRequest.getNumberOfDaysMissed()));
         weeklyAdherence.setDateOfUpdateInsert(weeklyAdherenceLogRequest.getDateOfUpdateInsert());

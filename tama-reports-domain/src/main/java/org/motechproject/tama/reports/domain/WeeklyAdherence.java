@@ -37,6 +37,9 @@ public class WeeklyAdherence {
     @Column(name = "week_start_date")
     private Date weekStartDate;
 
+    @Column(name = "first_call_date")
+    private Date firstCallDate;
+
     @Column(name = "adherence_reported_on")
     private Date adherenceReportedOn;
 
