@@ -238,7 +238,7 @@
                                 to_char(c.start_date, 'dd/MM/yyyy') AS start_date,
                                 to_char(c.week_start_date, 'dd/MM/yyyy') AS week_start_date,
                                 to_char(c.first_call_date, 'dd/MM/yyyy') AS first_call_date,
-                                to_char(c.first_call_date, 'HH:MI') AS time_of_first_call,
+                                to_char(c.first_call_date, 'HH24:MI') AS time_of_first_call,
                                 to_char(c.adherence_reported_on, 'dd/MM/yyyy') AS adherence_reported_on,
                                 c.no_of_doses_missed
 
