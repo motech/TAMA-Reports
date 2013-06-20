@@ -238,6 +238,7 @@
                                 to_char(c.start_date, 'dd/MM/yyyy') AS start_date,
                                 to_char(c.week_start_date, 'dd/MM/yyyy') AS week_start_date,
                                 to_char(c.first_call_date, 'dd/MM/yyyy') AS first_call_date,
+                                to_char(c.first_call_date, 'HH:MI') AS time_of_first_call,
                                 to_char(c.adherence_reported_on, 'dd/MM/yyyy') AS adherence_reported_on,
                                 c.no_of_doses_missed
 
@@ -262,6 +263,7 @@
       <field name="start_date" class="java.lang.String" />
       <field name="week_start_date" class="java.lang.String" />
       <field name="first_call_date" class="java.lang.String" />
+      <field name="time_of_first_call" class="java.lang.String" />
       <field name="adherence_reported_on" class="java.lang.String" />
       <field name="no_of_doses_missed" class="java.lang.String" />
       <variable name="dateFormat" class="java.text.DateFormat" resetType="None">
@@ -444,6 +446,25 @@
                                        </textField>
                                     </jr:detailCell>
                                  </jr:column>
+               </jr:columnGroup>
+               <jr:columnGroup width="150" uuid="42597891-c732-45f7-962c-3fa78362b95a">
+                                                <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4d3e8dae7f">
+                                                   <jr:columnHeader style="table 6_CH" height="33" rowSpan="1">
+                                                      <staticText>
+                                                         <reportElement uuid="b04c7dbc-8e3b-4c97-a224-27e043afa7b4" x="0" y="0" width="150" height="33" />
+                                                         <textElement />
+                                                         <text><![CDATA[Time of First Call ]]></text>
+                                                      </staticText>
+                                                   </jr:columnHeader>
+                                                   <jr:detailCell style="table 6_TD" height="33" rowSpan="1">
+                                                      <textField isBlankWhenNull="true">
+                                                         <reportElement uuid="c53d9733-de41-4b85-b425-27e053afa9b5" x="0" y="0" width="150" height="33" />
+                                                         <textElement />
+                                                          <textFieldExpression><![CDATA[$F{first_call_date}]]></textFieldExpression>
+
+                                                      </textField>
+                                                   </jr:detailCell>
+                                                </jr:column>
                </jr:columnGroup>
                <jr:columnGroup width="150" uuid="42596891-c732-45f7-962c-3fa7d552b95a">
                   <jr:column width="150" uuid="4951be05-0710-4478-b900-fd4d5e9dae7f">
