@@ -7,6 +7,7 @@ import org.motechproject.tama.reports.domain.Clinician;
 import org.motechproject.tama.reports.domain.builder.ClinicianBuilder;
 import org.motechproject.tama.reports.domain.repository.AllClinicians;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -62,10 +63,12 @@ public class ClinicianServiceTest {
         List<Clinician> newClinician = asList(new ClinicianBuilder().withId(oldClinicians.get(0).getClinicianId()).withContactNumber("contactNumber").withAlternateNumber("alternateNumber").withRole("role").build());
 
         when(allClinicians.findByClinicianIdIn(asList(oldClinicians.get(0).getClinicianId()))).thenReturn(oldClinicians);
-
+        List<Clinician> clinicians = new ArrayList<>();
+        clinicians.addAll(oldClinicians);
+        clinicians.addAll(newClinician);
+        when(allClinicians.findByClinicianId(oldClinicians.get(0).getClinicianId())).thenReturn(oldClinicians.get(0));
         clinicianService.update(newClinician);
-
-        verify(allClinicians).delete(oldClinicians);
+        verify(allClinicians).delete(oldClinicians.get(0));
         verify(allClinicians).save(newClinician);
     }
 }
