@@ -21,6 +21,7 @@ public class WeeklyAdherenceLogRequest implements Serializable {
     private Date firstCallDate;
     private Date adherenceLoggedDate;
     private int numberOfDaysMissed;
+    private boolean notResponded;
     private Date dateOfUpdateInsert;
 
 
