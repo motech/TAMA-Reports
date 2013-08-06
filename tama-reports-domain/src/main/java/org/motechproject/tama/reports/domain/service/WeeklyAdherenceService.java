@@ -2,6 +2,7 @@ package org.motechproject.tama.reports.domain.service;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.Predicate;
+import org.motechproject.tama.reports.contract.WeeklyAdherenceLogRequest;
 import org.motechproject.tama.reports.domain.WeeklyAdherence;
 import org.motechproject.tama.reports.domain.repository.AllWeeklyAdherence;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +24,17 @@ public class WeeklyAdherenceService {
         this.allWeeklyAdherence = allWeeklyAdherence;
     }
 
-    public void save(WeeklyAdherence weeklyAdherence) {
-        weeklyAdherence.setNumberOfDosesMissed("Missed");
-        weeklyAdherence.setAdherenceReportedOn(null);
+    public void save(WeeklyAdherence weeklyAdherence, WeeklyAdherenceLogRequest weeklyAdherenceLogRequest) {
+        if (weeklyAdherenceLogRequest.isNotResponded()) {
+            weeklyAdherence.setNumberOfDosesMissed("Missed");
+            weeklyAdherence.setAdherenceReportedOn(null);
+        }
         allWeeklyAdherence.save(weeklyAdherence);
     }
 
     public void update(WeeklyAdherence weeklyAdherence) {
         WeeklyAdherence persistedWeeklyAdherence = new WeeklyAdherence();
-        persistedWeeklyAdherence = allWeeklyAdherence.findByPatientDocumentIdAndClinicNameAndWeekStartDate(weeklyAdherence.getPatientDocumentId(),weeklyAdherence.getClinicName(),weeklyAdherence.getWeekStartDate());
+        persistedWeeklyAdherence = allWeeklyAdherence.findByPatientDocumentIdAndClinicNameAndWeekStartDate(weeklyAdherence.getPatientDocumentId(), weeklyAdherence.getClinicName(), weeklyAdherence.getWeekStartDate());
 
         persistedWeeklyAdherence.merge(weeklyAdherence);
         allWeeklyAdherence.save(persistedWeeklyAdherence);
