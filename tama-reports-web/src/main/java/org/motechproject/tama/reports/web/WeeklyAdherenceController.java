@@ -32,13 +32,13 @@ public class WeeklyAdherenceController {
     @ResponseStatus(HttpStatus.OK)
     public void save(@RequestBody WeeklyAdherenceLogRequest weeklyAdherenceLogRequest) {
         logger.info("Creating weekly adherence log");
-        weeklyAdherenceService.save(new WeeklyAdherenceLogMapper(weeklyAdherenceLogRequest).map());
+        weeklyAdherenceService.save(new WeeklyAdherenceLogMapper(weeklyAdherenceLogRequest).map(),weeklyAdherenceLogRequest);
     }
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody WeeklyAdherenceLogRequest weeklyAdherenceLogRequest) {
-        logger.info("Updating patient");
+        logger.info("Updating weekly adherence log");
         weeklyAdherenceService.update(new WeeklyAdherenceLogMapper(weeklyAdherenceLogRequest).map());
     }
 
