@@ -49,22 +49,50 @@
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="40" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<staticText>
 				<reportElement uuid="e07a1e28-401e-4073-9a34-d889b5b4ec78" x="0" y="0" width="180" height="20"/>
-				<textElement/>
+				 <textElement>
+                   <font isBold="true" />
+                 </textElement>
 				<text><![CDATA[OTC SMS Report]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="8a114e88-31f3-4a6b-8337-0b1786dc1044" x="0" y="20" width="180" height="20"/>
-				<textElement/>
+				<reportElement uuid="8a114e88-31f3-4a6b-8337-0b1786dc1044" x="0" y="20" width="90" height="20"/>
+				 <textElement>
+                  <font isBold="true" />
+                 </textElement>
 				<text><![CDATA[Date :]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="a6fe64a9-5aac-4e2e-a35c-edbea5faf606" x="180" y="20" width="180" height="20"/>
+				<reportElement uuid="a6fe64a9-5aac-4e2e-a35c-edbea5faf606"  x="90" y="20" width="90" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<staticText>
+              <reportElement uuid="71d7d53c-081a-4f47-8342-dc3095b90358" x="0" y="40" width="90" height="20"/>
+              <textElement textAlignment="Center" verticalAlignment="Middle">
+               <font isBold="true" />
+              </textElement>
+              <text><![CDATA[Report Start Date :]]></text>
+             </staticText>
+             <textField pattern="dd/MM/yyyy">
+              <reportElement uuid="410c907c-3d85-4c30-be1e-0558a4de194a" x="90" y="40" width="90" height="20"/>
+               <textElement verticalAlignment="Middle"/>
+              <textFieldExpression><![CDATA[$P{START_DATE}]]></textFieldExpression>
+             </textField>
+             <staticText>
+              <reportElement uuid="5dd5d443-a954-4552-8b74-38df7b0cafc8" x="0" y="60" width="90" height="20"/>
+              <textElement textAlignment="Center" verticalAlignment="Middle">
+               <font isBold="true" />
+              </textElement>
+              <text><![CDATA[Report End Date :]]></text>
+             </staticText>
+             <textField pattern="dd/MM/yyyy">
+              <reportElement uuid="f47ee413-4379-4fa2-a533-69308438901f" x="90" y="60" width="90" height="20"/>
+              <textElement verticalAlignment="Middle"/>
+              <textFieldExpression><![CDATA[$P{END_DATE}]]></textFieldExpression>
+             </textField>
 		</band>
 	</pageHeader>
 	<summary>

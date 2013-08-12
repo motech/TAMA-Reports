@@ -603,23 +603,52 @@
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="40" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="4a33bccb-2a39-4804-a8cb-f2d8e88269b1" x="150" y="20" width="150" height="20"/>
+				<reportElement uuid="4a33bccb-2a39-4804-a8cb-f2d8e88269b1" x="150" y="20" width="90" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement uuid="fe798db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="0" width="150" height="20"/>
-				<textElement/>
+				 <textElement>
+                   <font isBold="true" />
+                 </textElement>
+
 				<text><![CDATA[Patient Registration]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="fe798db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="20" width="150" height="20"/>
-				<textElement/>
-				<text><![CDATA[Date]]></text>
+				<reportElement uuid="fe798db9-47aa-49f9-ad9b-1ca69ee6b744" x="0" y="20" width="90" height="20"/>
+				 <textElement>
+                    <font isBold="true" />
+                 </textElement>
+                 <text><![CDATA[Date]]></text>
 			</staticText>
-		</band>
+            <staticText>
+              <reportElement uuid="8b3dce17-0686-45ff-959a-39605572b570" x="0" y="40" width="90" height="20"/>
+              <textElement textAlignment="Center" verticalAlignment="Middle">
+               <font isBold="true" />
+              </textElement>
+              <text><![CDATA[Report Start Date :]]></text>
+             </staticText>
+             <textField pattern="dd/MM/yyyy">
+              <reportElement uuid="71eb891d-d84d-488a-8660-0548ec99b536" x="90" y="40" width="90" height="20"/>
+               <textElement verticalAlignment="Middle"/>
+              <textFieldExpression><![CDATA[$P{START_DATE}]]></textFieldExpression>
+             </textField>
+             <staticText>
+              <reportElement uuid="2e8cbba5-29e0-4921-a10f-f8bd9a58fbc0" x="0" y="60" width="90" height="20"/>
+              <textElement textAlignment="Center" verticalAlignment="Middle">
+               <font isBold="true" />
+              </textElement>
+              <text><![CDATA[Report End Date :]]></text>
+             </staticText>
+             <textField pattern="dd/MM/yyyy">
+              <reportElement uuid="b345e3fb-bcb8-484b-bd69-c7d0c3e2ad64" x="90" y="60" width="90" height="20"/>
+              <textElement verticalAlignment="Middle"/>
+              <textFieldExpression><![CDATA[$P{END_DATE}]]></textFieldExpression>
+             </textField>
+        </band>
 	</pageHeader>
 	<summary>
 		<band height="168" splitType="Stretch">
