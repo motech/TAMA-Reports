@@ -93,7 +93,7 @@ and msg.call_date::date <= to_date($P{END_DATE}, 'dd/MM/yyyy')  ORDER BY (patien
 				 <textElement>
                   <font isBold="true" />
                  </textElement>
-				<text><![CDATA[Date :]]></text>
+				<text><![CDATA[Date of Report :]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement uuid="428d3592-b733-4276-bfb1-2a1f83dd84d7"  x="90" y="20" width="90" height="20"/>
