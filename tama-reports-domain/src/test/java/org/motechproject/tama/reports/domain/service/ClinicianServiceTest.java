@@ -59,16 +59,18 @@ public class ClinicianServiceTest {
 
     @Test
     public void shouldBeIdempotentOnUpdate() {
-        List<Clinician> oldClinicians = asList(new ClinicianBuilder().build());
+        List<Clinician> oldClinicians = asList(new ClinicianBuilder().withContactNumber("contactNumber").withAlternateNumber("alternateNumber").withRole("role").build());
+        oldClinicians.get(0).setClinicId("clinicId");
+        oldClinicians.get(0).setType("CC");
         List<Clinician> newClinician = asList(new ClinicianBuilder().withId(oldClinicians.get(0).getClinicianId()).withContactNumber("contactNumber").withAlternateNumber("alternateNumber").withRole("role").build());
-
-        when(allClinicians.findByClinicianIdIn(asList(oldClinicians.get(0).getClinicianId()))).thenReturn(oldClinicians);
+        newClinician.get(0).setType("CC");
+        when(allClinicians.findByClinicId(newClinician.get(0).getClinicId())).thenReturn(oldClinicians);
         List<Clinician> clinicians = new ArrayList<>();
         clinicians.addAll(oldClinicians);
         clinicians.addAll(newClinician);
         when(allClinicians.findByClinicianId(oldClinicians.get(0).getClinicianId())).thenReturn(oldClinicians.get(0));
         clinicianService.update(newClinician);
-        verify(allClinicians).delete(oldClinicians.get(0));
+        verify(allClinicians).deleteInBatch(oldClinicians);
         verify(allClinicians).save(newClinician);
     }
 }

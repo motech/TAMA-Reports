@@ -44,7 +44,8 @@ public class ClinicianService {
     }
 
     public void findDiffAndUpdate(List<Clinician> clinicians) {
-        List<Clinician> dbClinicians = filterByClinicId(allClinicians.findByClinicId(clinicians.get(0).getClinicId()), clinicians.get(0).getClinicId());
+        List<Clinician> clinicianList =  allClinicians.findByClinicId(clinicians.get(0).getClinicId());
+        List<Clinician> dbClinicians =  filterByClinicId(clinicianList, clinicians.get(0).getClinicId());
         allClinicians.deleteInBatch(dbClinicians);
     }
 
