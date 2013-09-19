@@ -35,7 +35,7 @@ public class ClinicianContactController {
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody ClinicianContactRequests clinicianContactsRequest) {
-        logger.info("Creating clinician from clinicianContact");
+        logger.info("Updating clinician from clinicianContact");
         clinicianService.update(new ClinicianContactMapper(clinicianContactsRequest.getClinicianContactRequests()).map());
     }
 }

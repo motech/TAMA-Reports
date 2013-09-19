@@ -11,7 +11,5 @@ public interface AllClinicians extends JpaRepository<Clinician, Long> {
 
     public List<Clinician> findByClinicianIdIn(List<String> clinicianIds);
 
-    public Clinician findByClinicianIdAndClinicId(String clinicianId,String clinicId);
-
     public List<Clinician> findByClinicId(String clinicId);
 }
