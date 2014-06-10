@@ -8,6 +8,7 @@ import org.motechproject.tama.reports.domain.export.ReportingService;
 import org.motechproject.tama.reports.domain.service.SMSLogService;
 import org.motechproject.tama.reports.mapping.RequestMapper;
 import org.motechproject.tama.reports.web.excel.ClinicianSMSLogParameters;
+import org.motechproject.tama.reports.web.excel.MonitoringAgentSMSLogParameters;
 import org.motechproject.tama.reports.web.excel.OTCSMSLogParameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,6 +26,7 @@ import static org.apache.commons.lang.StringUtils.equalsIgnoreCase;
 public class SMSLogController {
 
     public static final String CLINICIAN_SMS = "ClinicianSMS";
+    public static final String MonitoringAgent_SMS = "MonitoringAgentSMS";
 
     private SMSLogService smsLogService;
     private ReportingService reportingService;
@@ -59,6 +61,26 @@ public class SMSLogController {
             reportOTCAdviceSMS(clinicId, externalId, startDate, endDate, response);
         }
     }
+    
+    @RequestMapping(value = "agentReport", method = RequestMethod.GET)
+    public void agentReport(@RequestParam("type") String smsType,
+                       @RequestParam("externalId") String externalId,
+                       @RequestParam("startDate") String startDate,
+                       @RequestParam("endDate") String endDate,
+                       HttpServletResponse response) throws Exception {
+    	try{
+        response.setHeader("Content-Disposition", "inline; filename=AgentSMSReport.xls");
+        response.setContentType("application/vnd.ms-excel");
+        ServletOutputStream outputStream = response.getOutputStream();
+        if(equalsIgnoreCase(MonitoringAgent_SMS, smsType)){
+        	reportMonitoringAgentSMS( externalId, startDate, endDate, response);
+        }
+    	}
+    	catch(Exception e){
+    		e.printStackTrace();
+    	}
+        
+    }
 
     private void reportOTCAdviceSMS(String clinicId, String externalId, String startDate, String endDate, HttpServletResponse response) throws Exception {
         OTCSMSLogParameters parameters = new OTCSMSLogParameters();
@@ -78,6 +100,15 @@ public class SMSLogController {
                 .setStartDate(startDate)
                 .setEndDate(endDate);
         exportReport(response, parameters, "ClinicianSMSReport.jasper");
+    }
+    
+    private void reportMonitoringAgentSMS( String externalId, String startDate, String endDate, HttpServletResponse response) throws Exception {
+    	MonitoringAgentSMSLogParameters parameters = new MonitoringAgentSMSLogParameters();
+        parameters
+                .setMonitoringAgentId(externalId)
+                .setStartDate(startDate)
+                .setEndDate(endDate);
+        exportReport(response, parameters, "MonitoringAgentSMSReport.jasper");
     }
 
     private void exportReport(HttpServletResponse response, ReportParameters parameters, String reportName) throws Exception {

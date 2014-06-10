@@ -63,7 +63,7 @@
                 </executions>
                 <configuration>
                     <user>postgres</user>
-                    <password>p@ssw0rd</password>
+                    <password>password</password>
                     <driver>org.postgresql.Driver</driver>
                     <url>jdbc:postgresql://localhost/tama/;shutdown=true</url>
                     <schemas>tama_reports</schemas>

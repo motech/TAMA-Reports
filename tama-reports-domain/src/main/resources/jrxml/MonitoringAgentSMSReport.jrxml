@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="agentSmsReport" pageWidth="1120" pageHeight="7200" columnWidth="1080" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4d9928e-b7c8-411e-85ce-77ea68ff12bd">
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="agentSmsReport" uuid="c3f3e85d-9bba-4ac7-a0b8-e35bb9d1d865">
+		<parameter name="MONITORING_AGENT_ID" class="java.lang.String"/>
+		<parameter name="START_DATE" class="java.lang.String"/>
+		<parameter name="END_DATE" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select monitoring_agent_name,recipient_number,substring(content from (position('(' in content)+1)  for (position(')' in content)-(position('(' in content)+1)))as clinic_name, time_stamp, regexp_replace(content, '[0-9]{10}' , 'XXXXXXXXXX', 'g') as content from tama_reports.sms_log a , tama_reports.monitoring_agent b  where a.sms_type='M'  and b.monitoring_agent_id ilike $P{MONITORING_AGENT_ID} and a.external_id=b.monitoring_agent_id and  a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
+		</queryString>
+        <field name="content" class="java.lang.String"/>
+		<field name="recipient_number" class="java.lang.String"/>
+		<field name="time_stamp" class="java.sql.Timestamp"/>
+		<field name="monitoring_agent_name" class="java.lang.String"/>
+		<field name="clinic_name" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="MONITORING_AGENT_ID" class="java.lang.String"/>
+	<parameter name="START_DATE" class="java.lang.String"/>
+	<parameter name="END_DATE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select 1 as dummy;]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="100" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="a6fe64a9-5aac-4e2e-a35c-edbea5faf606" x="90" y="20" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e07a1e28-401e-4073-9a34-d889b5b4ec78" x="0" y="0" width="180" height="20"/>
+				<textElement>
+                 <font isBold="true" />
+                </textElement>
+				<text><![CDATA[Monitoring Agent SMS Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8a114e88-31f3-4a6b-8337-0b1786dc1044" x="0" y="20" width="90" height="20"/>
+				<textElement>
+                  <font isBold="true" />
+                </textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+              <reportElement uuid="50909275-8218-4029-b9c7-d757c093071f" x="0" y="40" width="90" height="20"/>
+              <textElement textAlignment="Center" verticalAlignment="Middle">
+               <font isBold="true" />
+              </textElement>
+              <text><![CDATA[Report Start Date :]]></text>
+             </staticText>
+             <textField pattern="dd/MM/yyyy">
+              <reportElement uuid="9a6bb814-ef05-482a-a9d3-3b1733353c16" x="90" y="40" width="90" height="20"/>
+               <textElement verticalAlignment="Middle"/>
+              <textFieldExpression><![CDATA[$P{START_DATE}]]></textFieldExpression>
+             </textField>
+             <staticText>
+              <reportElement uuid="832e0cf8-b623-4904-afb9-9e1977e1e230" x="0" y="60" width="90" height="20"/>
+              <textElement textAlignment="Center" verticalAlignment="Middle">
+               <font isBold="true" />
+              </textElement>
+              <text><![CDATA[Report End Date :]]></text>
+             </staticText>
+             <textField pattern="dd/MM/yyyy">
+              <reportElement uuid="ecbd6882-42ac-467c-abe2-3ded43f03d4f" x="90" y="60" width="90" height="20"/>
+              <textElement verticalAlignment="Middle"/>
+              <textFieldExpression><![CDATA[$P{END_DATE}]]></textFieldExpression>
+            </textField>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="50" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="3162afd5-16e7-44af-8d6f-456745227c66" key="table 1" style="table 1" x="0" y="0" width="1080" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="agentSmsReport" uuid="7d834ed5-6655-4100-aa6a-8cea08cb0476">
+						<datasetParameter name="MONITORING_AGENT_ID">
+							<datasetParameterExpression><![CDATA[$P{MONITORING_AGENT_ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="START_DATE">
+							<datasetParameterExpression><![CDATA[$P{START_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="END_DATE">
+							<datasetParameterExpression><![CDATA[$P{END_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="180" uuid="1058c597-d28a-4ccc-852a-1daecf2414b6">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="560a88d4-efc7-4a5a-9cfa-fd9efe6334bd" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Monitoring Agent Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+								<reportElement uuid="3477eba9-a09b-4905-8354-3a4e49c0ed37" style="table_TD" mode="Transparent" x="0" y="0" width="180" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{monitoring_agent_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="58c4a079-1934-42bb-8857-92a141f24091">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="cca3da7b-9dcb-4c89-acf0-3dfd2aa06f1e" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Monitoring Agent Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+								<reportElement uuid="45ecd5fe-9a55-4dea-b6df-a07af5b2525f" style="table_TD" mode="Transparent" x="0" y="0" width="180" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{recipient_number}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="aca1a551-0504-4cf8-88b6-5f43f8b75df1">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="943bd1ba-49eb-4b14-8cb1-ceca93b75a1c" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Clinic Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+								<reportElement uuid="89e4fa8c-d913-4feb-bf58-40fc3366b373" style="table_TD" mode="Transparent" x="0" y="0" width="180" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{clinic_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+						</jr:column>
+					<jr:column width="180" uuid="d7de616e-6c48-4865-a428-46458e5d7f4c">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="d45ccc7d-aef0-49d4-844e-43ec73666b3d" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Date of sending SMS (dd/mm/yyyy)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="false">
+								<reportElement uuid="d6526338-6a29-463e-9c75-375df821d23d" style="table_TD" mode="Transparent" x="0" y="0" width="180" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{time_stamp}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="05ced450-816f-11e2-9e96-0800200c9a77">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e231104a-eafa-40a4-bab0-1bc4eb16b39b" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Time of sending SMS (hh:mm)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="h.mm a" isBlankWhenNull="false">
+								<reportElement uuid="dc418036-04db-46d3-a1f3-52e857defe95" style="table_TD" mode="Transparent" x="0" y="0" width="180" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{time_stamp}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="e35d19b8-dc98-47e1-884d-070dcf21ae56">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="1d2bfe8c-53cc-4983-a3b0-4056496a8d0d" mode="Transparent" x="0" y="0" width="180" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Message]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+								<reportElement uuid="3cd6048d-fa8a-4b9f-9212-30ea55bb7bba" style="table_TD" mode="Transparent" x="0" y="0" width="180" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{content}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

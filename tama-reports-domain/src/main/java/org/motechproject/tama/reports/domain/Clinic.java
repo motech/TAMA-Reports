@@ -28,6 +28,9 @@ public class Clinic {
     @NotNull
     @Column(name = "city_name")
     private String cityName;
+    
+    @Column(name = "monitoring_agent_id")
+    private String monitoringAgentId;
 
     @NotNull
     @Column(name = "greeting_name")
@@ -45,6 +48,7 @@ public class Clinic {
     public void merge(Clinic clinic) {
         this.setClinicName(clinic.getClinicName());
         this.setCityName(clinic.getCityName());
+        this.setMonitoringAgentId(clinic.getMonitoringAgentId());
         this.setGreetingName(clinic.getGreetingName());
         this.setContactNumber(clinic.getContactNumber());
         this.setAddress(clinic.getAddress());
