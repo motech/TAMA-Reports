@@ -50,7 +50,7 @@
 		<parameter name="START_DATE" class="java.lang.String"/>
 		<parameter name="END_DATE" class="java.lang.String"/>
 		<queryString>
-			<![CDATA[select monitoring_agent_name,recipient_number,substring(content from (position('(' in content)+1)  for (position(')' in content)-(position('(' in content)+1)))as clinic_name, time_stamp, regexp_replace(content, '[0-9]{10}' , 'XXXXXXXXXX', 'g') as content from tama_reports.sms_log a , tama_reports.monitoring_agent b  where a.sms_type='M'  and b.monitoring_agent_id ilike $P{MONITORING_AGENT_ID} and a.external_id=b.monitoring_agent_id and  a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy');]]>
+			<![CDATA[select monitoring_agent_name,recipient_number,substring(content from (position('(' in content)+1)  for (position(')' in content)-(position('(' in content)+1)))as clinic_name, time_stamp, regexp_replace(content, '[0-9]{10}' , 'XXXXXXXXXX', 'g') as content from tama_reports.sms_log a , tama_reports.monitoring_agent b  where a.sms_type='M'  and b.monitoring_agent_id ilike $P{MONITORING_AGENT_ID} and a.external_id=b.monitoring_agent_id and a.time_stamp::date between to_date($P{START_DATE}, 'dd/MM/yyyy') and to_date($P{END_DATE}, 'dd/MM/yyyy') order by time_stamp desc;]]>
 		</queryString>
         <field name="content" class="java.lang.String"/>
 		<field name="recipient_number" class="java.lang.String"/>
