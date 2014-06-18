@@ -12,6 +12,7 @@ public class ClinicRequest implements Serializable {
     private String clinicId;
     private String clinicName;
     private String cityName;
+    private String monitoringAgentId;
     private String greetingName;
     private String address;
     private String contactNumber;
