@@ -93,13 +93,16 @@ Select cl.clinic_name,
        cl.address,
        cl.contact_number,
        cl.city_name,
+       ma.monitoring_agent_name,
+       ma.contact_number as ma_contact_number,
        array_agg(cn.clinician_name Order by cn.id) clinician_names,
        array_agg(cn.contact_number Order by cn.id) contact_numbers
 from tama_reports.clinic cl
+inner join tama_reports.monitoring_agent ma on ma.monitoring_agent_id = cl.monitoring_agent_id
 inner join tama_reports.clinician cn on cn.clinic_id = cl.clinic_id and cn.type = 'CC'
-group by clinic_name, greeting_name, address, cl.contact_number, city_name
+group by clinic_name, greeting_name, address, cl.contact_number, city_name,monitoring_agent_name,ma_contact_number
 )
-Select clinic_name, greeting_name, address, contact_number, city_name,
+Select clinic_name, greeting_name, address, contact_number, city_name,monitoring_agent_name,ma_contact_number,
        clinician_names[1] clinician_name_one, contact_numbers[1] contact_number_one,
        clinician_names[2] clinician_name_two, contact_numbers[2] contact_number_two,
        clinician_names[3] clinician_name_three, contact_numbers[3] contact_number_three from clinics
@@ -110,6 +113,8 @@ Order by clinic_name;]]>
 		<field name="address" class="java.lang.String"/>
 		<field name="contact_number" class="java.lang.String"/>
 		<field name="city_name" class="java.lang.String"/>
+		<field name="monitoring_agent_name" class="java.lang.String"/>
+		<field name="ma_contact_number" class="java.lang.String"/>
 		<field name="clinician_name_one" class="java.lang.String"/>
 		<field name="contact_number_one" class="java.lang.String"/>
 		<field name="clinician_name_two" class="java.lang.String"/>
@@ -242,6 +247,44 @@ Order by clinic_name;]]>
 								<reportElement uuid="467cfa78-ed08-4ca7-b3e4-4b377410fe61" x="0" y="0" width="90" height="20"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
 								<textFieldExpression><![CDATA[$F{city_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="7d56a32c-1d95-426a-b6d6-e079aab141d8">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="ef9aba02-9a79-4904-b189-18092b04165f" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Monitoring Agent]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="467cfa78-ed08-4ca7-b3e4-4b377410fe61" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{monitoring_agent_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="7d56a32c-1d95-426a-b6d6-e079aab141d8">
+						<jr:columnHeader style="table 3_CH" height="30">
+							<staticText>
+								<reportElement uuid="ef9aba02-9a79-4904-b189-18092b04165f" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="SansSerif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Contact Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="20">
+							<textField isBlankWhenNull="true">
+								<reportElement uuid="467cfa78-ed08-4ca7-b3e4-4b377410fe61" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{ma_contact_number}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
